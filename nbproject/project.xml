@@ -6,7 +6,7 @@
             <name>telecomando</name>
             <creation-uuid>b51dc4d2-7799-4c07-81c4-224fbcc6f168</creation-uuid>
             <make-project-type>0</make-project-type>
-            <c-extensions/>
+            <c-extensions>c</c-extensions>
             <cpp-extensions/>
             <header-extensions>h</header-extensions>
             <asminc-extensions/>
