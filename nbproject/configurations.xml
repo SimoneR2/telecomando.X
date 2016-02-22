@@ -31,7 +31,7 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>PICkit3PlatformTool</platformTool>
         <languageToolchain>XC8</languageToolchain>
-        <languageToolchainVersion>1.36</languageToolchainVersion>
+        <languageToolchainVersion>1.35</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <compileType>
@@ -60,7 +60,7 @@
         <property key="asmlist" value="true"/>
         <property key="define-macros" value=""/>
         <property key="extra-include-directories"
-                  value="..\..\Drive\librerie\LaurTec_PIC_libraries_v_3.3.0\inc;..\..\Drive\librerie\LaurTec_PIC_libraries_v_3.3.0\src"/>
+                  value="..\LaurTec_PIC_libraries_v_3.3.0\inc;..\LaurTec_PIC_libraries_v_3.3.0\src"/>
         <property key="identifier-length" value="255"/>
         <property key="operation-mode" value="free"/>
         <property key="opt-xc8-compiler-strict_ansi" value="false"/>
@@ -75,7 +75,7 @@
         <property key="optimization-speed" value="false"/>
         <property key="preprocess-assembler" value="true"/>
         <property key="undefine-macros" value=""/>
-        <property key="use-cci" value="false"/>
+        <property key="use-cci" value="true"/>
         <property key="use-iar" value="true"/>
         <property key="verbose" value="false"/>
         <property key="warning-level" value="0"/>
