@@ -322,9 +322,9 @@ text3 3776 379B CODE 3776 0
 text9 3764 3775 CODE 3764 0
 idataCOMRAM 3763 3763 CODE 3763 0
 %locals
-dist/default/production\telecomando.X.production.obj
+dist/default/debug\telecomando.X.debug.obj
 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f4480.h
-C:\Users\Massimo\AppData\Local\Temp\s4js.
+C:\Users\Massimo\AppData\Local\Temp\s1sc.
 1118 379C 0 CODE 0
 1120 379C 0 CODE 0
 1123 379C 0 CODE 0

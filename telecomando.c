@@ -44,7 +44,7 @@ void USART_Send(void);
 //////////////////
 
 //Serial variables
-unsigned char USART_Tx [7] = {0xAA, 0x00, 0x00, 0x00, 0x00, 0x00, 0xAA};
+unsigned char USART_Tx [7] = 0;
 //unsigned char usartRx[11] = 0;
 
 //Program variables
@@ -56,8 +56,8 @@ volatile unsigned int set_speed = 0;
 volatile unsigned char set_speed_pk1 = 0;
 volatile unsigned char set_speed_pk0 = 0;
 volatile unsigned char analogic_brake = 0;
-volatile signed char JoystickValues[2] = {0x00, 0x00}; //steering - speed
-volatile signed float JoystickConstants[2] = {0.703, 34}; //?
+volatile signed char JoystickValues[2] = 0; //steering - speed
+volatile signed float JoystickConstants[2] = 0;
 
 //__interrupt(high_priority) void ISR_bassa(void) {
 //}
@@ -68,7 +68,15 @@ volatile signed float JoystickConstants[2] = {0.703, 34}; //?
 
 void main(void) {
     board_initialization();
-    //[aggiungere controllo stato centraline]
+    
+    //Inizializzazione Arrays
+    USART_Tx[0] = 0xAA;
+    USART_Tx[6] = 0xAA;
+    JoystickConstants[0] = 0.703;
+    JoystickConstants[1] = 34;
+    
+    //[AGGIUNGERE CONTROLLO STATO CENTRALINE]
+    
     while (1) {
         Joystick_Polling();
 

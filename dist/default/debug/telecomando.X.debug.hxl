@@ -6,7 +6,7 @@
   200008h - 2FFFFFh
   30000Eh - 30003Fh
   
- dist/default/production\telecomando.X.production.hex ranges:
+ dist/default/debug\telecomando.X.debug.hex ranges:
   0h - 3h
   3763h - 4000h
   200000h - 200007h
@@ -23,7 +23,7 @@
   T = Trailing code
   & = Find & replace opcode
   X = Find & delete opcode
-  1 = dist/default/production\telecomando.X.production.hex
+  1 = dist/default/debug\telecomando.X.debug.hex
 00000000: 1111------------------------------------------------------------
 00003740: -----------------------------------11111111111111111111111111111
 00003780: 1111111111111111111111111111111111111111111111111111111111111111

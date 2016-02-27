@@ -3,15 +3,15 @@ Microchip MPLAB XC8 Compiler V1.35 ()
 Linker command line:
 
 --edf=C:\Program Files (x86)\Microchip\xc8\v1.35\dat\en_msgs.txt -cs \
-  -h+dist/default/production\telecomando.X.production.sym \
-  --cmf=dist/default/production\telecomando.X.production.cmf -z -Q18F4480 \
-  -oC:\Users\Massimo\AppData\Local\Temp\s4js.2 \
-  -Mdist/default/production/telecomando.X.production.map -E1 -ver=XC8 \
-  --acfsm=1493 -ASTACK=060h-02ffh -pstack=STACK -ACODE=00h-03FFFh \
-  -ACONST=00h-03FFFh -ASMALLCONST=0300h-03FFhx61 -AMEDIUMCONST=0300h-03FFFh \
-  -ACOMRAM=01h-05Fh -AABS1=00h-02FFh -ABIGRAM=01h-02FFh \
-  -ARAM=060h-0FFh,0100h-01FFhx2 -ABANK0=060h-0FFh -ABANK1=0100h-01FFh \
-  -ABANK2=0200h-02FFh -ASFR=0D00h-0DFFhx2,0F00h-0F5Fh,0F60h-0FFFh \
+  -h+dist/default/debug\telecomando.X.debug.sym \
+  --cmf=dist/default/debug\telecomando.X.debug.cmf -z -Q18F4480 \
+  -oC:\Users\Massimo\AppData\Local\Temp\s1sc.2 \
+  -Mdist/default/debug/telecomando.X.debug.map -E1 -ver=XC8 --acfsm=1493 \
+  -ASTACK=060h-02ffh -pstack=STACK -ACODE=00h-03FFFh -ACONST=00h-03FFFh \
+  -ASMALLCONST=0300h-03FFhx61 -AMEDIUMCONST=0300h-03FFFh -ACOMRAM=01h-05Fh \
+  -AABS1=00h-02FFh -ABIGRAM=01h-02FFh -ARAM=060h-0FFh,0100h-01FFhx2 \
+  -ABANK0=060h-0FFh -ABANK1=0100h-01FFh -ABANK2=0200h-02FFh \
+  -ASFR=0D00h-0DFFhx2,0F00h-0F5Fh,0F60h-0FFFh \
   -preset_vec=00h,intcode,intcodelo,powerup,init,end_init -pramtop=0300h \
   -psmallconst=SMALLCONST -pmediumconst=MEDIUMCONST -pconst=CONST \
   -AFARRAM=00h-00h -ACONFIG=0300000h-030000Dh -pconfig=CONFIG \
@@ -21,8 +21,8 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\Massimo\AppData\Local\Temp\s4js.obj \
-  dist/default/production\telecomando.X.production.obj 
+  C:\Users\Massimo\AppData\Local\Temp\s1sc.obj \
+  dist/default/debug\telecomando.X.debug.obj 
 
 Object code version is 3.11
 
@@ -34,11 +34,11 @@ Call graph: (short form)
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\Massimo\AppData\Local\Temp\s4js.obj
+C:\Users\Massimo\AppData\Local\Temp\s1sc.obj
                 end_init                              0        0        4        0       0
                 idloc                            200000   200000        8   200000       0
                 config                           300000   300000        E   300000       0
-dist/default/production\telecomando.X.production.obj
+dist/default/debug\telecomando.X.debug.obj
                 text10                             37F4     37F4       48     1BFA       0
                 text9                              3764     3764       12     1BB2       0
                 text8                              383C     383C       4A     1C1E       0

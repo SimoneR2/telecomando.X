@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
-  <executable name="dist/default/production\telecomando.X.production.hex">
+  <executable name="dist/default/debug\telecomando.X.debug.hex">
     <memory name="program">
       <units>bytes</units>
       <length>16384</length>
