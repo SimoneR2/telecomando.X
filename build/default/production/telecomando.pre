@@ -19412,14 +19412,457 @@ delay_quartz_frequency_value = frequency;
 
 }
 
-# 38 "telecomando.c"
+# 7 "C:\Program Files (x86)\Microchip\xc8\v1.35\include\stdlib.h"
+typedef unsigned short wchar_t;
+
+# 15
+typedef struct {
+int rem;
+int quot;
+} div_t;
+typedef struct {
+unsigned rem;
+unsigned quot;
+} udiv_t;
+typedef struct {
+long quot;
+long rem;
+} ldiv_t;
+typedef struct {
+unsigned long quot;
+unsigned long rem;
+} uldiv_t;
+
+# 53
+extern double atof(const char *);
+extern double strtod(const char *, const char **);
+extern int atoi(const char *);
+extern unsigned xtoi(const char *);
+extern long atol(const char *);
+extern long strtol(const char *, char **, int);
+
+extern int rand(void);
+extern void srand(unsigned int);
+extern void * calloc(size_t, size_t);
+extern div_t div(int numer, int denom);
+extern udiv_t udiv(unsigned numer, unsigned denom);
+extern ldiv_t ldiv(long numer, long denom);
+extern uldiv_t uldiv(unsigned long numer,unsigned long denom);
+extern unsigned long _lrotl(unsigned long value, unsigned int shift);
+extern unsigned long _lrotr(unsigned long value, unsigned int shift);
+extern unsigned int _rotl(unsigned int value, unsigned int shift);
+extern unsigned int _rotr(unsigned int value, unsigned int shift);
+
+
+
+
+extern void * malloc(size_t);
+extern void free(void *);
+extern void * realloc(void *, size_t);
+
+# 86
+extern int atexit(void (*)(void));
+extern char * getenv(const char *);
+extern char ** environ;
+extern int system(char *);
+extern void qsort(void *, size_t, size_t, int (*)(const void *, const void *));
+extern void * bsearch(const void *, void *, size_t, size_t, int(*)(const void *, const void *));
+extern int abs(int);
+extern long labs(long);
+
+extern char * itoa(char * buf, int val, int base);
+extern char * utoa(char * buf, unsigned val, int base);
+
+
+
+
+extern char * ltoa(char * buf, long val, int base);
+extern char * ultoa(char * buf, unsigned long val, int base);
+
+extern char * ftoa(float f, int * status);
+
+# 170 "../LaurTec_PIC_libraries_v_3.3.0/inc\LCD_44780.h"
+void LCD_enable_pulse (void);
+
+# 189
+void LCD_send_command (unsigned char bit_3, unsigned char bit_2, unsigned char bit_1, unsigned char bit_0);
+
+# 198
+void LCD_home(void);
+
+# 213
+void LCD_shift(unsigned char shift, unsigned char number_of_shift);
+
+# 229
+void LCD_shift_cursor(unsigned char shift,unsigned char number_of_shift);
+
+# 241
+void LCD_goto_line (unsigned char line);
+
+# 256
+void LCD_goto_xy (unsigned char x, unsigned char y);
+
+# 267
+void LCD_write_char (unsigned char value);
+
+# 286
+void LCD_write_message(const unsigned char *buffer);
+
+# 301
+void LCD_write_string(unsigned char *buffer);
+
+# 321
+void LCD_write_integer(int value, unsigned char number_of_digits, unsigned char zero_cleaning);
+
+# 330
+void LCD_clear (void);
+
+# 346
+void LCD_cursor(unsigned char active, unsigned char blinking);
+
+# 361
+void LCD_backlight(unsigned char active);
+
+# 375
+void LCD_initialize(unsigned char quartz_frequency);
+
+# 49 "../LaurTec_PIC_libraries_v_3.3.0/src\LCD_44780.c"
+void LCD_enable_pulse (void) {
+
+LATCbits.LATC1 = 1;
+delay_ms (1);
+LATCbits.LATC1 = 0;
+delay_ms (1);
+}
+
+# 61
+void LCD_send_command (unsigned char D3, unsigned char D2, unsigned char D1, unsigned char D0) {
+
+LATCbits.LATC2 = D0;
+LATCbits.LATC3 = D1;
+LATDbits.LATD0 = D2;
+LATDbits.LATD1 = D3;
+LCD_enable_pulse ();
+}
+
+# 74
+void LCD_home(void) {
+
+LCD_send_command (0,0,0,0);
+LCD_send_command (0,0,1,0);
+}
+
+# 84
+void LCD_shift (unsigned char shift, unsigned char number_of_shift) {
+
+unsigned char i;
+
+for (i=0; i < number_of_shift; i++) {
+LCD_send_command (0,0,0,1);
+LCD_send_command (1,shift,0,0);
+}
+}
+
+# 98
+void LCD_shift_cursor (unsigned char shift, unsigned char number_of_shift){
+
+unsigned char i;
+
+for (i=0; i < number_of_shift; i++) {
+LCD_send_command (0,0,0,1);
+LCD_send_command (0,shift,0,0);
+}
+}
+
+
+
+
+void LCD_goto_line (unsigned char line) {
+
+switch(line) {
+
+case 1: LCD_send_command(1,0,0,0);
+LCD_send_command(0,0,0,0);
+break;
+
+case 2: LCD_send_command(1,1,0,0);
+LCD_send_command(0,0,0,0);
+break;
+
+case 3: LCD_send_command(1,0,0,1);
+LCD_send_command(0,1,0,0);
+break;
+
+case 4: LCD_send_command(1,1,0,1);
+LCD_send_command(0,1,0,0);
+}
+}
+
+# 136
+void LCD_goto_xy (unsigned char x, unsigned char y){
+
+LCD_goto_line (y);
+LCD_shift_cursor (1, x-1);
+}
+
+
+
+
+void LCD_write_char (unsigned char value) {
+
+unsigned char D3,D2,D1,D0;
+
+LATAbits.LATA6 = 1;
+
+
+D3 = (value & 0b10000000) >> 7;
+D2 = (value & 0b01000000) >> 6;
+D1 = (value & 0b00100000) >> 5;
+D0 = (value & 0b00010000) >> 4;
+
+LCD_send_command (D3,D2,D1,D0);
+
+
+D3 = (value & 0b00001000) >> 3;
+D2 = (value & 0b00000100) >> 2;
+D1 = (value & 0b00000010) >> 1;
+D0 = (value & 0b00000001);
+
+LCD_send_command (D3,D2,D1,D0);
+
+LATAbits.LATA6 = 0;
+}
+
+# 178
+void LCD_write_message (const unsigned char *buffer) {
+
+
+while(*buffer) {
+
+
+LCD_write_char(*buffer);
+
+buffer++;
+}
+}
+
+# 194
+void LCD_write_string (unsigned char *buffer) {
+
+
+while(*buffer){
+
+
+LCD_write_char(*buffer);
+
+buffer++;
+}
+}
+
+# 210
+void LCD_write_integer (signed int value, unsigned char number_of_digits, unsigned char zero_cleaning){
+
+
+unsigned char convertedInt [6] = {0,0,0,0,0,0};
+
+
+unsigned char index;
+
+# 224
+itoa ((unsigned char*) convertedInt, value,10);
+
+
+
+if (number_of_digits >0 ) {
+
+convertedInt[number_of_digits] = '\0';
+
+
+
+while (!(convertedInt[number_of_digits-1] <= '9' && convertedInt[number_of_digits-1] >= '0')){
+
+for (index = number_of_digits-1; index > 0; index--){
+convertedInt[index] = convertedInt[index-1];
+
+if (zero_cleaning == 0x01) {
+convertedInt[index-1] = ' ';
+} else {
+convertedInt[index-1] = '0';
+}
+
+}
+}
+}
+
+LCD_write_string (convertedInt);
+
+}
+
+# 257
+void LCD_clear (void){
+
+LCD_send_command (0,0,0,0);
+LCD_send_command (0,0,0,1);
+}
+
+
+
+
+void LCD_cursor (unsigned char active, unsigned char blinking) {
+
+LCD_send_command (0,0,0,0);
+LCD_send_command (1,1,active,blinking);
+}
+
+
+
+
+void LCD_backlight (unsigned char active) {
+
+LATCbits.LATC1 = active;
+}
+
+
+
+
+void LCD_initialize (unsigned char quartz_frequency) {
+
+delay_set_quartz (quartz_frequency);
+
+LATAbits.LATA6 = 0x00;
+LATCbits.LATC1 = 0x00;
+LATCbits.LATC0 = 0x00;
+
+delay_ms (100);
+LCD_send_command (0,0,1,1);
+delay_ms (100);
+LCD_send_command (0,0,1,1);
+delay_ms (10);
+LCD_send_command (0,0,1,1);
+
+LCD_send_command (0,0,1,0);
+
+LCD_send_command (0,0,1,0);
+LCD_send_command (1,0,0,0);
+
+LCD_send_command (0,0,0,0);
+LCD_send_command (1,0,0,0);
+
+LCD_send_command (0,0,0,0);
+LCD_send_command (0,0,0,1);
+
+LCD_send_command (0,0,0,0);
+LCD_send_command (0,1,1,0);
+
+LCD_clear ();
+
+LCD_cursor (0,0);
+
+}
+
+# 7 "C:\Program Files (x86)\Microchip\xc8\v1.35\include\stdarg.h"
+typedef void * va_list[1];
+
+#pragma intrinsic(__va_start)
+extern void * __va_start(void);
+
+#pragma intrinsic(__va_arg)
+extern void * __va_arg(void *, ...);
+
+# 43 "C:\Program Files (x86)\Microchip\xc8\v1.35\include\stdio.h"
+struct __prbuf
+{
+char * ptr;
+void (* func)(char);
+};
+
+# 25 "C:\Program Files (x86)\Microchip\xc8\v1.35\include\errno.h"
+extern int errno;
+
+# 12 "C:\Program Files (x86)\Microchip\xc8\v1.35\include\conio.h"
+extern void init_uart(void);
+
+extern char getch(void);
+extern char getche(void);
+extern void putch(char);
+extern void ungetch(char);
+
+extern __bit kbhit(void);
+
+# 23
+extern char * cgets(char *);
+extern void cputs(const char *);
+
+# 88 "C:\Program Files (x86)\Microchip\xc8\v1.35\include\stdio.h"
+extern int cprintf(char *, ...);
+#pragma printf_check(cprintf)
+
+
+
+extern int _doprnt(struct __prbuf *, const register char *, register va_list);
+
+
+# 180
+#pragma printf_check(vprintf) const
+#pragma printf_check(vsprintf) const
+
+extern char * gets(char *);
+extern int puts(const char *);
+extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
+extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
+extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
+extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
+extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
+extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
+
+#pragma printf_check(printf) const
+#pragma printf_check(sprintf) const
+extern int sprintf(char *, const char *, ...);
+extern int printf(const char *, ...);
+
+# 30 "C:\Program Files (x86)\Microchip\xc8\v1.35\include\math.h"
+extern double fabs(double);
+extern double floor(double);
+extern double ceil(double);
+extern double modf(double, double *);
+extern double sqrt(double);
+extern double atof(const char *);
+extern double sin(double) ;
+extern double cos(double) ;
+extern double tan(double) ;
+extern double asin(double) ;
+extern double acos(double) ;
+extern double atan(double);
+extern double atan2(double, double) ;
+extern double log(double);
+extern double log10(double);
+extern double pow(double, double) ;
+extern double exp(double) ;
+extern double sinh(double) ;
+extern double cosh(double) ;
+extern double tanh(double);
+extern double eval_poly(double, const double *, int);
+extern double frexp(double, int *);
+extern double ldexp(double, int);
+extern double fmod(double, double);
+extern double trunc(double);
+extern double round(double);
+
+# 50 "telecomando.c"
 void board_initialization(void);
 void Joystick_Polling(void);
 void USART_Send(void);
+void LCD_Handler(void);
 
-# 47
+# 60
 unsigned char USART_Tx [7] = 0;
-
+unsigned char USART_Rx[7] = 0;
+volatile bit actual_dir = 0;
+volatile unsigned int actual_speed = 0;
+volatile unsigned char actual_speed_pk1 = 0;
+volatile unsigned char actual_speed_pk0 = 0;
+volatile unsigned char ECU_Check = 0;
+volatile unsigned char Battery_Check = 0;
 
 
 volatile bit dir = 0;
@@ -19433,7 +19876,43 @@ volatile unsigned char analogic_brake = 0;
 volatile signed char JoystickValues[2] = 0;
 volatile signed float JoystickConstants[2] = 0;
 
-# 69
+
+volatile unsigned long time_counter = 0;
+volatile unsigned long pr_time_1 = 0;
+volatile unsigned long pr_time_2 = 0;
+volatile unsigned long pr_time_3 = 0;
+
+
+unsigned char str [12] = 0;
+signed float actual_speed_kmh = 0;
+
+__attribute__((interrupt("__high_priority"))) void ISR_alta(void) {
+if (PIR1bits.RCIF == 1) {
+getsUSART((char*) USART_Rx, 7);
+if ((USART_Rx[0] == 0xAA)&&(USART_Rx[6] == 0xAA)) {
+actual_dir = USART_Rx[1];
+actual_speed_pk1 = USART_Rx[2];
+actual_speed_pk0 = USART_Rx[3];
+ECU_Check = USART_Rx[4];
+Battery_Check = USART_Rx[5];
+actual_speed = (actual_speed_pk1 << 8) || (actual_speed_pk0);
+}
+PIR1bits.RCIF = 0;
+}
+}
+
+__attribute__((interrupt("__low_priority"))) void ISR_bassa(void) {
+if (PIR2bits.TMR3IF) {
+time_counter++;
+TMR3H = 0x63;
+TMR3L = 0xC0;
+PIR2bits.TMR3IF = 0;
+}
+}
+
+
+
+
 void main(void) {
 board_initialization();
 
@@ -19446,6 +19925,8 @@ JoystickConstants[1] = 34;
 
 
 while (1) {
+
+# 151
 Joystick_Polling();
 
 
@@ -19461,6 +19942,7 @@ dir = 0;
 }
 }
 
+if (switch_position != 0) {
 set_steering = (128 + JoystickValues[0])*(JoystickConstants[0]);
 if (JoystickValues[1] > 0) {
 set_speed = (JoystickValues[1])*(JoystickConstants[1]);
@@ -19469,12 +19951,24 @@ analogic_brake = 0;
 set_speed = 0;
 analogic_brake = -((2 * JoystickValues[1]) + 1);
 }
+} else {
+set_speed = 0;
+analogic_brake = 255;
+}
+
+if ((time_counter - pr_time_2) >= 1) {
+pr_time_2 = time_counter;
 USART_Send();
-delay_ms(10);
+}
+
+if ((time_counter - pr_time_3) >= 30) {
+pr_time_3 = time_counter;
+LCD_Handler();
+}
 }
 }
 
-# 113
+# 196
 void Joystick_Polling(void) {
 for (i = 0; i < 2; i++) {
 ADCON0bits.GO = 1;
@@ -19493,10 +19987,40 @@ USART_Tx[3] = set_speed_pk0;
 USART_Tx[4] = set_steering;
 USART_Tx[5] = analogic_brake;
 
-for (i = 0; i < 7; i++) {
-WriteUSART(USART_Tx[i]);
-while ((!TXSTAbits.TRMT));
+putsUSART((char *) USART_Tx);
+
+
+
+
 }
+
+void LCD_Handler(void) {
+actual_speed_kmh = actual_speed / 278;
+
+LCD_clear();
+LCD_goto_line(1);
+LCD_write_message("=== VEHICLE DATA ===");
+
+LCD_goto_line(2);
+LCD_write_message("Direction: ");
+if (switch_position != 0) {
+if (dir == 1) {
+LCD_write_message("FWD");
+} else {
+LCD_write_message("BKWD");
+}
+} else {
+LCD_write_message("P");
+}
+
+LCD_goto_line(3);
+sprintf(str, "Speed: %.3f", actual_speed_kmh);
+str[11] = '\0';
+LCD_write_string(str);
+LCD_write_message("Km/h");
+
+LCD_goto_line(4);
+LCD_write_message("====================");
 }
 
 void board_initialization(void) {
@@ -19506,15 +20030,29 @@ TRISA = 0b00001111;
 LATB = 0x00;
 TRISB = 0xFF;
 LATC = 0x00;
-TRISC = 0xFF;
+TRISC = 0b11110000;
 LATD = 0x00;
-TRISD = 0x11000000;
+TRISD = 0x01111100;
 LATE = 0x00;
 TRISE = 0xFF;
 
 RCSTA&=0b01001111,TXSTAbits.TXEN=0,PIE1&=0b11001111;
 
-# 160
+
+LCD_initialize(16);
+LCD_write_message("Wait...");
+LCD_backlight(0);
+
+
+PIR1bits.RCIF = 0;
+PIR2bits.TMR3IF = 0;
+
+
+RCONbits.IPEN = 1;
+IPR1bits.RCIP = 1;
+IPR2bits.TMR3IP = 0;
+
+
 OpenUSART(0b01111111 & 0b11111111 & 0b11111110 & 0b11111101
 & 0b11111111 & 0b11111111, 103);
 RCSTAbits.SPEN = 1;
@@ -19533,6 +20071,17 @@ ADCON2bits.ADCS0 = 1;
 ADCON2bits.ADFM = 0;
 ADCON0bits.ADON = 1;
 
-# 183
+
+TMR3H = 0x63;
+TMR3L = 0xC0;
+
+
+PIE1bits.RCIE = 1;
+PIE2bits.TMR3IE = 1;
+INTCONbits.GIEH = 1;
+INTCONbits.GIEL = 1;
+
+LCD_clear();
+T3CON = 0x01;
 delay_ms(2);
 }
