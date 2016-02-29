@@ -3,12 +3,13 @@
 // DATA: 22/02/2016
 // VERSION: 1.0
 // FILE SAVED AS: telecomando.c
-// FOR PIC: 18F4480
+// FOR PIC: 18F4480 (18F4685)
 // CLOCK FREQUENCY: 16 MHz
 // PROGRAM FUNCTION: misura, impacchettamento ed invio dei dati del joystick
 // attraverso USART. Viene eseguita prima la misura di entrambi gli assi e
 // e memorizzato il dato ottenuto in un array di signed char (-128;+127),
 // successivamente convertito ed inviato in questo ordine attraverso seriale.
+// [AGGIUNGERE INFORMAZIONI]
 //
 // ============================== I/O ==========================================
 //  Inputs: RA0 = X-Axis (steering)
@@ -68,6 +69,8 @@ volatile unsigned char Battery_Check = 0;
 
 //Program variables
 volatile bit dir = LOW;
+volatile bit power_switch = LOW;
+volatile bit wait_low = LOW;
 volatile unsigned char i = 0;
 volatile unsigned char switch_position = 0;
 volatile unsigned char set_steering = 0;
@@ -91,7 +94,7 @@ signed float actual_speed_kmh = 0;
 __interrupt(high_priority) void ISR_alta(void) {
     if (PIR1bits.RCIF == HIGH) {
         getsUSART((char*) USART_Rx, 7);
-        if ((USART_Rx[0] == 0xAA)&&(USART_Rx[6] == 0xAA)) {
+        if ((USART_Rx[0] == 0xAA) && (USART_Rx[6] == 0xAA)) {
             actual_dir = USART_Rx[1];
             actual_speed_pk1 = USART_Rx[2];
             actual_speed_pk0 = USART_Rx[3];
@@ -111,12 +114,14 @@ __interrupt(low_priority) void ISR_bassa(void) {
         PIR2bits.TMR3IF = 0;
     }
 }
+
 //////////
 // MAIN //
 //////////
 
 void main(void) {
     board_initialization();
+    PORTDbits.RD7 = LOW; //Turn off ON/OFF switch backlight
 
     //Inizializzazione Arrays
     USART_Tx[0] = 0xAA;
@@ -127,26 +132,38 @@ void main(void) {
     //[AGGIUNGERE CONTROLLO STATO CENTRALINE]
 
     while (1) {
-        // GRANDI MISTERI DELLA FEDE, vedere il tipo di pulsante fisico
-        //        if (PORTBbits.RB3 == LOW) {
-        //            set_speed = 0;
-        //            while (PORTBbits.RB3 == LOW) {
-        //                LCD_clear();
-        //                LCD_goto_line(1);
-        //                LCD_write_message("====================");
-        //                LCD_goto_line(2);
-        //                LCD_write_message("==> VEHICLE  OFF <==");
-        //                LCD_goto_line(3);
-        //                LCD_write_message("Turn the switch ON! ");
-        //                LCD_goto_line(4);
-        //                LCD_write_message("====================");
-        //                if ((time_counter - pr_time_1) >= 700) {
-        //                    pr_time_1 = time_counter;
-        //                    PORTDbits.RD7 = ~PORTDbits.RD7;
-        //                }
-        //                delay_ms(300);
-        //            }
-        //        }
+        if ((PORTBbits.RB3 == LOW) || (wait_low == LOW)) {
+            wait_low = LOW;
+            if (PORTBbits.RB3 == HIGH) {
+                power_switch = ~power_switch;
+                wait_low = HIGH;
+            }
+        }
+
+        if (power_switch == LOW) {
+            dir = FWD;
+            set_speed = 0;
+            set_steering = 90;
+            analogic_brake = 0;
+            USART_Send();
+            while (power_switch == LOW) {
+                LCD_clear();
+                LCD_goto_line(1);
+                LCD_write_message("====================");
+                LCD_goto_line(2);
+                LCD_write_message("==> VEHICLE  OFF <==");
+                LCD_goto_line(3);
+                LCD_write_message("Turn the switch ON! ");
+                LCD_goto_line(4);
+                LCD_write_message("====================");
+                if ((time_counter - pr_time_1) >= 700) {
+                    pr_time_1 = time_counter;
+                    PORTDbits.RD7 = ~PORTDbits.RD7;
+                }
+                delay_ms(300); //[!!]Verificare
+            }
+            PORTDbits.RD7 = LOW; //Turn off ON/OFF switch backlight
+        }
 
         Joystick_Polling();
 
@@ -212,10 +229,6 @@ void USART_Send(void) {
     USART_Tx[5] = analogic_brake;
     //    USART_Tx = {0xAA, dir, set_speed_pk1, set_speed_pk0, set_steering, analogic_brake, 0xAA};
     putsUSART((char *) USART_Tx);
-    //    for (i = 0; i < 7; i++) {
-    //        WriteUSART(USART_Tx[i]);
-    //        while (BusyUSART());
-    //    }
 }
 
 void LCD_Handler(void) {
@@ -247,7 +260,7 @@ void LCD_Handler(void) {
     LCD_write_message("====================");
 }
 
-void board_initialization(void) {//[PER ORA DISABILITATI GLI INTERRUPT PER RX]
+void board_initialization(void) {
     //Inputs and Outputs Configuration
     LATA = 0x00;
     TRISA = 0b00001111; // X-Axis / Y-Axis / 3P Switch
@@ -260,12 +273,12 @@ void board_initialization(void) {//[PER ORA DISABILITATI GLI INTERRUPT PER RX]
     LATE = 0x00;
     TRISE = 0xFF;
 
-    CloseUSART();
-
     //LCD Initialize
     LCD_initialize(16);
-    LCD_write_message("Wait...");
     LCD_backlight(0);
+    LCD_clear();
+    LCD_goto_line(1);
+    LCD_write_message("Wait...");
 
     //Interrupt Flags
     PIR1bits.RCIF = LOW;
@@ -276,10 +289,10 @@ void board_initialization(void) {//[PER ORA DISABILITATI GLI INTERRUPT PER RX]
     IPR1bits.RCIP = HIGH; //interrupt alta priorità ricezione seriale
     IPR2bits.TMR3IP = LOW; // interrupt bassa priorità TMR3
 
-    //Open Serial Module (asyncronous mode - 8 bit - 9600 baud)
-    OpenUSART(USART_TX_INT_OFF & USART_RX_INT_ON & USART_ASYNCH_MODE & USART_EIGHT_BIT
-            & USART_BRGH_HIGH & USART_CONT_RX, 103);
-    RCSTAbits.SPEN = HIGH; //abilita la periferica
+    //USART Configuration (asyncronous mode - 8 bit - 9600 baud)
+    CloseUSART();
+    OpenUSART(USART_TX_INT_OFF & USART_RX_INT_ON & USART_ASYNCH_MODE
+              & USART_EIGHT_BIT & USART_BRGH_HIGH & USART_CONT_RX, 103);
 
     //Configurazione ADC
     ADCON1 = 0b00001101; //RA0 and RA1 analogic, AVdd and AVss voltage reference (?)
@@ -305,7 +318,8 @@ void board_initialization(void) {//[PER ORA DISABILITATI GLI INTERRUPT PER RX]
     INTCONbits.GIEH = HIGH;
     INTCONbits.GIEL = HIGH;
 
-    LCD_clear();
-    T3CON = 0x01; //abilita timer
+    RCSTAbits.SPEN = HIGH; //USART Enable
     delay_ms(2);
+    T3CON = 0x01; //Timer Enable
+    LCD_clear();
 }
