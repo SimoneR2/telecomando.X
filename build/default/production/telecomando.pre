@@ -19317,10 +19317,9 @@ extern __nonreentrant void _delay3(unsigned char);
 
 
 # 11 "telecomando.h"
-#pragma config OSC = HS
+#pragma config OSC = IRCIO67
 #pragma config FCMEN = OFF
 #pragma config IESO = OFF
-
 
 #pragma config PWRT = OFF
 #pragma config BOREN = BOHW
@@ -19365,7 +19364,7 @@ extern __nonreentrant void _delay3(unsigned char);
 
 #pragma config EBTRB = OFF
 
-# 74 "../LaurTec_PIC_libraries_v_3.3.0/inc\delay.h"
+# 74 "D:/Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\delay.h"
 void delay_ms (unsigned int value_ms);
 
 # 88
@@ -19374,8 +19373,8 @@ void delay_s (unsigned char value_s);
 # 102
 void delay_set_quartz (unsigned char frequency);
 
-# 49 "../LaurTec_PIC_libraries_v_3.3.0/src\delay.c"
-volatile unsigned char delay_quartz_frequency_value = 16;
+# 49 "D:/Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/src\delay.c"
+volatile unsigned char delay_quartz_frequency_value = 8;
 volatile unsigned int clock_counter_reference = 0;
 
 # 61
@@ -19481,52 +19480,52 @@ extern char * ultoa(char * buf, unsigned long val, int base);
 
 extern char * ftoa(float f, int * status);
 
-# 164 "../LaurTec_PIC_libraries_v_3.3.0/inc\LCD_44780.h"
-void LCD_enable_pulse(void);
+# 165 "D:/Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\LCD_44780.h"
+void LCD_enable_pulse (void);
 
-# 183
-void LCD_send_command(unsigned char bit_3, unsigned char bit_2, unsigned char bit_1, unsigned char bit_0);
+# 184
+void LCD_send_command (unsigned char bit_3, unsigned char bit_2, unsigned char bit_1, unsigned char bit_0);
 
-# 192
+# 193
 void LCD_home(void);
 
-# 207
+# 208
 void LCD_shift(unsigned char shift, unsigned char number_of_shift);
 
-# 223
-void LCD_shift_cursor(unsigned char shift, unsigned char number_of_shift);
+# 224
+void LCD_shift_cursor(unsigned char shift,unsigned char number_of_shift);
 
-# 235
-void LCD_goto_line(unsigned char line);
+# 236
+void LCD_goto_line (unsigned char line);
 
-# 250
-void LCD_goto_xy(unsigned char x, unsigned char y);
+# 251
+void LCD_goto_xy (unsigned char x, unsigned char y);
 
-# 261
-void LCD_write_char(unsigned char value);
+# 262
+void LCD_write_char (unsigned char value);
 
-# 280
+# 281
 void LCD_write_message(const unsigned char *buffer);
 
-# 295
+# 296
 void LCD_write_string(unsigned char *buffer);
 
-# 315
+# 316
 void LCD_write_integer(int value, unsigned char number_of_digits, unsigned char zero_cleaning);
 
-# 324
-void LCD_clear(void);
+# 325
+void LCD_clear (void);
 
-# 340
+# 341
 void LCD_cursor(unsigned char active, unsigned char blinking);
 
-# 355
+# 356
 void LCD_backlight(unsigned char active);
 
-# 369
+# 370
 void LCD_initialize(unsigned char quartz_frequency);
 
-# 49 "../LaurTec_PIC_libraries_v_3.3.0/src\LCD_44780.c"
+# 49 "D:/Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/src\LCD_44780.c"
 void LCD_enable_pulse (void) {
 
 LATCbits.LATC1 = 1;
@@ -19906,8 +19905,8 @@ PIR1bits.RCIF = 0;
 __attribute__((interrupt("__low_priority"))) void ISR_bassa(void) {
 if (PIR2bits.TMR3IF) {
 time_counter++;
-TMR3H = 0x63;
-TMR3L = 0xC0;
+TMR3H = 0xB1;
+TMR3L = 0xE0;
 PIR2bits.TMR3IF = 0;
 }
 }
@@ -19950,7 +19949,7 @@ LCD_goto_line(3);
 LCD_write_message("Turn the switch ON! ");
 LCD_goto_line(4);
 LCD_write_message("====================");
-if ((time_counter - pr_time_1) >= 700) {
+if ((time_counter - pr_time_1) >= 70) {
 pr_time_1 = time_counter;
 PORTDbits.RD7 = ~PORTDbits.RD7;
 }
@@ -20052,6 +20051,9 @@ LCD_write_message("====================");
 }
 
 void board_initialization(void) {
+OSCCONbits.IRCF0 = 1;
+OSCCONbits.IRCF1 = 1;
+OSCCONbits.IRCF2 = 1;
 
 LATA = 0x00;
 TRISA = 0b00001111;
@@ -20065,12 +20067,12 @@ LATE = 0x00;
 TRISE = 0xFF;
 
 
-LCD_initialize(16);
+LCD_initialize(8);
 LCD_backlight(0);
 LCD_clear();
 LCD_goto_line(1);
 LCD_write_message("Wait...");
-
+delay_s(1);
 
 PIR1bits.RCIF = 0;
 PIR2bits.TMR3IF = 0;
@@ -20100,8 +20102,8 @@ ADCON2bits.ADFM = 0;
 ADCON0bits.ADON = 1;
 
 
-TMR3H = 0x63;
-TMR3L = 0xC0;
+TMR3H = 0xB1;
+TMR3L = 0xE0;
 
 
 PIE1bits.RCIE = 1;

@@ -3,32 +3,6 @@
 [d edition pro ]
 [d chip 18F4480 ]
 [d frameptr 4065 ]
-"61 Z:\Centraline/LaurTec_PIC_libraries_v_3.3.0/src\delay.c
-[v _delay_ms delay_ms `(v  1 e 0 0 ]
-"115
-[v _delay_set_quartz delay_set_quartz `(v  1 e 0 0 ]
-"49 Z:\Centraline/LaurTec_PIC_libraries_v_3.3.0/src\LCD_44780.c
-[v _LCD_enable_pulse LCD_enable_pulse `(v  1 e 0 0 ]
-"61
-[v _LCD_send_command LCD_send_command `(v  1 e 0 0 ]
-"98
-[v _LCD_shift_cursor LCD_shift_cursor `(v  1 e 0 0 ]
-"111
-[v _LCD_goto_line LCD_goto_line `(v  1 e 0 0 ]
-"145
-[v _LCD_write_char LCD_write_char `(v  1 e 0 0 ]
-"178
-[v _LCD_write_message LCD_write_message `(v  1 e 0 0 ]
-"194
-[v _LCD_write_string LCD_write_string `(v  1 e 0 0 ]
-"257
-[v _LCD_clear LCD_clear `(v  1 e 0 0 ]
-"266
-[v _LCD_cursor LCD_cursor `(v  1 e 0 0 ]
-"275
-[v _LCD_backlight LCD_backlight `(v  1 e 0 0 ]
-"283
-[v _LCD_initialize LCD_initialize `(v  1 e 0 0 ]
 "8 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\awdiv.c
 [v ___awdiv __awdiv `(i  1 e 2 0 ]
 "8 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\awmod.c
@@ -97,7 +71,35 @@
 [v _ReadUSART ReadUSART `(uc  1 e 1 0 ]
 "13 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\pic18\plib\USART\uwrite.c
 [v _WriteUSART WriteUSART `(v  1 e 0 0 ]
-"94 Z:\Centraline\telecomando.X\telecomando.c
+"61 D:/Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/src\delay.c
+[v _delay_ms delay_ms `(v  1 e 0 0 ]
+"102
+[v _delay_s delay_s `(v  1 e 0 0 ]
+"115
+[v _delay_set_quartz delay_set_quartz `(v  1 e 0 0 ]
+"49 D:/Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/src\LCD_44780.c
+[v _LCD_enable_pulse LCD_enable_pulse `(v  1 e 0 0 ]
+"61
+[v _LCD_send_command LCD_send_command `(v  1 e 0 0 ]
+"98
+[v _LCD_shift_cursor LCD_shift_cursor `(v  1 e 0 0 ]
+"111
+[v _LCD_goto_line LCD_goto_line `(v  1 e 0 0 ]
+"145
+[v _LCD_write_char LCD_write_char `(v  1 e 0 0 ]
+"178
+[v _LCD_write_message LCD_write_message `(v  1 e 0 0 ]
+"194
+[v _LCD_write_string LCD_write_string `(v  1 e 0 0 ]
+"257
+[v _LCD_clear LCD_clear `(v  1 e 0 0 ]
+"266
+[v _LCD_cursor LCD_cursor `(v  1 e 0 0 ]
+"275
+[v _LCD_backlight LCD_backlight `(v  1 e 0 0 ]
+"283
+[v _LCD_initialize LCD_initialize `(v  1 e 0 0 ]
+"94 C:\Users\Simone\Documents\GitHub\telecomando.X\telecomando.c
 [v _ISR_alta ISR_alta `IIH(v  1 e 0 0 ]
 "109
 [v _ISR_bassa ISR_bassa `IIL(v  1 e 0 0 ]
@@ -111,10 +113,6 @@
 [v _LCD_Handler LCD_Handler `(v  1 e 0 0 ]
 "263
 [v _board_initialization board_initialization `(v  1 e 0 0 ]
-"49 Z:\Centraline/LaurTec_PIC_libraries_v_3.3.0/src\delay.c
-[v _delay_quartz_frequency_value delay_quartz_frequency_value `VEuc  1 e 1 0 ]
-"50
-[v _clock_counter_reference clock_counter_reference `VEui  1 e 2 0 ]
 [s S486 . 1 `uc 1 RA0 1 0 :1:0 
 `uc 1 RA1 1 0 :1:1 
 `uc 1 RA2 1 0 :1:2 
@@ -355,7 +353,7 @@
 [v _TRISB TRISB `VEuc  1 e 1 @3987 ]
 "30033
 [v _TRISC TRISC `VEuc  1 e 1 @3988 ]
-[s S1628 . 1 `uc 1 TRISC0 1 0 :1:0 
+[s S1665 . 1 `uc 1 TRISC0 1 0 :1:0 
 `uc 1 TRISC1 1 0 :1:1 
 `uc 1 TRISC2 1 0 :1:2 
 `uc 1 TRISC3 1 0 :1:3 
@@ -365,7 +363,7 @@
 `uc 1 TRISC7 1 0 :1:7 
 ]
 "30065
-[s S1637 . 1 `uc 1 RC0 1 0 :1:0 
+[s S1674 . 1 `uc 1 RC0 1 0 :1:0 
 `uc 1 RC1 1 0 :1:1 
 `uc 1 RC2 1 0 :1:2 
 `uc 1 RC3 1 0 :1:3 
@@ -374,15 +372,15 @@
 `uc 1 RC6 1 0 :1:6 
 `uc 1 RC7 1 0 :1:7 
 ]
-[u S1646 . 1 `S1628 1 . 1 0 `S1637 1 . 1 0 ]
-[v _TRISCbits TRISCbits `VES1646  1 e 1 @3988 ]
+[u S1683 . 1 `S1665 1 . 1 0 `S1674 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES1683  1 e 1 @3988 ]
 "30254
 [v _TRISD TRISD `VEuc  1 e 1 @3989 ]
 "30475
 [v _TRISE TRISE `VEuc  1 e 1 @3990 ]
 "30697
 [v _PIE1 PIE1 `VEuc  1 e 1 @3997 ]
-[s S949 . 1 `uc 1 TMR1IE 1 0 :1:0 
+[s S979 . 1 `uc 1 TMR1IE 1 0 :1:0 
 `uc 1 TMR2IE 1 0 :1:1 
 `uc 1 CCP1IE 1 0 :1:2 
 `uc 1 SSPIE 1 0 :1:3 
@@ -392,14 +390,14 @@
 `uc 1 PSPIE 1 0 :1:7 
 ]
 "30722
-[s S958 . 1 `uc 1 . 1 0 :5:0 
+[s S988 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 RC1IE 1 0 :1:5 
 ]
-[s S961 . 1 `uc 1 . 1 0 :4:0 
+[s S991 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 TX1IE 1 0 :1:4 
 ]
-[u S964 . 1 `S949 1 . 1 0 `S958 1 . 1 0 `S961 1 . 1 0 ]
-[v _PIE1bits PIE1bits `VES964  1 e 1 @3997 ]
+[u S994 . 1 `S979 1 . 1 0 `S988 1 . 1 0 `S991 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES994  1 e 1 @3997 ]
 [s S259 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
@@ -418,7 +416,7 @@
 ]
 [u S274 . 1 `S259 1 . 1 0 `S268 1 . 1 0 `S271 1 . 1 0 ]
 [v _PIR1bits PIR1bits `VES274  1 e 1 @3998 ]
-[s S755 . 1 `uc 1 TMR1IP 1 0 :1:0 
+[s S785 . 1 `uc 1 TMR1IP 1 0 :1:0 
 `uc 1 TMR2IP 1 0 :1:1 
 `uc 1 CCP1IP 1 0 :1:2 
 `uc 1 SSPIP 1 0 :1:3 
@@ -428,18 +426,18 @@
 `uc 1 PSPIP 1 0 :1:7 
 ]
 "30884
-[s S764 . 1 `uc 1 . 1 0 :4:0 
+[s S794 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 TXBIP 1 0 :1:4 
 ]
-[s S767 . 1 `uc 1 . 1 0 :5:0 
+[s S797 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 RC1IP 1 0 :1:5 
 ]
-[s S770 . 1 `uc 1 . 1 0 :4:0 
+[s S800 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 TX1IP 1 0 :1:4 
 ]
-[u S773 . 1 `S755 1 . 1 0 `S764 1 . 1 0 `S767 1 . 1 0 `S770 1 . 1 0 ]
-[v _IPR1bits IPR1bits `VES773  1 e 1 @3999 ]
-[s S984 . 1 `uc 1 ECCP1IE 1 0 :1:0 
+[u S803 . 1 `S785 1 . 1 0 `S794 1 . 1 0 `S797 1 . 1 0 `S800 1 . 1 0 ]
+[v _IPR1bits IPR1bits `VES803  1 e 1 @3999 ]
+[s S1014 . 1 `uc 1 ECCP1IE 1 0 :1:0 
 `uc 1 TMR3IE 1 0 :1:1 
 `uc 1 HLVDIE 1 0 :1:2 
 `uc 1 BCLIE 1 0 :1:3 
@@ -449,11 +447,11 @@
 `uc 1 OSCFIE 1 0 :1:7 
 ]
 "30964
-[s S993 . 1 `uc 1 . 1 0 :2:0 
+[s S1023 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 LVDIE 1 0 :1:2 
 ]
-[u S996 . 1 `S984 1 . 1 0 `S993 1 . 1 0 ]
-[v _PIE2bits PIE2bits `VES996  1 e 1 @4000 ]
+[u S1026 . 1 `S1014 1 . 1 0 `S1023 1 . 1 0 ]
+[v _PIE2bits PIE2bits `VES1026  1 e 1 @4000 ]
 [s S300 . 1 `uc 1 ECCP1IF 1 0 :1:0 
 `uc 1 TMR3IF 1 0 :1:1 
 `uc 1 HLVDIF 1 0 :1:2 
@@ -469,7 +467,7 @@
 ]
 [u S312 . 1 `S300 1 . 1 0 `S309 1 . 1 0 ]
 [v _PIR2bits PIR2bits `VES312  1 e 1 @4001 ]
-[s S797 . 1 `uc 1 ECCP1IP 1 0 :1:0 
+[s S827 . 1 `uc 1 ECCP1IP 1 0 :1:0 
 `uc 1 TMR3IP 1 0 :1:1 
 `uc 1 HLVDIP 1 0 :1:2 
 `uc 1 BCLIP 1 0 :1:3 
@@ -479,14 +477,14 @@
 `uc 1 OSCFIP 1 0 :1:7 
 ]
 "31094
-[s S806 . 1 `uc 1 . 1 0 :2:0 
+[s S836 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 LVDIP 1 0 :1:2 
 ]
-[u S809 . 1 `S797 1 . 1 0 `S806 1 . 1 0 ]
-[v _IPR2bits IPR2bits `VES809  1 e 1 @4002 ]
+[u S839 . 1 `S827 1 . 1 0 `S836 1 . 1 0 ]
+[v _IPR2bits IPR2bits `VES839  1 e 1 @4002 ]
 "31529
 [v _RCSTA RCSTA `VEuc  1 e 1 @4011 ]
-[s S1099 . 1 `uc 1 RX9D 1 0 :1:0 
+[s S1129 . 1 `uc 1 RX9D 1 0 :1:0 
 `uc 1 OERR 1 0 :1:1 
 `uc 1 FERR 1 0 :1:2 
 `uc 1 ADDEN 1 0 :1:3 
@@ -496,25 +494,25 @@
 `uc 1 SPEN 1 0 :1:7 
 ]
 "31570
-[s S1108 . 1 `uc 1 . 1 0 :3:0 
+[s S1138 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 ADEN 1 0 :1:3 
 ]
-[s S1111 . 1 `uc 1 . 1 0 :5:0 
+[s S1141 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 SRENA 1 0 :1:5 
 ]
-[s S1114 . 1 `uc 1 . 1 0 :6:0 
+[s S1144 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 RC8_9 1 0 :1:6 
 ]
-[s S1117 . 1 `uc 1 . 1 0 :6:0 
+[s S1147 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 RC9 1 0 :1:6 
 ]
-[s S1120 . 1 `uc 1 RCD8 1 0 :1:0 
+[s S1150 . 1 `uc 1 RCD8 1 0 :1:0 
 ]
-[u S1122 . 1 `S1099 1 . 1 0 `S1108 1 . 1 0 `S1111 1 . 1 0 `S1114 1 . 1 0 `S1117 1 . 1 0 `S1120 1 . 1 0 ]
-[v _RCSTAbits RCSTAbits `VES1122  1 e 1 @4011 ]
+[u S1152 . 1 `S1129 1 . 1 0 `S1138 1 . 1 0 `S1141 1 . 1 0 `S1144 1 . 1 0 `S1147 1 . 1 0 `S1150 1 . 1 0 ]
+[v _RCSTAbits RCSTAbits `VES1152  1 e 1 @4011 ]
 "31738
 [v _TXSTA TXSTA `VEuc  1 e 1 @4012 ]
-[s S826 . 1 `uc 1 TX9D 1 0 :1:0 
+[s S856 . 1 `uc 1 TX9D 1 0 :1:0 
 `uc 1 TRMT 1 0 :1:1 
 `uc 1 BRGH 1 0 :1:2 
 `uc 1 SENDB 1 0 :1:3 
@@ -524,36 +522,36 @@
 `uc 1 CSRC 1 0 :1:7 
 ]
 "31798
-[s S835 . 1 `uc 1 . 1 0 :2:0 
+[s S865 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 BRGH1 1 0 :1:2 
 ]
-[s S838 . 1 `uc 1 . 1 0 :7:0 
+[s S868 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 CSRC1 1 0 :1:7 
 ]
-[s S841 . 1 `uc 1 . 1 0 :3:0 
+[s S871 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 SENDB1 1 0 :1:3 
 ]
-[s S844 . 1 `uc 1 . 1 0 :4:0 
+[s S874 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 SYNC1 1 0 :1:4 
 ]
-[s S847 . 1 `uc 1 . 1 0 :1:0 
+[s S877 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 TRMT1 1 0 :1:1 
 ]
-[s S850 . 1 `uc 1 . 1 0 :6:0 
+[s S880 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 TX91 1 0 :1:6 
 ]
-[s S853 . 1 `uc 1 TX9D1 1 0 :1:0 
+[s S883 . 1 `uc 1 TX9D1 1 0 :1:0 
 ]
-[s S855 . 1 `uc 1 . 1 0 :5:0 
+[s S885 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 TXEN1 1 0 :1:5 
 ]
-[s S858 . 1 `uc 1 . 1 0 :6:0 
+[s S888 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 TX8_9 1 0 :1:6 
 ]
-[s S861 . 1 `uc 1 TXD8 1 0 :1:0 
+[s S891 . 1 `uc 1 TXD8 1 0 :1:0 
 ]
-[u S863 . 1 `S826 1 . 1 0 `S835 1 . 1 0 `S838 1 . 1 0 `S841 1 . 1 0 `S844 1 . 1 0 `S847 1 . 1 0 `S850 1 . 1 0 `S853 1 . 1 0 `S855 1 . 1 0 `S858 1 . 1 0 `S861 1 . 1 0 ]
-[v _TXSTAbits TXSTAbits `VES863  1 e 1 @4012 ]
+[u S893 . 1 `S856 1 . 1 0 `S865 1 . 1 0 `S868 1 . 1 0 `S871 1 . 1 0 `S874 1 . 1 0 `S877 1 . 1 0 `S880 1 . 1 0 `S883 1 . 1 0 `S885 1 . 1 0 `S888 1 . 1 0 `S891 1 . 1 0 ]
+[v _TXSTAbits TXSTAbits `VES893  1 e 1 @4012 ]
 "32035
 [v _TXREG TXREG `VEuc  1 e 1 @4013 ]
 "32046
@@ -568,13 +566,13 @@
 [v _TMR3L TMR3L `VEuc  1 e 1 @4018 ]
 "32214
 [v _TMR3H TMR3H `VEuc  1 e 1 @4019 ]
-[s S921 . 1 `uc 1 ADCS 1 0 :3:0 
+[s S951 . 1 `uc 1 ADCS 1 0 :3:0 
 `uc 1 ACQT 1 0 :3:3 
 `uc 1 . 1 0 :1:6 
 `uc 1 ADFM 1 0 :1:7 
 ]
 "32915
-[s S926 . 1 `uc 1 ADCS0 1 0 :1:0 
+[s S956 . 1 `uc 1 ADCS0 1 0 :1:0 
 `uc 1 ADCS1 1 0 :1:1 
 `uc 1 ADCS2 1 0 :1:2 
 `uc 1 ACQT0 1 0 :1:3 
@@ -582,10 +580,10 @@
 `uc 1 ACQT2 1 0 :1:5 
 ]
 "32915
-[u S933 . 1 `S921 1 . 1 0 `S926 1 . 1 0 ]
+[u S963 . 1 `S951 1 . 1 0 `S956 1 . 1 0 ]
 "32915
 "32915
-[v _ADCON2bits ADCON2bits `VES933  1 e 1 @4032 ]
+[v _ADCON2bits ADCON2bits `VES963  1 e 1 @4032 ]
 "32964
 [v _ADCON1 ADCON1 `VEuc  1 e 1 @4033 ]
 [s S591 . 1 `uc 1 . 1 0 :1:0 
@@ -632,26 +630,26 @@
 [v _ADCON0bits ADCON0bits `VES623  1 e 1 @4034 ]
 "33188
 [v _ADRESH ADRESH `VEuc  1 e 1 @4036 ]
-[s S688 . 1 `uc 1 NOT_BOR 1 0 :1:0 
+[s S718 . 1 `uc 1 NOT_BOR 1 0 :1:0 
 ]
 "33961
-[s S690 . 1 `uc 1 . 1 0 :1:0 
+[s S720 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 NOT_POR 1 0 :1:1 
 ]
 "33961
-[s S693 . 1 `uc 1 . 1 0 :2:0 
+[s S723 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 NOT_PD 1 0 :1:2 
 ]
 "33961
-[s S696 . 1 `uc 1 . 1 0 :3:0 
+[s S726 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 NOT_TO 1 0 :1:3 
 ]
 "33961
-[s S699 . 1 `uc 1 . 1 0 :4:0 
+[s S729 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 NOT_RI 1 0 :1:4 
 ]
 "33961
-[s S702 . 1 `uc 1 nBOR 1 0 :1:0 
+[s S732 . 1 `uc 1 nBOR 1 0 :1:0 
 `uc 1 nPOR 1 0 :1:1 
 `uc 1 nPD 1 0 :1:2 
 `uc 1 nTO 1 0 :1:3 
@@ -661,18 +659,37 @@
 `uc 1 IPEN 1 0 :1:7 
 ]
 "33961
-[s S711 . 1 `uc 1 BOR 1 0 :1:0 
+[s S741 . 1 `uc 1 BOR 1 0 :1:0 
 `uc 1 POR 1 0 :1:1 
 `uc 1 PD 1 0 :1:2 
 `uc 1 TO 1 0 :1:3 
 `uc 1 RI 1 0 :1:4 
 ]
 "33961
-[u S717 . 1 `S688 1 . 1 0 `S690 1 . 1 0 `S693 1 . 1 0 `S696 1 . 1 0 `S699 1 . 1 0 `S702 1 . 1 0 `S711 1 . 1 0 ]
+[u S747 . 1 `S718 1 . 1 0 `S720 1 . 1 0 `S723 1 . 1 0 `S726 1 . 1 0 `S729 1 . 1 0 `S732 1 . 1 0 `S741 1 . 1 0 ]
 "33961
 "33961
-[v _RCONbits RCONbits `VES717  1 e 1 @4048 ]
-[s S1012 . 1 `uc 1 RBIF 1 0 :1:0 
+[v _RCONbits RCONbits `VES747  1 e 1 @4048 ]
+[s S678 . 1 `uc 1 SCS 1 0 :2:0 
+`uc 1 IOFS 1 0 :1:2 
+`uc 1 OSTS 1 0 :1:3 
+`uc 1 IRCF 1 0 :3:4 
+`uc 1 IDLEN 1 0 :1:7 
+]
+"34368
+[s S684 . 1 `uc 1 SCS0 1 0 :1:0 
+`uc 1 SCS1 1 0 :1:1 
+`uc 1 . 1 0 :2:2 
+`uc 1 IRCF0 1 0 :1:4 
+`uc 1 IRCF1 1 0 :1:5 
+`uc 1 IRCF2 1 0 :1:6 
+]
+"34368
+[u S691 . 1 `S678 1 . 1 0 `S684 1 . 1 0 ]
+"34368
+"34368
+[v _OSCCONbits OSCCONbits `VES691  1 e 1 @4051 ]
+[s S1042 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INT0IF 1 0 :1:1 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 RBIE 1 0 :1:3 
@@ -682,7 +699,7 @@
 `uc 1 GIE_GIEH 1 0 :1:7 
 ]
 "34968
-[s S1021 . 1 `uc 1 RBIF 1 0 :1:0 
+[s S1051 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INT0IF 1 0 :1:1 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 RBIE 1 0 :1:3 
@@ -692,7 +709,7 @@
 `uc 1 GIE 1 0 :1:7 
 ]
 "34968
-[s S1030 . 1 `uc 1 RBIF 1 0 :1:0 
+[s S1060 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INT0IF 1 0 :1:1 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 RBIE 1 0 :1:3 
@@ -702,7 +719,7 @@
 `uc 1 GIEH 1 0 :1:7 
 ]
 "34968
-[s S1039 . 1 `uc 1 . 1 0 :1:0 
+[s S1069 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 INT0F 1 0 :1:1 
 `uc 1 T0IF 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -712,31 +729,35 @@
 `uc 1 GIE 1 0 :1:7 
 ]
 "34968
-[s S1048 . 1 `uc 1 . 1 0 :6:0 
+[s S1078 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 GIEL 1 0 :1:6 
 `uc 1 GIEH 1 0 :1:7 
 ]
 "34968
-[u S1052 . 1 `S1012 1 . 1 0 `S1021 1 . 1 0 `S1030 1 . 1 0 `S1039 1 . 1 0 `S1048 1 . 1 0 ]
+[u S1082 . 1 `S1042 1 . 1 0 `S1051 1 . 1 0 `S1060 1 . 1 0 `S1069 1 . 1 0 `S1078 1 . 1 0 ]
 "34968
 "34968
-[v _INTCONbits INTCONbits `VES1052  1 e 1 @4082 ]
+[v _INTCONbits INTCONbits `VES1082  1 e 1 @4082 ]
 "354 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\doprnt.c
 [v _dpowers dpowers `C[10]ul  1 s 40 dpowers ]
 "7 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\powers.c
 [v __powers_ _powers_ `C[13]d  1 e 52 0 ]
 "39
 [v __npowers_ _npowers_ `C[13]d  1 e 52 0 ]
-[s S1738 . 1 `uc 1 RX_NINE 1 0 :1:0 
+[s S1775 . 1 `uc 1 RX_NINE 1 0 :1:0 
 `uc 1 TX_NINE 1 0 :1:1 
 `uc 1 FRAME_ERROR 1 0 :1:2 
 `uc 1 OVERRUN_ERROR 1 0 :1:3 
 `uc 1 fill 1 0 :4:4 
 ]
 "5 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\pic18\plib\USART\udefs.c
-[u S1744 USART 1 `uc 1 val 1 0 `S1738 1 . 1 0 ]
-[v _USART_Status USART_Status `S1744  1 e 1 0 ]
-"61 Z:\Centraline\telecomando.X\telecomando.c
+[u S1781 USART 1 `uc 1 val 1 0 `S1775 1 . 1 0 ]
+[v _USART_Status USART_Status `S1781  1 e 1 0 ]
+"49 D:/Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/src\delay.c
+[v _delay_quartz_frequency_value delay_quartz_frequency_value `VEuc  1 e 1 0 ]
+"50
+[v _clock_counter_reference clock_counter_reference `VEui  1 e 2 0 ]
+"61 C:\Users\Simone\Documents\GitHub\telecomando.X\telecomando.c
 [v _USART_Tx USART_Tx `[7]uc  1 e 7 0 ]
 "62
 [v _USART_Rx USART_Rx `[7]uc  1 e 7 0 ]
@@ -796,7 +817,19 @@
 "263
 [v _board_initialization board_initialization `(v  1 e 0 0 ]
 {
-"325
+"328
+} 0
+"102 D:/Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/src\delay.c
+[v _delay_s delay_s `(v  1 e 0 0 ]
+{
+[v delay_s@value_s value_s `uc  1 a 1 wreg ]
+"104
+[v delay_s@repeat_loop repeat_loop `uc  1 a 1 19 ]
+"102
+[v delay_s@value_s value_s `uc  1 a 1 wreg ]
+"106
+[v delay_s@value_s value_s `uc  1 a 1 18 ]
+"108
 } 0
 "73 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\pic18\plib\USART\uopen.c
 [v _OpenUSART OpenUSART `(v  1 e 0 0 ]
@@ -808,7 +841,7 @@
 [v OpenUSART@config config `uc  1 a 1 26 ]
 "143
 } 0
-"283 Z:\Centraline/LaurTec_PIC_libraries_v_3.3.0/src\LCD_44780.c
+"283 D:/Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/src\LCD_44780.c
 [v _LCD_initialize LCD_initialize `(v  1 e 0 0 ]
 {
 [v LCD_initialize@quartz_frequency quartz_frequency `uc  1 a 1 wreg ]
@@ -817,7 +850,7 @@
 [v LCD_initialize@quartz_frequency quartz_frequency `uc  1 a 1 23 ]
 "316
 } 0
-"115 Z:\Centraline/LaurTec_PIC_libraries_v_3.3.0/src\delay.c
+"115 D:/Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/src\delay.c
 [v _delay_set_quartz delay_set_quartz `(v  1 e 0 0 ]
 {
 [v delay_set_quartz@frequency frequency `uc  1 a 1 wreg ]
@@ -826,7 +859,7 @@
 [v delay_set_quartz@frequency frequency `uc  1 a 1 24 ]
 "119
 } 0
-"266 Z:\Centraline/LaurTec_PIC_libraries_v_3.3.0/src\LCD_44780.c
+"266 D:/Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/src\LCD_44780.c
 [v _LCD_cursor LCD_cursor `(v  1 e 0 0 ]
 {
 [v LCD_cursor@active active `uc  1 a 1 wreg ]
@@ -845,7 +878,7 @@
 [v LCD_backlight@active active `uc  1 a 1 24 ]
 "278
 } 0
-"222 Z:\Centraline\telecomando.X\telecomando.c
+"222 C:\Users\Simone\Documents\GitHub\telecomando.X\telecomando.c
 [v _USART_Send USART_Send `(v  1 e 0 0 ]
 {
 "232
@@ -865,7 +898,7 @@
 [v WriteUSART@data data `uc  1 a 1 24 ]
 "23
 } 0
-"234 Z:\Centraline\telecomando.X\telecomando.c
+"234 C:\Users\Simone\Documents\GitHub\telecomando.X\telecomando.c
 [v _LCD_Handler LCD_Handler `(v  1 e 0 0 ]
 {
 "261
@@ -875,9 +908,9 @@
 {
 "516
 [v sprintf@fval fval `d  1 a 4 20 ]
-[u S1463 . 4 `ul 1 vd 4 0 `d 1 integ 4 0 ]
+[u S1500 . 4 `ul 1 vd 4 0 `d 1 integ 4 0 ]
 "526
-[v sprintf@tmpval tmpval `S1463  1 a 4 14 ]
+[v sprintf@tmpval tmpval `S1500  1 a 4 14 ]
 "528
 [v sprintf@val val `ul  1 a 4 8 ]
 "504
@@ -925,17 +958,17 @@
 "8 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
 {
-[s S2153 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+[s S2190 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
 "13
-[s S2158 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
-[u S2161 . 4 `l 1 i 4 0 `d 1 f 4 0 `S2153 1 fAsBytes 4 0 `S2158 1 fAsWords 4 0 ]
-[v ___flmul@prod prod `S2161  1 a 4 49 ]
+[s S2195 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
+[u S2198 . 4 `l 1 i 4 0 `d 1 f 4 0 `S2190 1 fAsBytes 4 0 `S2195 1 fAsWords 4 0 ]
+[v ___flmul@prod prod `S2198  1 a 4 49 ]
 "12
 [v ___flmul@grs grs `ul  1 a 4 44 ]
-[s S2229 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+[s S2266 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
 "14
-[u S2232 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S2229 1 nAsBytes 2 0 ]
-[v ___flmul@temp temp `S2232  1 a 2 53 ]
+[u S2269 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S2266 1 nAsBytes 2 0 ]
+[v ___flmul@temp temp `S2269  1 a 2 53 ]
 "10
 [v ___flmul@bexp bexp `uc  1 a 1 48 ]
 "11
@@ -1092,7 +1125,7 @@
 [v ___lwdiv@divisor divisor `ui  1 p 2 26 ]
 "31
 } 0
-"194 Z:\Centraline/LaurTec_PIC_libraries_v_3.3.0/src\LCD_44780.c
+"194 D:/Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/src\LCD_44780.c
 [v _LCD_write_string LCD_write_string `(v  1 e 0 0 ]
 {
 [v LCD_write_string@buffer buffer `*.39uc  1 p 2 26 ]
@@ -1149,7 +1182,7 @@
 {
 "55
 } 0
-"61 Z:\Centraline/LaurTec_PIC_libraries_v_3.3.0/src\delay.c
+"61 D:/Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/src\delay.c
 [v _delay_ms delay_ms `(v  1 e 0 0 ]
 {
 [v delay_ms@value_ms value_ms `ui  1 p 2 16 ]
@@ -1165,7 +1198,7 @@
 [v ___wmul@multiplicand multiplicand `ui  1 p 2 26 ]
 "53
 } 0
-"213 Z:\Centraline\telecomando.X\telecomando.c
+"213 C:\Users\Simone\Documents\GitHub\telecomando.X\telecomando.c
 [v _Joystick_Polling Joystick_Polling `(v  1 e 0 0 ]
 {
 "220

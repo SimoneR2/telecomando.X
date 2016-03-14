@@ -109,8 +109,8 @@ __interrupt(high_priority) void ISR_alta(void) {
 __interrupt(low_priority) void ISR_bassa(void) {
     if (PIR2bits.TMR3IF) { //10ms
         time_counter++;
-        TMR3H = 0x63;
-        TMR3L = 0xC0;
+        TMR3H	 = 0xB1;
+  TMR3L	 = 0xE0;
         PIR2bits.TMR3IF = 0;
     }
 }
@@ -156,7 +156,7 @@ void main(void) {
                 LCD_write_message("Turn the switch ON! ");
                 LCD_goto_line(4);
                 LCD_write_message("====================");
-                if ((time_counter - pr_time_1) >= 700) {
+                if ((time_counter - pr_time_1) >= 70) {
                     pr_time_1 = time_counter;
                     PORTDbits.RD7 = ~PORTDbits.RD7;
                 }
@@ -261,6 +261,9 @@ void LCD_Handler(void) {
 }
 
 void board_initialization(void) {
+    OSCCONbits.IRCF0 = 1;
+    OSCCONbits.IRCF1 = 1;
+    OSCCONbits.IRCF2 = 1;
     //Inputs and Outputs Configuration
     LATA = 0x00;
     TRISA = 0b00001111; // X-Axis / Y-Axis / 3P Switch
@@ -274,12 +277,12 @@ void board_initialization(void) {
     TRISE = 0xFF;
 
     //LCD Initialize
-    LCD_initialize(16);
+    LCD_initialize(8);
     LCD_backlight(0);
     LCD_clear();
     LCD_goto_line(1);
     LCD_write_message("Wait...");
-
+    delay_s(1);
     //Interrupt Flags
     PIR1bits.RCIF = LOW;
     PIR2bits.TMR3IF = LOW;
@@ -309,8 +312,8 @@ void board_initialization(void) {
     ADCON0bits.ADON = HIGH;
 
     //Configurations
-    TMR3H = 0x63;
-    TMR3L = 0xC0;
+TMR3H	 = 0xB1;
+  TMR3L	 = 0xE0;
 
     //Interrupts Enables
     PIE1bits.RCIE = HIGH;
