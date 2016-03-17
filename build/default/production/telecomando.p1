@@ -3,102 +3,120 @@ Version 3.2 HI-TECH Software Intermediate Code
 "152 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18.h
 [v __delay `JF16824 ~T0 @X0 0 e ]
 [p i __delay ]
-"29231 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f4480.h
-[s S1824 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1824 . LATC0 LATC1 LATC2 LATC3 LATC4 LATC5 LATC6 LATC7 ]
-"29241
-[s S1825 :1 `uc 1 ]
-[n S1825 . LC0 ]
-"29244
-[s S1826 :1 `uc 1 :1 `uc 1 ]
-[n S1826 . . LC1 ]
-"29248
-[s S1827 :2 `uc 1 :1 `uc 1 ]
-[n S1827 . . LC2 ]
-"29252
-[s S1828 :3 `uc 1 :1 `uc 1 ]
-[n S1828 . . LC3 ]
-"29256
-[s S1829 :4 `uc 1 :1 `uc 1 ]
-[n S1829 . . LC4 ]
-"29260
-[s S1830 :5 `uc 1 :1 `uc 1 ]
-[n S1830 . . LC5 ]
-"29264
-[s S1831 :6 `uc 1 :1 `uc 1 ]
-[n S1831 . . LC6 ]
-"29268
-[s S1832 :7 `uc 1 :1 `uc 1 ]
-[n S1832 . . LC7 ]
-"29230
-[u S1823 `S1824 1 `S1825 1 `S1826 1 `S1827 1 `S1828 1 `S1829 1 `S1830 1 `S1831 1 `S1832 1 ]
-[n S1823 . . . . . . . . . . ]
-"29273
-[v _LATCbits `VS1823 ~T0 @X0 0 e@3979 ]
-"29363
-[s S1834 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1834 . LATD0 LATD1 LATD2 LATD3 LATD4 LATD5 LATD6 LATD7 ]
-"29373
-[s S1835 :1 `uc 1 ]
-[n S1835 . LD0 ]
-"29376
-[s S1836 :1 `uc 1 :1 `uc 1 ]
-[n S1836 . . LD1 ]
-"29380
-[s S1837 :2 `uc 1 :1 `uc 1 ]
-[n S1837 . . LD2 ]
-"29384
-[s S1838 :3 `uc 1 :1 `uc 1 ]
-[n S1838 . . LD3 ]
-"29388
-[s S1839 :4 `uc 1 :1 `uc 1 ]
-[n S1839 . . LD4 ]
-"29392
-[s S1840 :5 `uc 1 :1 `uc 1 ]
-[n S1840 . . LD5 ]
-"29396
-[s S1841 :6 `uc 1 :1 `uc 1 ]
-[n S1841 . . LD6 ]
-"29400
-[s S1842 :7 `uc 1 :1 `uc 1 ]
-[n S1842 . . LD7 ]
-"29362
-[u S1833 `S1834 1 `S1835 1 `S1836 1 `S1837 1 `S1838 1 `S1839 1 `S1840 1 `S1841 1 `S1842 1 ]
-[n S1833 . . . . . . . . . . ]
-"29405
-[v _LATDbits `VS1833 ~T0 @X0 0 e@3980 ]
-"28967
-[s S1804 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1804 . LATA0 LATA1 LATA2 LATA3 LATA4 LATA5 LATA6 LATA7 ]
-"28977
-[s S1805 :1 `uc 1 ]
-[n S1805 . LA0 ]
-"28980
-[s S1806 :1 `uc 1 :1 `uc 1 ]
-[n S1806 . . LA1 ]
-"28984
-[s S1807 :2 `uc 1 :1 `uc 1 ]
-[n S1807 . . LA2 ]
-"28988
-[s S1808 :3 `uc 1 :1 `uc 1 ]
-[n S1808 . . LA3 ]
-"28992
-[s S1809 :4 `uc 1 :1 `uc 1 ]
-[n S1809 . . LA4 ]
-"28996
-[s S1810 :5 `uc 1 :1 `uc 1 ]
-[n S1810 . . LA5 ]
-"29000
-[s S1811 :6 `uc 1 :1 `uc 1 ]
-[n S1811 . . LA6 ]
-"29004
-[s S1812 :7 `uc 1 :1 `uc 1 ]
-[n S1812 . . LA7 ]
-"28966
-[u S1803 `S1804 1 `S1805 1 `S1806 1 `S1807 1 `S1808 1 `S1809 1 `S1810 1 `S1811 1 `S1812 1 ]
-[n S1803 . . . . . . . . . . ]
-"29009
-[v _LATAbits `VS1803 ~T0 @X0 0 e@3977 ]
+"28392 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f4480.h
+[s S1768 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1768 . RC0 RC1 RC2 RC3 RC4 RC5 RC6 RC7 ]
+"28402
+[s S1769 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1769 . T1OSO T1OSI CCP1 SCK SDI SDO TX RX ]
+"28412
+[s S1770 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1770 . T13CKI . SCL SDA . CK DT ]
+"28421
+[s S1771 :1 `uc 1 :1 `uc 1 ]
+[n S1771 . . CCP2 ]
+"28425
+[s S1772 :2 `uc 1 :1 `uc 1 ]
+[n S1772 . . PA1 ]
+"28429
+[s S1773 :1 `uc 1 :1 `uc 1 ]
+[n S1773 . . PA2 ]
+"28391
+[u S1767 `S1768 1 `S1769 1 `S1770 1 `S1771 1 `S1772 1 `S1773 1 ]
+[n S1767 . . . . . . . ]
+"28434
+[v _PORTCbits `VS1767 ~T0 @X0 0 e@3970 ]
+"28564
+[s S1775 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1775 . RD0 RD1 RD2 RD3 RD4 RD5 RD6 RD7 ]
+"28574
+[s S1776 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1776 . PSP0 PSP1 PSP2 PSP3 PSP4 PSP5 PSP6 PSP7 ]
+"28584
+[s S1777 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1777 . C1INB C1INA C2INB C2INA P1A P1B P1C P1D ]
+"28594
+[s S1778 :4 `uc 1 :1 `uc 1 ]
+[n S1778 . . ECCP1 ]
+"28598
+[s S1779 :7 `uc 1 :1 `uc 1 ]
+[n S1779 . . SS2 ]
+"28563
+[u S1774 `S1775 1 `S1776 1 `S1777 1 `S1778 1 `S1779 1 ]
+[n S1774 . . . . . . ]
+"28603
+[v _PORTDbits `VS1774 ~T0 @X0 0 e@3971 ]
+"28743
+[s S1781 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1781 . RE0 RE1 RE2 RE3 ]
+"28749
+[s S1782 :2 `uc 1 :1 `uc 1 ]
+[n S1782 . . CCP10 ]
+"28753
+[s S1783 :7 `uc 1 :1 `uc 1 ]
+[n S1783 . . CCP2E ]
+"28757
+[s S1784 :6 `uc 1 :1 `uc 1 ]
+[n S1784 . . CCP6E ]
+"28761
+[s S1785 :5 `uc 1 :1 `uc 1 ]
+[n S1785 . . CCP7E ]
+"28765
+[s S1786 :4 `uc 1 :1 `uc 1 ]
+[n S1786 . . CCP8E ]
+"28769
+[s S1787 :3 `uc 1 :1 `uc 1 ]
+[n S1787 . . CCP9E ]
+"28773
+[s S1788 :2 `uc 1 :1 `uc 1 ]
+[n S1788 . . CS ]
+"28777
+[s S1789 :7 `uc 1 :1 `uc 1 ]
+[n S1789 . . PA2E ]
+"28781
+[s S1790 :6 `uc 1 :1 `uc 1 ]
+[n S1790 . . PB1E ]
+"28785
+[s S1791 :2 `uc 1 :1 `uc 1 ]
+[n S1791 . . PB2 ]
+"28789
+[s S1792 :4 `uc 1 :1 `uc 1 ]
+[n S1792 . . PB3E ]
+"28793
+[s S1793 :5 `uc 1 :1 `uc 1 ]
+[n S1793 . . PC1E ]
+"28797
+[s S1794 :1 `uc 1 :1 `uc 1 ]
+[n S1794 . . PC2 ]
+"28801
+[s S1795 :3 `uc 1 :1 `uc 1 ]
+[n S1795 . . PC3E ]
+"28805
+[s S1796 :1 `uc 1 ]
+[n S1796 . PD2 ]
+"28808
+[s S1797 :1 `uc 1 ]
+[n S1797 . RDE ]
+"28811
+[s S1798 :4 `uc 1 :1 `uc 1 ]
+[n S1798 . . RE4 ]
+"28815
+[s S1799 :5 `uc 1 :1 `uc 1 ]
+[n S1799 . . RE5 ]
+"28819
+[s S1800 :6 `uc 1 :1 `uc 1 ]
+[n S1800 . . RE6 ]
+"28823
+[s S1801 :7 `uc 1 :1 `uc 1 ]
+[n S1801 . . RE7 ]
+"28827
+[s S1802 :1 `uc 1 :1 `uc 1 ]
+[n S1802 . . WRE ]
+"28742
+[u S1780 `S1781 1 `S1782 1 `S1783 1 `S1784 1 `S1785 1 `S1786 1 `S1787 1 `S1788 1 `S1789 1 `S1790 1 `S1791 1 `S1792 1 `S1793 1 `S1794 1 `S1795 1 `S1796 1 `S1797 1 `S1798 1 `S1799 1 `S1800 1 `S1801 1 `S1802 1 ]
+[n S1780 . . . . . . . . . . . . . . . . . . . . . . . ]
+"28832
+[v _PORTEbits `VS1780 ~T0 @X0 0 e@3972 ]
 "95 C:\Program Files (x86)\Microchip\xc8\v1.35\include\stdlib.h
 [v _itoa `(*uc ~T0 @X0 0 ef3`*uc`i`i ]
 [t ~ __interrupt__ s ]
@@ -138,27 +156,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [p mainexit ]
 "51 telecomando.c
 [v _board_initialization `(v ~T0 @X0 0 ef ]
-"28564 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f4480.h
-[s S1775 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1775 . RD0 RD1 RD2 RD3 RD4 RD5 RD6 RD7 ]
-"28574
-[s S1776 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1776 . PSP0 PSP1 PSP2 PSP3 PSP4 PSP5 PSP6 PSP7 ]
-"28584
-[s S1777 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1777 . C1INB C1INA C2INB C2INA P1A P1B P1C P1D ]
-"28594
-[s S1778 :4 `uc 1 :1 `uc 1 ]
-[n S1778 . . ECCP1 ]
-"28598
-[s S1779 :7 `uc 1 :1 `uc 1 ]
-[n S1779 . . SS2 ]
-"28563
-[u S1774 `S1775 1 `S1776 1 `S1777 1 `S1778 1 `S1779 1 ]
-[n S1774 . . . . . . ]
-"28603
-[v _PORTDbits `VS1774 ~T0 @X0 0 e@3971 ]
-"28219
+"28219 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f4480.h
 [s S1762 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S1762 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
 "28229
@@ -254,18 +252,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _putsUSART `(v ~T0 @X0 0 ef1`*uc ]
 "194 C:\Program Files (x86)\Microchip\xc8\v1.35\include\stdio.h
 [v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
-"34352 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f4480.h
-[s S2093 :2 `uc 1 :1 `uc 1 :1 `uc 1 :3 `uc 1 :1 `uc 1 ]
-[n S2093 . SCS IOFS OSTS IRCF IDLEN ]
-"34359
-[s S2094 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S2094 . SCS0 SCS1 . IRCF0 IRCF1 IRCF2 ]
-"34351
-[u S2092 `S2093 1 `S2094 1 ]
-[n S2092 . . . ]
-"34368
-[v _OSCCONbits `VS2092 ~T0 @X0 0 e@4051 ]
-"28961
+"28961 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f4480.h
 [v _LATA `Vuc ~T0 @X0 0 e@3977 ]
 "29591
 [v _TRISA `Vuc ~T0 @X0 0 e@3986 ]
@@ -15682,58 +15669,58 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic18.h: 154: extern __nonreentrant void _delaywdt(unsigned long);
 [; ;pic18.h: 156: extern __nonreentrant void _delay3(unsigned char);
 "11 telecomando.h
-[p x OSC=IRCIO67 ]
+[p x OSC=HS ]
 "12
 [p x FCMEN=OFF ]
 "13
 [p x IESO=OFF ]
-"15
-[p x PWRT=OFF ]
 "16
-[p x BOREN=BOHW ]
+[p x PWRT=OFF ]
 "17
+[p x BOREN=BOHW ]
+"18
 [p x BORV=3 ]
-"20
-[p x WDT=OFF ]
 "21
+[p x WDT=OFF ]
+"22
 [p x WDTPS=32768 ]
-"24
-[p x PBADEN=ON ]
 "25
-[p x LPT1OSC=OFF ]
+[p x PBADEN=ON ]
 "26
+[p x LPT1OSC=OFF ]
+"27
 [p x MCLRE=ON ]
-"29
-[p x STVREN=ON ]
 "30
-[p x LVP=ON ]
+[p x STVREN=ON ]
 "31
-[p x BBSIZ=1024 ]
+[p x LVP=OFF ]
 "32
+[p x BBSIZ=1024 ]
+"33
 [p x XINST=OFF ]
-"35
-[p x CP0=OFF ]
 "36
+[p x CP0=OFF ]
+"37
 [p x CP1=OFF ]
-"39
-[p x CPB=OFF ]
 "40
+[p x CPB=OFF ]
+"41
 [p x CPD=OFF ]
-"43
-[p x WRT0=OFF ]
 "44
+[p x WRT0=OFF ]
+"45
 [p x WRT1=OFF ]
-"47
-[p x WRTC=OFF ]
 "48
-[p x WRTB=OFF ]
+[p x WRTC=OFF ]
 "49
+[p x WRTB=OFF ]
+"50
 [p x WRTD=OFF ]
-"52
-[p x EBTR0=OFF ]
 "53
+[p x EBTR0=OFF ]
+"54
 [p x EBTR1=OFF ]
-"56
+"57
 [p x EBTRB=OFF ]
 [; ;inc\delay.h: 74: void delay_ms (unsigned int value_ms);
 [; ;inc\delay.h: 88: void delay_s (unsigned char value_s);
@@ -15741,9 +15728,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 "49 D:/Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/src\delay.c
 [v _delay_quartz_frequency_value `Vuc ~T0 @X0 1 e ]
 [i _delay_quartz_frequency_value
--> -> 8 `i `uc
+-> -> 16 `i `uc
 ]
-[; ;src\delay.c: 49: volatile unsigned char delay_quartz_frequency_value = 8;
+[; ;src\delay.c: 49: volatile unsigned char delay_quartz_frequency_value = 16;
 "50
 [v _clock_counter_reference `Vui ~T0 @X0 1 e ]
 [i _clock_counter_reference
@@ -15876,18 +15863,18 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdlib.h: 101: extern char * ltoa(char * buf, long val, int base);
 [; ;stdlib.h: 102: extern char * ultoa(char * buf, unsigned long val, int base);
 [; ;stdlib.h: 104: extern char * ftoa(float f, int * status);
-[; ;inc\LCD_44780.h: 165: void LCD_enable_pulse (void);
-[; ;inc\LCD_44780.h: 184: void LCD_send_command (unsigned char bit_3, unsigned char bit_2, unsigned char bit_1, unsigned char bit_0);
+[; ;inc\LCD_44780.h: 165: void LCD_enable_pulse(void);
+[; ;inc\LCD_44780.h: 184: void LCD_send_command(unsigned char bit_3, unsigned char bit_2, unsigned char bit_1, unsigned char bit_0);
 [; ;inc\LCD_44780.h: 193: void LCD_home(void);
 [; ;inc\LCD_44780.h: 208: void LCD_shift(unsigned char shift, unsigned char number_of_shift);
-[; ;inc\LCD_44780.h: 224: void LCD_shift_cursor(unsigned char shift,unsigned char number_of_shift);
-[; ;inc\LCD_44780.h: 236: void LCD_goto_line (unsigned char line);
-[; ;inc\LCD_44780.h: 251: void LCD_goto_xy (unsigned char x, unsigned char y);
-[; ;inc\LCD_44780.h: 262: void LCD_write_char (unsigned char value);
+[; ;inc\LCD_44780.h: 224: void LCD_shift_cursor(unsigned char shift, unsigned char number_of_shift);
+[; ;inc\LCD_44780.h: 236: void LCD_goto_line(unsigned char line);
+[; ;inc\LCD_44780.h: 251: void LCD_goto_xy(unsigned char x, unsigned char y);
+[; ;inc\LCD_44780.h: 262: void LCD_write_char(unsigned char value);
 [; ;inc\LCD_44780.h: 281: void LCD_write_message(const unsigned char *buffer);
 [; ;inc\LCD_44780.h: 296: void LCD_write_string(unsigned char *buffer);
 [; ;inc\LCD_44780.h: 316: void LCD_write_integer(int value, unsigned char number_of_digits, unsigned char zero_cleaning);
-[; ;inc\LCD_44780.h: 325: void LCD_clear (void);
+[; ;inc\LCD_44780.h: 325: void LCD_clear(void);
 [; ;inc\LCD_44780.h: 341: void LCD_cursor(unsigned char active, unsigned char blinking);
 [; ;inc\LCD_44780.h: 356: void LCD_backlight(unsigned char active);
 [; ;inc\LCD_44780.h: 370: void LCD_initialize(unsigned char quartz_frequency);
@@ -15897,15 +15884,15 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;src\LCD_44780.c: 49: void LCD_enable_pulse (void) {
 [e :U _LCD_enable_pulse ]
 [f ]
-[; ;src\LCD_44780.c: 51: LATCbits.LATC1 = 1;
+[; ;src\LCD_44780.c: 51: PORTCbits.RC1 = 1;
 "51
-[e = . . _LATCbits 0 1 -> -> 1 `i `uc ]
+[e = . . _PORTCbits 0 1 -> -> 1 `i `uc ]
 [; ;src\LCD_44780.c: 52: delay_ms (1);
 "52
 [e ( _delay_ms (1 -> -> 1 `i `ui ]
-[; ;src\LCD_44780.c: 53: LATCbits.LATC1 = 0;
+[; ;src\LCD_44780.c: 53: PORTCbits.RC1 = 0;
 "53
-[e = . . _LATCbits 0 1 -> -> 0 `i `uc ]
+[e = . . _PORTCbits 0 1 -> -> 0 `i `uc ]
 [; ;src\LCD_44780.c: 54: delay_ms (1);
 "54
 [e ( _delay_ms (1 -> -> 1 `i `ui ]
@@ -15923,18 +15910,18 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _D1 `uc ~T0 @X0 1 r3 ]
 [v _D0 `uc ~T0 @X0 1 r4 ]
 [f ]
-[; ;src\LCD_44780.c: 63: LATCbits.LATC2 = D0;
+[; ;src\LCD_44780.c: 63: PORTCbits.RC2 = D0;
 "63
-[e = . . _LATCbits 0 2 _D0 ]
-[; ;src\LCD_44780.c: 64: LATCbits.LATC3 = D1;
+[e = . . _PORTCbits 0 2 _D0 ]
+[; ;src\LCD_44780.c: 64: PORTCbits.RC3 = D1;
 "64
-[e = . . _LATCbits 0 3 _D1 ]
-[; ;src\LCD_44780.c: 65: LATDbits.LATD0 = D2;
+[e = . . _PORTCbits 0 3 _D1 ]
+[; ;src\LCD_44780.c: 65: PORTDbits.RD0 = D2;
 "65
-[e = . . _LATDbits 0 0 _D2 ]
-[; ;src\LCD_44780.c: 66: LATDbits.LATD1 = D3;
+[e = . . _PORTDbits 0 0 _D2 ]
+[; ;src\LCD_44780.c: 66: PORTDbits.RD1 = D3;
 "66
-[e = . . _LATDbits 0 1 _D3 ]
+[e = . . _PORTDbits 0 1 _D3 ]
 [; ;src\LCD_44780.c: 67: LCD_enable_pulse ();
 "67
 [e ( _LCD_enable_pulse ..  ]
@@ -16130,9 +16117,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _D1 `uc ~T0 @X0 1 a ]
 [v _D0 `uc ~T0 @X0 1 a ]
 [; ;src\LCD_44780.c: 147: unsigned char D3,D2,D1,D0;
-[; ;src\LCD_44780.c: 149: LATAbits.LATA6 = 1;
+[; ;src\LCD_44780.c: 149: PORTEbits.RE2 = 1;
 "149
-[e = . . _LATAbits 0 6 -> -> 1 `i `uc ]
+[e = . . _PORTEbits 0 2 -> -> 1 `i `uc ]
 [; ;src\LCD_44780.c: 152: D3 = (value & 0b10000000) >> 7;
 "152
 [e = _D3 -> >> & -> _value `i -> 128 `i -> 7 `i `uc ]
@@ -16163,9 +16150,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;src\LCD_44780.c: 165: LCD_send_command (D3,D2,D1,D0);
 "165
 [e ( _LCD_send_command (4 , , , _D3 _D2 _D1 _D0 ]
-[; ;src\LCD_44780.c: 167: LATAbits.LATA6 = 0;
+[; ;src\LCD_44780.c: 167: PORTEbits.RE2 = 0;
 "167
-[e = . . _LATAbits 0 6 -> -> 0 `i `uc ]
+[e = . . _PORTEbits 0 2 -> -> 0 `i `uc ]
 [; ;src\LCD_44780.c: 168: }
 "168
 [e :UE 2190 ]
@@ -16369,9 +16356,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :U _LCD_backlight ]
 [v _active `uc ~T0 @X0 1 r1 ]
 [f ]
-[; ;src\LCD_44780.c: 277: LATCbits.LATC1 = active;
+[; ;src\LCD_44780.c: 277: PORTEbits.RE1 = active;
 "277
-[e = . . _LATCbits 0 1 _active ]
+[e = . . _PORTEbits 0 1 _active ]
 [; ;src\LCD_44780.c: 278: }
 "278
 [e :UE 2211 ]
@@ -16386,15 +16373,15 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;src\LCD_44780.c: 285: delay_set_quartz (quartz_frequency);
 "285
 [e ( _delay_set_quartz (1 _quartz_frequency ]
-[; ;src\LCD_44780.c: 287: LATAbits.LATA6 = 0x00;
+[; ;src\LCD_44780.c: 287: PORTEbits.RE2 = 0x00;
 "287
-[e = . . _LATAbits 0 6 -> -> 0 `i `uc ]
-[; ;src\LCD_44780.c: 288: LATCbits.LATC1 = 0x00;
+[e = . . _PORTEbits 0 2 -> -> 0 `i `uc ]
+[; ;src\LCD_44780.c: 288: PORTCbits.RC1 = 0x00;
 "288
-[e = . . _LATCbits 0 1 -> -> 0 `i `uc ]
-[; ;src\LCD_44780.c: 289: LATCbits.LATC0 = 0x00;
+[e = . . _PORTCbits 0 1 -> -> 0 `i `uc ]
+[; ;src\LCD_44780.c: 289: PORTCbits.RC0 = 0x00;
 "289
-[e = . . _LATCbits 0 0 -> -> 0 `i `uc ]
+[e = . . _PORTCbits 0 0 -> -> 0 `i `uc ]
 [; ;src\LCD_44780.c: 291: delay_ms (100);
 "291
 [e ( _delay_ms (1 -> -> 100 `i `ui ]
@@ -16740,12 +16727,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;telecomando.c: 111: time_counter++;
 "111
 [e ++ _time_counter -> -> -> 1 `i `l `ul ]
-[; ;telecomando.c: 112: TMR3H = 0xB1;
+[; ;telecomando.c: 112: TMR3H = 0x63;
 "112
-[e = _TMR3H -> -> 177 `i `uc ]
-[; ;telecomando.c: 113: TMR3L = 0xE0;
+[e = _TMR3H -> -> 99 `i `uc ]
+[; ;telecomando.c: 113: TMR3L = 0xC0;
 "113
-[e = _TMR3L -> -> 224 `i `uc ]
+[e = _TMR3L -> -> 192 `i `uc ]
 [; ;telecomando.c: 114: PIR2bits.TMR3IF = 0;
 "114
 [e = . . _PIR2bits 0 1 -> -> 0 `i `uc ]
@@ -17195,153 +17182,150 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;telecomando.c: 263: void board_initialization(void) {
 [e :U _board_initialization ]
 [f ]
-[; ;telecomando.c: 264: OSCCONbits.IRCF0 = 1;
-"264
-[e = . . _OSCCONbits 1 3 -> -> 1 `i `uc ]
-[; ;telecomando.c: 265: OSCCONbits.IRCF1 = 1;
+[; ;telecomando.c: 265: LATA = 0x00;
 "265
-[e = . . _OSCCONbits 1 4 -> -> 1 `i `uc ]
-[; ;telecomando.c: 266: OSCCONbits.IRCF2 = 1;
-"266
-[e = . . _OSCCONbits 1 5 -> -> 1 `i `uc ]
-[; ;telecomando.c: 268: LATA = 0x00;
-"268
 [e = _LATA -> -> 0 `i `uc ]
-[; ;telecomando.c: 269: TRISA = 0b00001111;
-"269
+[; ;telecomando.c: 266: TRISA = 0b00001111;
+"266
 [e = _TRISA -> -> 15 `i `uc ]
-[; ;telecomando.c: 270: LATB = 0x00;
-"270
+[; ;telecomando.c: 267: LATB = 0x00;
+"267
 [e = _LATB -> -> 0 `i `uc ]
-[; ;telecomando.c: 271: TRISB = 0xFF;
-"271
+[; ;telecomando.c: 268: TRISB = 0xFF;
+"268
 [e = _TRISB -> -> 255 `i `uc ]
-[; ;telecomando.c: 272: LATC = 0x00;
-"272
+[; ;telecomando.c: 269: LATC = 0x00;
+"269
 [e = _LATC -> -> 0 `i `uc ]
-[; ;telecomando.c: 273: TRISC = 0b11110000;
-"273
+[; ;telecomando.c: 270: TRISC = 0b11110000;
+"270
 [e = _TRISC -> -> 240 `i `uc ]
-[; ;telecomando.c: 274: LATD = 0x00;
-"274
+[; ;telecomando.c: 271: LATD = 0x00;
+"271
 [e = _LATD -> -> 0 `i `uc ]
-[; ;telecomando.c: 275: TRISD = 0x01111100;
-"275
-[e = _TRISD -> -> 17895680 `l `uc ]
-[; ;telecomando.c: 276: LATE = 0x00;
-"276
+[; ;telecomando.c: 272: TRISD = 0x01111000;
+"272
+[e = _TRISD -> -> 17895424 `l `uc ]
+[; ;telecomando.c: 273: LATE = 0x00;
+"273
 [e = _LATE -> -> 0 `i `uc ]
-[; ;telecomando.c: 277: TRISE = 0xFF;
+[; ;telecomando.c: 274: TRISE = 0x00;
+"274
+[e = _TRISE -> -> 0 `i `uc ]
+[; ;telecomando.c: 277: LCD_initialize(16);
 "277
-[e = _TRISE -> -> 255 `i `uc ]
-[; ;telecomando.c: 280: LCD_initialize(8);
-"280
-[e ( _LCD_initialize (1 -> -> 8 `i `uc ]
-[; ;telecomando.c: 281: LCD_backlight(0);
-"281
+[e ( _LCD_initialize (1 -> -> 16 `i `uc ]
+[; ;telecomando.c: 278: LCD_backlight(0);
+"278
 [e ( _LCD_backlight (1 -> -> 0 `i `uc ]
-[; ;telecomando.c: 282: LCD_clear();
-"282
+[; ;telecomando.c: 279: LCD_clear();
+"279
 [e ( _LCD_clear ..  ]
-[; ;telecomando.c: 283: LCD_goto_line(1);
-"283
+[; ;telecomando.c: 280: LCD_goto_line(1);
+"280
 [e ( _LCD_goto_line (1 -> -> 1 `i `uc ]
-[; ;telecomando.c: 284: LCD_write_message("Wait...");
-"284
+[; ;telecomando.c: 281: LCD_write_message("Wait...");
+"281
 [e ( _LCD_write_message (1 :s 13C ]
-[; ;telecomando.c: 285: delay_s(1);
-"285
+[; ;telecomando.c: 282: PORTDbits.RD2 = 1;
+"282
+[e = . . _PORTDbits 0 2 -> -> 1 `i `uc ]
+[; ;telecomando.c: 283: delay_s(1);
+"283
 [e ( _delay_s (1 -> -> 1 `i `uc ]
-[; ;telecomando.c: 287: PIR1bits.RCIF = 0;
-"287
+[; ;telecomando.c: 284: PORTDbits.RD2 = 0;
+"284
+[e = . . _PORTDbits 0 2 -> -> 0 `i `uc ]
+[; ;telecomando.c: 286: PIR1bits.RCIF = 0;
+"286
 [e = . . _PIR1bits 0 5 -> -> 0 `i `uc ]
-[; ;telecomando.c: 288: PIR2bits.TMR3IF = 0;
-"288
+[; ;telecomando.c: 287: PIR2bits.TMR3IF = 0;
+"287
 [e = . . _PIR2bits 0 1 -> -> 0 `i `uc ]
-[; ;telecomando.c: 291: RCONbits.IPEN = 1;
-"291
+[; ;telecomando.c: 290: RCONbits.IPEN = 1;
+"290
 [e = . . _RCONbits 5 7 -> -> 1 `i `uc ]
-[; ;telecomando.c: 292: IPR1bits.RCIP = 1;
-"292
+[; ;telecomando.c: 291: IPR1bits.RCIP = 1;
+"291
 [e = . . _IPR1bits 0 5 -> -> 1 `i `uc ]
-[; ;telecomando.c: 293: IPR2bits.TMR3IP = 0;
-"293
+[; ;telecomando.c: 292: IPR2bits.TMR3IP = 0;
+"292
 [e = . . _IPR2bits 0 1 -> -> 0 `i `uc ]
-[; ;telecomando.c: 296: RCSTA&=0b01001111,TXSTAbits.TXEN=0,PIE1&=0b11001111;
-"296
+[; ;telecomando.c: 295: RCSTA&=0b01001111,TXSTAbits.TXEN=0,PIE1&=0b11001111;
+"295
 [e ; ; =& _RCSTA -> -> 79 `i `uc = . . _TXSTAbits 0 5 -> -> 0 `i `uc =& _PIE1 -> -> 207 `i `uc ]
-[; ;telecomando.c: 297: OpenUSART(0b01111111 & 0b11111111 & 0b11111110
-[; ;telecomando.c: 298: & 0b11111101 & 0b11111111 & 0b11111111, 103);
-"298
+[; ;telecomando.c: 296: OpenUSART(0b01111111 & 0b11111111 & 0b11111110
+[; ;telecomando.c: 297: & 0b11111101 & 0b11111111 & 0b11111111, 103);
+"297
 [e ( _OpenUSART (2 , -> & & & & & -> 127 `i -> 255 `i -> 254 `i -> 253 `i -> 255 `i -> 255 `i `uc -> -> 103 `i `ui ]
-[; ;telecomando.c: 301: ADCON1 = 0b00001101;
-"301
+[; ;telecomando.c: 300: ADCON1 = 0b00001101;
+"300
 [e = _ADCON1 -> -> 13 `i `uc ]
-[; ;telecomando.c: 302: ADCON0bits.CHS2 = 0;
-"302
+[; ;telecomando.c: 301: ADCON0bits.CHS2 = 0;
+"301
 [e = . . _ADCON0bits 3 4 -> -> 0 `i `uc ]
-[; ;telecomando.c: 303: ADCON0bits.CHS1 = 0;
-"303
+[; ;telecomando.c: 302: ADCON0bits.CHS1 = 0;
+"302
 [e = . . _ADCON0bits 3 3 -> -> 0 `i `uc ]
-[; ;telecomando.c: 304: ADCON0bits.CHS0 = 0;
-"304
+[; ;telecomando.c: 303: ADCON0bits.CHS0 = 0;
+"303
 [e = . . _ADCON0bits 3 2 -> -> 0 `i `uc ]
-[; ;telecomando.c: 305: ADCON2bits.ACQT2 = 1;
-"305
+[; ;telecomando.c: 304: ADCON2bits.ACQT2 = 1;
+"304
 [e = . . _ADCON2bits 1 5 -> -> 1 `i `uc ]
-[; ;telecomando.c: 306: ADCON2bits.ACQT1 = 1;
-"306
+[; ;telecomando.c: 305: ADCON2bits.ACQT1 = 1;
+"305
 [e = . . _ADCON2bits 1 4 -> -> 1 `i `uc ]
-[; ;telecomando.c: 307: ADCON2bits.ACQT0 = 0;
-"307
+[; ;telecomando.c: 306: ADCON2bits.ACQT0 = 0;
+"306
 [e = . . _ADCON2bits 1 3 -> -> 0 `i `uc ]
-[; ;telecomando.c: 308: ADCON2bits.ADCS2 = 1;
-"308
+[; ;telecomando.c: 307: ADCON2bits.ADCS2 = 1;
+"307
 [e = . . _ADCON2bits 1 2 -> -> 1 `i `uc ]
-[; ;telecomando.c: 309: ADCON2bits.ADCS1 = 0;
-"309
+[; ;telecomando.c: 308: ADCON2bits.ADCS1 = 0;
+"308
 [e = . . _ADCON2bits 1 1 -> -> 0 `i `uc ]
-[; ;telecomando.c: 310: ADCON2bits.ADCS0 = 1;
-"310
+[; ;telecomando.c: 309: ADCON2bits.ADCS0 = 1;
+"309
 [e = . . _ADCON2bits 1 0 -> -> 1 `i `uc ]
-[; ;telecomando.c: 311: ADCON2bits.ADFM = 0;
-"311
+[; ;telecomando.c: 310: ADCON2bits.ADFM = 0;
+"310
 [e = . . _ADCON2bits 0 3 -> -> 0 `i `uc ]
-[; ;telecomando.c: 312: ADCON0bits.ADON = 1;
-"312
+[; ;telecomando.c: 311: ADCON0bits.ADON = 1;
+"311
 [e = . . _ADCON0bits 1 0 -> -> 1 `i `uc ]
-[; ;telecomando.c: 315: TMR3H = 0xB1;
+[; ;telecomando.c: 314: TMR3H = 0x63;
+"314
+[e = _TMR3H -> -> 99 `i `uc ]
+[; ;telecomando.c: 315: TMR3L = 0xC0;
 "315
-[e = _TMR3H -> -> 177 `i `uc ]
-[; ;telecomando.c: 316: TMR3L = 0xE0;
-"316
-[e = _TMR3L -> -> 224 `i `uc ]
-[; ;telecomando.c: 319: PIE1bits.RCIE = 1;
-"319
+[e = _TMR3L -> -> 192 `i `uc ]
+[; ;telecomando.c: 318: PIE1bits.RCIE = 1;
+"318
 [e = . . _PIE1bits 0 5 -> -> 1 `i `uc ]
-[; ;telecomando.c: 320: PIE2bits.TMR3IE = 1;
-"320
+[; ;telecomando.c: 319: PIE2bits.TMR3IE = 1;
+"319
 [e = . . _PIE2bits 0 1 -> -> 1 `i `uc ]
-[; ;telecomando.c: 321: INTCONbits.GIEH = 1;
-"321
+[; ;telecomando.c: 320: INTCONbits.GIEH = 1;
+"320
 [e = . . _INTCONbits 2 7 -> -> 1 `i `uc ]
-[; ;telecomando.c: 322: INTCONbits.GIEL = 1;
-"322
+[; ;telecomando.c: 321: INTCONbits.GIEL = 1;
+"321
 [e = . . _INTCONbits 2 6 -> -> 1 `i `uc ]
-[; ;telecomando.c: 324: RCSTAbits.SPEN = 1;
-"324
+[; ;telecomando.c: 323: RCSTAbits.SPEN = 1;
+"323
 [e = . . _RCSTAbits 0 7 -> -> 1 `i `uc ]
-[; ;telecomando.c: 325: delay_ms(2);
-"325
+[; ;telecomando.c: 324: delay_ms(2);
+"324
 [e ( _delay_ms (1 -> -> 2 `i `ui ]
-[; ;telecomando.c: 326: T3CON = 0x01;
-"326
+[; ;telecomando.c: 325: T3CON = 0x01;
+"325
 [e = _T3CON -> -> 1 `i `uc ]
-[; ;telecomando.c: 327: LCD_clear();
-"327
+[; ;telecomando.c: 326: LCD_clear();
+"326
 [e ( _LCD_clear ..  ]
-[; ;telecomando.c: 328: }
-"328
+[; ;telecomando.c: 327: }
+"327
 [e :UE 2253 ]
 }
 [p f _sprintf 8462336 ]

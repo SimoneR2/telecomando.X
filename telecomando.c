@@ -109,8 +109,8 @@ __interrupt(high_priority) void ISR_alta(void) {
 __interrupt(low_priority) void ISR_bassa(void) {
     if (PIR2bits.TMR3IF) { //10ms
         time_counter++;
-        TMR3H	 = 0xB1;
-  TMR3L	 = 0xE0;
+TMR3H	 = 0x63;
+  TMR3L	 = 0xC0;
         PIR2bits.TMR3IF = 0;
     }
 }
@@ -261,9 +261,6 @@ void LCD_Handler(void) {
 }
 
 void board_initialization(void) {
-    OSCCONbits.IRCF0 = 1;
-    OSCCONbits.IRCF1 = 1;
-    OSCCONbits.IRCF2 = 1;
     //Inputs and Outputs Configuration
     LATA = 0x00;
     TRISA = 0b00001111; // X-Axis / Y-Axis / 3P Switch
@@ -272,17 +269,19 @@ void board_initialization(void) {
     LATC = 0x00;
     TRISC = 0b11110000; //USART Tx and Rx / LCD
     LATD = 0x00;
-    TRISD = 0x01111100; //LCD / Backlight ON/OFF
+    TRISD = 0x01111000; //LCD / Backlight ON/OFF
     LATE = 0x00;
-    TRISE = 0xFF;
+    TRISE = 0x00;
 
     //LCD Initialize
-    LCD_initialize(8);
+    LCD_initialize(16);
     LCD_backlight(0);
     LCD_clear();
     LCD_goto_line(1);
     LCD_write_message("Wait...");
+    PORTDbits.RD2 = 1;
     delay_s(1);
+    PORTDbits.RD2 = 0;
     //Interrupt Flags
     PIR1bits.RCIF = LOW;
     PIR2bits.TMR3IF = LOW;
@@ -312,8 +311,8 @@ void board_initialization(void) {
     ADCON0bits.ADON = HIGH;
 
     //Configurations
-TMR3H	 = 0xB1;
-  TMR3L	 = 0xE0;
+TMR3H	 = 0x63;
+  TMR3L	 = 0xC0;
 
     //Interrupts Enables
     PIE1bits.RCIE = HIGH;

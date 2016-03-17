@@ -19317,9 +19317,10 @@ extern __nonreentrant void _delay3(unsigned char);
 
 
 # 11 "telecomando.h"
-#pragma config OSC = IRCIO67
+#pragma config OSC = HS
 #pragma config FCMEN = OFF
 #pragma config IESO = OFF
+
 
 #pragma config PWRT = OFF
 #pragma config BOREN = BOHW
@@ -19336,7 +19337,7 @@ extern __nonreentrant void _delay3(unsigned char);
 
 
 #pragma config STVREN = ON
-#pragma config LVP = ON
+#pragma config LVP = OFF
 #pragma config BBSIZ = 1024
 #pragma config XINST = OFF
 
@@ -19374,7 +19375,7 @@ void delay_s (unsigned char value_s);
 void delay_set_quartz (unsigned char frequency);
 
 # 49 "D:/Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/src\delay.c"
-volatile unsigned char delay_quartz_frequency_value = 8;
+volatile unsigned char delay_quartz_frequency_value = 16;
 volatile unsigned int clock_counter_reference = 0;
 
 # 61
@@ -19481,10 +19482,10 @@ extern char * ultoa(char * buf, unsigned long val, int base);
 extern char * ftoa(float f, int * status);
 
 # 165 "D:/Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\LCD_44780.h"
-void LCD_enable_pulse (void);
+void LCD_enable_pulse(void);
 
 # 184
-void LCD_send_command (unsigned char bit_3, unsigned char bit_2, unsigned char bit_1, unsigned char bit_0);
+void LCD_send_command(unsigned char bit_3, unsigned char bit_2, unsigned char bit_1, unsigned char bit_0);
 
 # 193
 void LCD_home(void);
@@ -19493,16 +19494,16 @@ void LCD_home(void);
 void LCD_shift(unsigned char shift, unsigned char number_of_shift);
 
 # 224
-void LCD_shift_cursor(unsigned char shift,unsigned char number_of_shift);
+void LCD_shift_cursor(unsigned char shift, unsigned char number_of_shift);
 
 # 236
-void LCD_goto_line (unsigned char line);
+void LCD_goto_line(unsigned char line);
 
 # 251
-void LCD_goto_xy (unsigned char x, unsigned char y);
+void LCD_goto_xy(unsigned char x, unsigned char y);
 
 # 262
-void LCD_write_char (unsigned char value);
+void LCD_write_char(unsigned char value);
 
 # 281
 void LCD_write_message(const unsigned char *buffer);
@@ -19514,7 +19515,7 @@ void LCD_write_string(unsigned char *buffer);
 void LCD_write_integer(int value, unsigned char number_of_digits, unsigned char zero_cleaning);
 
 # 325
-void LCD_clear (void);
+void LCD_clear(void);
 
 # 341
 void LCD_cursor(unsigned char active, unsigned char blinking);
@@ -19528,19 +19529,19 @@ void LCD_initialize(unsigned char quartz_frequency);
 # 49 "D:/Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/src\LCD_44780.c"
 void LCD_enable_pulse (void) {
 
-LATCbits.LATC1 = 1;
+PORTCbits.RC1 = 1;
 delay_ms (1);
-LATCbits.LATC1 = 0;
+PORTCbits.RC1 = 0;
 delay_ms (1);
 }
 
 # 61
 void LCD_send_command (unsigned char D3, unsigned char D2, unsigned char D1, unsigned char D0) {
 
-LATCbits.LATC2 = D0;
-LATCbits.LATC3 = D1;
-LATDbits.LATD0 = D2;
-LATDbits.LATD1 = D3;
+PORTCbits.RC2 = D0;
+PORTCbits.RC3 = D1;
+PORTDbits.RD0 = D2;
+PORTDbits.RD1 = D3;
 LCD_enable_pulse ();
 }
 
@@ -19611,7 +19612,7 @@ void LCD_write_char (unsigned char value) {
 
 unsigned char D3,D2,D1,D0;
 
-LATAbits.LATA6 = 1;
+PORTEbits.RE2 = 1;
 
 
 D3 = (value & 0b10000000) >> 7;
@@ -19629,7 +19630,7 @@ D0 = (value & 0b00000001);
 
 LCD_send_command (D3,D2,D1,D0);
 
-LATAbits.LATA6 = 0;
+PORTEbits.RE2 = 0;
 }
 
 # 178
@@ -19718,7 +19719,7 @@ LCD_send_command (1,1,active,blinking);
 
 void LCD_backlight (unsigned char active) {
 
-LATCbits.LATC1 = active;
+PORTEbits.RE1 = active;
 }
 
 
@@ -19728,9 +19729,9 @@ void LCD_initialize (unsigned char quartz_frequency) {
 
 delay_set_quartz (quartz_frequency);
 
-LATAbits.LATA6 = 0x00;
-LATCbits.LATC1 = 0x00;
-LATCbits.LATC0 = 0x00;
+PORTEbits.RE2 = 0x00;
+PORTCbits.RC1 = 0x00;
+PORTCbits.RC0 = 0x00;
 
 delay_ms (100);
 LCD_send_command (0,0,1,1);
@@ -19905,8 +19906,8 @@ PIR1bits.RCIF = 0;
 __attribute__((interrupt("__low_priority"))) void ISR_bassa(void) {
 if (PIR2bits.TMR3IF) {
 time_counter++;
-TMR3H = 0xB1;
-TMR3L = 0xE0;
+TMR3H = 0x63;
+TMR3L = 0xC0;
 PIR2bits.TMR3IF = 0;
 }
 }
@@ -20051,9 +20052,6 @@ LCD_write_message("====================");
 }
 
 void board_initialization(void) {
-OSCCONbits.IRCF0 = 1;
-OSCCONbits.IRCF1 = 1;
-OSCCONbits.IRCF2 = 1;
 
 LATA = 0x00;
 TRISA = 0b00001111;
@@ -20062,17 +20060,19 @@ TRISB = 0xFF;
 LATC = 0x00;
 TRISC = 0b11110000;
 LATD = 0x00;
-TRISD = 0x01111100;
+TRISD = 0x01111000;
 LATE = 0x00;
-TRISE = 0xFF;
+TRISE = 0x00;
 
 
-LCD_initialize(8);
+LCD_initialize(16);
 LCD_backlight(0);
 LCD_clear();
 LCD_goto_line(1);
 LCD_write_message("Wait...");
+PORTDbits.RD2 = 1;
 delay_s(1);
+PORTDbits.RD2 = 0;
 
 PIR1bits.RCIF = 0;
 PIR2bits.TMR3IF = 0;
@@ -20102,8 +20102,8 @@ ADCON2bits.ADFM = 0;
 ADCON0bits.ADON = 1;
 
 
-TMR3H = 0xB1;
-TMR3L = 0xE0;
+TMR3H = 0x63;
+TMR3L = 0xC0;
 
 
 PIE1bits.RCIE = 1;

@@ -5,7 +5,7 @@ Linker command line:
 --edf=C:\Program Files (x86)\Microchip\xc8\v1.35\dat\en_msgs.txt -cs \
   -h+dist/default/production\telecomando.X.production.sym \
   --cmf=dist/default/production\telecomando.X.production.cmf -z -Q18F4480 \
-  -oC:\Users\Simone\AppData\Local\Temp\sap4.2 \
+  -oC:\Users\Simone\AppData\Local\Temp\s56c.2 \
   -Mdist/default/production/telecomando.X.production.map -E1 -ver=XC8 \
   --acfsm=1493 -ASTACK=0125h-02ffh -pstack=STACK -ACODE=00h-03FFFh \
   -ACONST=00h-03FFFh -ASMALLCONST=0300h-03FFhx61 -AMEDIUMCONST=0300h-03FFFh \
@@ -21,7 +21,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\Simone\AppData\Local\Temp\sap4.obj \
+  C:\Users\Simone\AppData\Local\Temp\s56c.obj \
   dist/default/production\telecomando.X.production.obj 
 
 Object code version is 3.11
@@ -34,7 +34,7 @@ Call graph: (short form)
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\Simone\AppData\Local\Temp\sap4.obj
+C:\Users\Simone\AppData\Local\Temp\s56c.obj
                 end_init                             C0       C0        4        C       0
                 reset_vec                             0        0        4        0       0
                 idloc                            200000   200000        8   200000       0
@@ -285,18 +285,15 @@ _INTCONbits                     (abs)        000FF2
 _IPR1bits                       (abs)        000F9F
 _IPR2bits                       (abs)        000FA2
 _ISR_alta                       intcode      000008
-_ISR_alta$1308                  cstackCOMRAM 00003B
+_ISR_alta$1283                  cstackCOMRAM 00003B
 _ISR_bassa                      intcodelo    000018
 _JoystickConstants              bssCOMRAM    00001A
 _JoystickValues                 bssCOMRAM    000022
 _Joystick_Polling               text39       002D64
 _LATA                           (abs)        000F89
-_LATAbits                       (abs)        000F89
 _LATB                           (abs)        000F8A
 _LATC                           (abs)        000F8B
-_LATCbits                       (abs)        000F8B
 _LATD                           (abs)        000F8C
-_LATDbits                       (abs)        000F8C
 _LATE                           (abs)        000F8D
 _LCD_Handler                    text11       0024BA
 _LCD_backlight                  text7        003082
@@ -309,7 +306,6 @@ _LCD_send_command               text35       002DF2
 _LCD_write_char                 text32       002AD0
 _LCD_write_message              text31       002F48
 _LCD_write_string               text30       002FC6
-_OSCCONbits                     (abs)        000FD3
 _OpenUSART                      text3        002C6A
 _PIE1                           (abs)        000F9D
 _PIE1bits                       (abs)        000F9D
@@ -318,7 +314,9 @@ _PIR1bits                       (abs)        000F9E
 _PIR2bits                       (abs)        000FA1
 _PORTAbits                      (abs)        000F80
 _PORTBbits                      (abs)        000F81
+_PORTCbits                      (abs)        000F82
 _PORTDbits                      (abs)        000F83
+_PORTEbits                      (abs)        000F84
 _RCONbits                       (abs)        000FD0
 _RCREG                          (abs)        000FAE
 _RCSTA                          (abs)        000FAB
@@ -356,9 +354,9 @@ __CFG_EBTRB$OFF                 (abs)        000000
 __CFG_FCMEN$OFF                 (abs)        000000
 __CFG_IESO$OFF                  (abs)        000000
 __CFG_LPT1OSC$OFF               (abs)        000000
-__CFG_LVP$ON                    (abs)        000000
+__CFG_LVP$OFF                   (abs)        000000
 __CFG_MCLRE$ON                  (abs)        000000
-__CFG_OSC$IRCIO67               (abs)        000000
+__CFG_OSC$HS                    (abs)        000000
 __CFG_PBADEN$ON                 (abs)        000000
 __CFG_PWRT$OFF                  (abs)        000000
 __CFG_STVREN$ON                 (abs)        000000
@@ -834,12 +832,12 @@ _delay_set_quartz               text5        003090
 _dir                            bitbssCOMRAM 000219
 _dpowers                        mediumconst  003F53
 _fround                         text15       001A7C
-_fround$2510                    cstackBANK0  00009F
-_fround$2511                    cstackBANK0  00009B
+_fround$2471                    cstackBANK0  00009F
+_fround$2472                    cstackBANK0  00009B
 _getsUSART                      text42       002F74
 _i                              bssCOMRAM    000015
 _isdigit                        text14       003034
-_isdigit$2119                   cstackCOMRAM 00003D
+_isdigit$2080                   cstackCOMRAM 00003D
 _main                           text0        001708
 _power_switch                   bitbssCOMRAM 00021A
 _pr_time_1                      bssCOMRAM    000001
@@ -847,13 +845,13 @@ _pr_time_2                      bssCOMRAM    000005
 _pr_time_3                      bssBANK0     0000DC
 _putsUSART                      text9        002FA0
 _scale                          text13       00126E
-_scale$2512                     cstackBANK0  00009B
+_scale$2473                     cstackBANK0  00009B
 _set_speed                      bssCOMRAM    00000D
 _set_speed_pk0                  bssCOMRAM    000016
 _set_speed_pk1                  bssCOMRAM    000017
 _set_steering                   bssCOMRAM    000018
 _sprintf                        text12       0000C4
-_sprintf$2513                   cstackBANK1  000100
+_sprintf$2474                   cstackBANK1  000100
 _str                            bssBANK1     000119
 _switch_position                bssCOMRAM    000019
 _time_counter                   bssCOMRAM    000009
