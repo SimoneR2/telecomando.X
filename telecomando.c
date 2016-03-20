@@ -62,6 +62,7 @@ unsigned char USART_Tx [8] = 0;
 unsigned char USART_Tx_Old [8] = 0;
 unsigned char USART_Rx[8] = 0;
 volatile bit actual_dir = LOW;
+volatile char spam_counter = 0;
 volatile unsigned int actual_speed = 0;
 volatile unsigned char actual_speed_pk1 = 0;
 volatile unsigned char actual_speed_pk0 = 0;
@@ -122,7 +123,22 @@ __interrupt(low_priority) void ISR_bassa(void) {
 
 void main(void) {
     board_initialization();
-    //PORTDbits.RD7 = LOW; //Turn off ON/OFF switch backlight
+
+    //ECU Debug
+    PORTDbits.RD2 = HIGH;
+    PORTDbits.RD3 = HIGH;
+    PORTDbits.RD5 = HIGH;
+    PORTDbits.RD6 = HIGH;
+    PORTDbits.RD7 = HIGH;
+    delay_ms(500);
+    PORTDbits.RD2 = LOW;
+    PORTDbits.RD3 = LOW;
+    PORTDbits.RD5 = LOW;
+    PORTDbits.RD6 = LOW;
+    PORTDbits.RD7 = LOW;
+
+    //Turn off ON/OFF switch backlight
+    PORTDbits.RD7 = LOW;
 
     //Inizializzazione Arrays
     USART_Tx[0] = 0xAA;
@@ -133,13 +149,13 @@ void main(void) {
     USART_Tx[5] = 0x01;
     USART_Tx[6] = 0xAA;
     USART_Tx[7] = '\0';
-    JoystickConstants[0] = 0.703;
-    JoystickConstants[1] = 34;
-
-    //[AGGIUNGERE CONTROLLO STATO CENTRALINE]
+    JoystickConstants[X_AXIS] = 0.703;
+    JoystickConstants[Y_AXIS] = 34;
 
     while (1) {
-        //CLRWDT();
+        //[Check BLUETOOTH CONNECTION]
+        //[CHECK ECU]
+
         if ((PORTBbits.RB3 == LOW) || (wait_low == LOW)) {
             wait_low = LOW;
             if (PORTBbits.RB3 == HIGH) {
@@ -153,6 +169,8 @@ void main(void) {
             set_speed = 0;
             set_steering = 90;
             analogic_brake = 0;
+            while (BusyUSART() == HIGH) {
+            };
             USART_Send();
             while (power_switch == LOW) {
                 LCD_clear();
@@ -202,10 +220,10 @@ void main(void) {
             analogic_brake = 255;
         }
 
-        if ((time_counter - pr_time_2) >= 10) {
-            pr_time_2 = time_counter;
-            USART_Send();
-        }
+        //        if ((time_counter - pr_time_2) >= 1) {
+        //            pr_time_2 = time_counter;
+        USART_Send();
+        //        }
 
         if ((time_counter - pr_time_3) >= 50) {
             pr_time_3 = time_counter;
@@ -235,14 +253,24 @@ void USART_Send(void) {
     USART_Tx[3] = set_speed_pk0;
     USART_Tx[4] = set_steering;
     USART_Tx[5] = analogic_brake;
-    for (char i = 0; i<6; i++){
-        if (USART_Tx[i] == 0){
+
+    //Set to 1 the null bytes to avoid serial send interrupts
+    for (char i = 0; i < 6; i++) {
+        if (USART_Tx[i] == 0) {
             USART_Tx[i] = 1; //debug
         }
-        if (USART_Tx[i] == USART_Tx_Old[i])
+        USART_Tx_Old[i] = USART_Tx[i];
     }
-    if (BusyUSART()!= 1){
-         putsUSART(USART_Tx);
+
+    //Checks if the data serial send is identical to the prevoius and blocks it
+    spam_counter = 0;
+    for (i = 1; i < 6; i++) {
+        if (USART_Tx[i] == USART_Tx_Old[i]) {
+            spam_counter++;
+        };
+    }
+    if ((BusyUSART() != HIGH)&&(spam_counter != 5)) {
+        putsUSART(USART_Tx);
     }
 }
 
