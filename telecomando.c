@@ -58,8 +58,8 @@ void LCD_Handler(void);
 //////////////////
 
 //Serial variables
-unsigned char USART_Tx [7] = 0;
-unsigned char USART_Rx[7] = 0;
+unsigned char USART_Tx [8] = 0;
+unsigned char USART_Rx[8] = 0;
 volatile bit actual_dir = LOW;
 volatile unsigned int actual_speed = 0;
 volatile unsigned char actual_speed_pk1 = 0;
