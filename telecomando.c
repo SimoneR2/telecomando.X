@@ -49,6 +49,7 @@
 
 //Subroutines used:
 void board_initialization(void);
+void PWR_Button_Polling(void);
 void Joystick_Polling(void);
 void USART_Send(void);
 void LCD_Handler(void);
@@ -156,13 +157,7 @@ void main(void) {
         //[Check BLUETOOTH CONNECTION]
         //[CHECK ECU]
 
-        if ((PORTBbits.RB3 == LOW) || (wait_low == LOW)) {
-            wait_low = LOW;
-            if (PORTBbits.RB3 == HIGH) {
-                power_switch = ~power_switch;
-                wait_low = HIGH;
-            }
-        }
+        PWR_Button_Polling();
 
         if (power_switch == LOW) {
             dir = FWD;
@@ -186,6 +181,7 @@ void main(void) {
                     pr_time_1 = time_counter;
                     PORTDbits.RD7 = ~PORTDbits.RD7;
                 }
+                PWR_Button_Polling();
                 delay_ms(300); //[!!]Verificare
             }
             PORTDbits.RD7 = LOW; //Turn off ON/OFF switch backlight
@@ -235,6 +231,16 @@ void main(void) {
 ///////////////////
 //  SUBROUTINES  //
 ///////////////////
+
+void PWR_Button_Polling(void) {
+    if ((PORTBbits.RB3 == LOW) || (wait_low == LOW)) {
+        wait_low = LOW;
+        if (PORTBbits.RB3 == HIGH) {
+            power_switch = ~power_switch;
+            wait_low = HIGH;
+        }
+    }
+}
 
 void Joystick_Polling(void) {
     for (i = 0; i < 2; i++) {
