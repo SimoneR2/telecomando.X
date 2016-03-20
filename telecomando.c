@@ -59,6 +59,7 @@ void LCD_Handler(void);
 
 //Serial variables
 unsigned char USART_Tx [8] = 0;
+unsigned char USART_Tx_Old [8] = 0;
 unsigned char USART_Rx[8] = 0;
 volatile bit actual_dir = LOW;
 volatile unsigned int actual_speed = 0;
@@ -121,10 +122,15 @@ __interrupt(low_priority) void ISR_bassa(void) {
 
 void main(void) {
     board_initialization();
-    PORTDbits.RD7 = LOW; //Turn off ON/OFF switch backlight
+    //PORTDbits.RD7 = LOW; //Turn off ON/OFF switch backlight
 
     //Inizializzazione Arrays
     USART_Tx[0] = 0xAA;
+    USART_Tx[1] = 0x01;
+    USART_Tx[2] = 0x01;
+    USART_Tx[3] = 0x01;
+    USART_Tx[4] = 0x01;
+    USART_Tx[5] = 0x01;
     USART_Tx[6] = 0xAA;
     USART_Tx[7] = '\0';
     JoystickConstants[0] = 0.703;
@@ -196,12 +202,12 @@ void main(void) {
             analogic_brake = 255;
         }
 
-        if ((time_counter - pr_time_2) >= 1) {
+        if ((time_counter - pr_time_2) >= 10) {
             pr_time_2 = time_counter;
             USART_Send();
         }
 
-        if ((time_counter - pr_time_3) >= 30) {
+        if ((time_counter - pr_time_3) >= 50) {
             pr_time_3 = time_counter;
             LCD_Handler();
         }
@@ -229,9 +235,15 @@ void USART_Send(void) {
     USART_Tx[3] = set_speed_pk0;
     USART_Tx[4] = set_steering;
     USART_Tx[5] = analogic_brake;
-    //    USART_Tx = {0xAA, dir, set_speed_pk1, set_speed_pk0, set_steering, analogic_brake, 0xAA};
-    while(BusyUSART());
-    putsUSART((char *) USART_Tx);
+    for (char i = 0; i<6; i++){
+        if (USART_Tx[i] == 0){
+            USART_Tx[i] = 1; //debug
+        }
+        if (USART_Tx[i] == USART_Tx_Old[i])
+    }
+    if (BusyUSART()!= 1){
+         putsUSART(USART_Tx);
+    }
 }
 
 void LCD_Handler(void) {
