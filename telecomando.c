@@ -100,6 +100,9 @@ __interrupt(high_priority) void ISR_alta(void) {
         if ((USART_Rx[0] == 0xAA) && (USART_Rx[6] == 0xAA)) {
             actual_dir = USART_Rx[1];
             actual_speed_pk1 = USART_Rx[2];
+            if (actual_speed_pk1 == 0b10000000) {
+                actual_speed_pk1 = 0x00;
+            }
             actual_speed_pk0 = USART_Rx[3];
             ECU_Check = USART_Rx[4];
             Battery_Check = USART_Rx[5];
