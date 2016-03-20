@@ -109,8 +109,8 @@ __interrupt(high_priority) void ISR_alta(void) {
 __interrupt(low_priority) void ISR_bassa(void) {
     if (PIR2bits.TMR3IF) { //10ms
         time_counter++;
-TMR3H	 = 0x63;
-  TMR3L	 = 0xC0;
+        TMR3H = 0x63;
+        TMR3L = 0xC0;
         PIR2bits.TMR3IF = 0;
     }
 }
@@ -126,12 +126,14 @@ void main(void) {
     //Inizializzazione Arrays
     USART_Tx[0] = 0xAA;
     USART_Tx[6] = 0xAA;
+    USART_Tx[7] = '\0';
     JoystickConstants[0] = 0.703;
     JoystickConstants[1] = 34;
 
     //[AGGIUNGERE CONTROLLO STATO CENTRALINE]
 
     while (1) {
+        //CLRWDT();
         if ((PORTBbits.RB3 == LOW) || (wait_low == LOW)) {
             wait_low = LOW;
             if (PORTBbits.RB3 == HIGH) {
@@ -156,7 +158,7 @@ void main(void) {
                 LCD_write_message("Turn the switch ON! ");
                 LCD_goto_line(4);
                 LCD_write_message("====================");
-                if ((time_counter - pr_time_1) >= 70) {
+                if ((time_counter - pr_time_1) >= 50) {
                     pr_time_1 = time_counter;
                     PORTDbits.RD7 = ~PORTDbits.RD7;
                 }
@@ -228,6 +230,7 @@ void USART_Send(void) {
     USART_Tx[4] = set_steering;
     USART_Tx[5] = analogic_brake;
     //    USART_Tx = {0xAA, dir, set_speed_pk1, set_speed_pk0, set_steering, analogic_brake, 0xAA};
+    while(BusyUSART());
     putsUSART((char *) USART_Tx);
 }
 
@@ -267,21 +270,12 @@ void board_initialization(void) {
     LATB = 0x00;
     TRISB = 0xFF; // ON/OFF Switch
     LATC = 0x00;
-    TRISC = 0b11110000; //USART Tx and Rx / LCD
+    TRISC = 0b10110000; //USART Tx and Rx / LCD
     LATD = 0x00;
-    TRISD = 0x01111000; //LCD / Backlight ON/OFF
+    TRISD = 0x00; //LCD / Backlight ON/OFF
     LATE = 0x00;
     TRISE = 0x00;
 
-    //LCD Initialize
-    LCD_initialize(16);
-    LCD_backlight(0);
-    LCD_clear();
-    LCD_goto_line(1);
-    LCD_write_message("Wait...");
-    PORTDbits.RD2 = 1;
-    delay_s(1);
-    PORTDbits.RD2 = 0;
     //Interrupt Flags
     PIR1bits.RCIF = LOW;
     PIR2bits.TMR3IF = LOW;
@@ -293,8 +287,9 @@ void board_initialization(void) {
 
     //USART Configuration (asyncronous mode - 8 bit - 9600 baud)
     CloseUSART();
+    delay_ms(10);
     OpenUSART(USART_TX_INT_OFF & USART_RX_INT_ON & USART_ASYNCH_MODE
-              & USART_EIGHT_BIT & USART_BRGH_HIGH & USART_CONT_RX, 103);
+            & USART_EIGHT_BIT & USART_BRGH_HIGH & USART_CONT_RX, 103);
 
     //Configurazione ADC
     ADCON1 = 0b00001101; //RA0 and RA1 analogic, AVdd and AVss voltage reference (?)
@@ -310,9 +305,24 @@ void board_initialization(void) {
     ADCON2bits.ADFM = 0; //Left Justified
     ADCON0bits.ADON = HIGH;
 
+    PORTDbits.RD2 = 1;
+    delay_ms(10);
+    PORTDbits.RD3 = 1;
+    delay_s(1);
+    //LCD Initialize
+    LCD_initialize(16);
+    LCD_backlight(0);
+    LCD_clear();
+    LCD_goto_line(1);
+
+    LCD_write_message("Wait...");
+
+    PORTDbits.RD2 = 0;
+    PORTDbits.RD3 = 0;
+
     //Configurations
-TMR3H	 = 0x63;
-  TMR3L	 = 0xC0;
+    TMR3H = 0x63;
+    TMR3L = 0xC0;
 
     //Interrupts Enables
     PIE1bits.RCIE = HIGH;
@@ -321,7 +331,6 @@ TMR3H	 = 0x63;
     INTCONbits.GIEL = HIGH;
 
     RCSTAbits.SPEN = HIGH; //USART Enable
-    delay_ms(2);
     T3CON = 0x01; //Timer Enable
     LCD_clear();
 }

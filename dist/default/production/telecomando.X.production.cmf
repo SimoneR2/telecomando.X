@@ -11,7 +11,7 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\Simone\AppData\Local\Temp\s56c.obj
+$C:\Users\Simone\AppData\Local\Temp\s4ic.obj
 idloc IDLOC 0 200000 200000 8 1
 reset_vec CODE 0 0 0 4 1
 end_init CODE 0 C0 C0 4 1
@@ -1003,43 +1003,43 @@ F8 text12 CODE >611:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\do
 1A66 text0 CODE >203:C:\Users\Simone\Documents\GitHub\telecomando.X\telecomando.c
 1A76 text0 CODE >204:C:\Users\Simone\Documents\GitHub\telecomando.X\telecomando.c
 1A7A text0 CODE >134:C:\Users\Simone\Documents\GitHub\telecomando.X\telecomando.c
-2DAC cinit CODE >1487:C:\Users\Simone\AppData\Local\Temp\s56c.
-2DAC cinit CODE >1489:C:\Users\Simone\AppData\Local\Temp\s56c.
-2DAC cinit CODE >1492:C:\Users\Simone\AppData\Local\Temp\s56c.
-2DAC cinit CODE >1601:C:\Users\Simone\AppData\Local\Temp\s56c.
-2DB0 cinit CODE >1602:C:\Users\Simone\AppData\Local\Temp\s56c.
-2DB2 cinit CODE >1603:C:\Users\Simone\AppData\Local\Temp\s56c.
-2DB2 cinit CODE >1604:C:\Users\Simone\AppData\Local\Temp\s56c.
-2DB4 cinit CODE >1605:C:\Users\Simone\AppData\Local\Temp\s56c.
-2DB6 cinit CODE >1606:C:\Users\Simone\AppData\Local\Temp\s56c.
-2DB8 cinit CODE >1609:C:\Users\Simone\AppData\Local\Temp\s56c.
-2DBC cinit CODE >1610:C:\Users\Simone\AppData\Local\Temp\s56c.
-2DBE cinit CODE >1611:C:\Users\Simone\AppData\Local\Temp\s56c.
-2DBE cinit CODE >1612:C:\Users\Simone\AppData\Local\Temp\s56c.
-2DC0 cinit CODE >1613:C:\Users\Simone\AppData\Local\Temp\s56c.
-2DC2 cinit CODE >1614:C:\Users\Simone\AppData\Local\Temp\s56c.
-2DC4 cinit CODE >1617:C:\Users\Simone\AppData\Local\Temp\s56c.
-2DC6 cinit CODE >1620:C:\Users\Simone\AppData\Local\Temp\s56c.
-2DCA cinit CODE >1621:C:\Users\Simone\AppData\Local\Temp\s56c.
-2DCC cinit CODE >1622:C:\Users\Simone\AppData\Local\Temp\s56c.
-2DCC cinit CODE >1623:C:\Users\Simone\AppData\Local\Temp\s56c.
-2DCE cinit CODE >1624:C:\Users\Simone\AppData\Local\Temp\s56c.
-2DD0 cinit CODE >1625:C:\Users\Simone\AppData\Local\Temp\s56c.
-2DD2 cinit CODE >1630:C:\Users\Simone\AppData\Local\Temp\s56c.
-2DD4 cinit CODE >1631:C:\Users\Simone\AppData\Local\Temp\s56c.
-2DD6 cinit CODE >1632:C:\Users\Simone\AppData\Local\Temp\s56c.
-2DD8 cinit CODE >1633:C:\Users\Simone\AppData\Local\Temp\s56c.
-2DDA cinit CODE >1634:C:\Users\Simone\AppData\Local\Temp\s56c.
-2DDC cinit CODE >1635:C:\Users\Simone\AppData\Local\Temp\s56c.
-2DDE cinit CODE >1636:C:\Users\Simone\AppData\Local\Temp\s56c.
-2DE0 cinit CODE >1637:C:\Users\Simone\AppData\Local\Temp\s56c.
-2DE4 cinit CODE >1643:C:\Users\Simone\AppData\Local\Temp\s56c.
-2DE4 cinit CODE >1645:C:\Users\Simone\AppData\Local\Temp\s56c.
-2DE6 cinit CODE >1646:C:\Users\Simone\AppData\Local\Temp\s56c.
-2DE8 cinit CODE >1648:C:\Users\Simone\AppData\Local\Temp\s56c.
-2DEA cinit CODE >1649:C:\Users\Simone\AppData\Local\Temp\s56c.
-2DEC cinit CODE >1650:C:\Users\Simone\AppData\Local\Temp\s56c.
-2DEE cinit CODE >1651:C:\Users\Simone\AppData\Local\Temp\s56c.
+2DAC cinit CODE >1487:C:\Users\Simone\AppData\Local\Temp\s4ic.
+2DAC cinit CODE >1489:C:\Users\Simone\AppData\Local\Temp\s4ic.
+2DAC cinit CODE >1492:C:\Users\Simone\AppData\Local\Temp\s4ic.
+2DAC cinit CODE >1601:C:\Users\Simone\AppData\Local\Temp\s4ic.
+2DB0 cinit CODE >1602:C:\Users\Simone\AppData\Local\Temp\s4ic.
+2DB2 cinit CODE >1603:C:\Users\Simone\AppData\Local\Temp\s4ic.
+2DB2 cinit CODE >1604:C:\Users\Simone\AppData\Local\Temp\s4ic.
+2DB4 cinit CODE >1605:C:\Users\Simone\AppData\Local\Temp\s4ic.
+2DB6 cinit CODE >1606:C:\Users\Simone\AppData\Local\Temp\s4ic.
+2DB8 cinit CODE >1609:C:\Users\Simone\AppData\Local\Temp\s4ic.
+2DBC cinit CODE >1610:C:\Users\Simone\AppData\Local\Temp\s4ic.
+2DBE cinit CODE >1611:C:\Users\Simone\AppData\Local\Temp\s4ic.
+2DBE cinit CODE >1612:C:\Users\Simone\AppData\Local\Temp\s4ic.
+2DC0 cinit CODE >1613:C:\Users\Simone\AppData\Local\Temp\s4ic.
+2DC2 cinit CODE >1614:C:\Users\Simone\AppData\Local\Temp\s4ic.
+2DC4 cinit CODE >1617:C:\Users\Simone\AppData\Local\Temp\s4ic.
+2DC6 cinit CODE >1620:C:\Users\Simone\AppData\Local\Temp\s4ic.
+2DCA cinit CODE >1621:C:\Users\Simone\AppData\Local\Temp\s4ic.
+2DCC cinit CODE >1622:C:\Users\Simone\AppData\Local\Temp\s4ic.
+2DCC cinit CODE >1623:C:\Users\Simone\AppData\Local\Temp\s4ic.
+2DCE cinit CODE >1624:C:\Users\Simone\AppData\Local\Temp\s4ic.
+2DD0 cinit CODE >1625:C:\Users\Simone\AppData\Local\Temp\s4ic.
+2DD2 cinit CODE >1630:C:\Users\Simone\AppData\Local\Temp\s4ic.
+2DD4 cinit CODE >1631:C:\Users\Simone\AppData\Local\Temp\s4ic.
+2DD6 cinit CODE >1632:C:\Users\Simone\AppData\Local\Temp\s4ic.
+2DD8 cinit CODE >1633:C:\Users\Simone\AppData\Local\Temp\s4ic.
+2DDA cinit CODE >1634:C:\Users\Simone\AppData\Local\Temp\s4ic.
+2DDC cinit CODE >1635:C:\Users\Simone\AppData\Local\Temp\s4ic.
+2DDE cinit CODE >1636:C:\Users\Simone\AppData\Local\Temp\s4ic.
+2DE0 cinit CODE >1637:C:\Users\Simone\AppData\Local\Temp\s4ic.
+2DE4 cinit CODE >1643:C:\Users\Simone\AppData\Local\Temp\s4ic.
+2DE4 cinit CODE >1645:C:\Users\Simone\AppData\Local\Temp\s4ic.
+2DE6 cinit CODE >1646:C:\Users\Simone\AppData\Local\Temp\s4ic.
+2DE8 cinit CODE >1648:C:\Users\Simone\AppData\Local\Temp\s4ic.
+2DEA cinit CODE >1649:C:\Users\Simone\AppData\Local\Temp\s4ic.
+2DEC cinit CODE >1650:C:\Users\Simone\AppData\Local\Temp\s4ic.
+2DEE cinit CODE >1651:C:\Users\Simone\AppData\Local\Temp\s4ic.
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -1067,7 +1067,7 @@ __end_of_Joystick_Polling 2DAC 0 CODE 0 text39 dist/default/production\telecoman
 _set_speed D 0 COMRAM 1 bssCOMRAM dist/default/production\telecomando.X.production.obj
 __Hibigdata 0 0 CODE 0 ibigdata dist/default/production\telecomando.X.production.obj
 __size_of_ISR_bassa 0 0 ABS 0 - dist/default/production\telecomando.X.production.obj
-__mediumconst 3EEA 0 MEDIUMCONST 0 mediumconst C:\Users\Simone\AppData\Local\Temp\s56c.obj
+__mediumconst 3EEA 0 MEDIUMCONST 0 mediumconst C:\Users\Simone\AppData\Local\Temp\s4ic.obj
 LCD_write_char@value 79 0 BANK0 1 cstackBANK0 dist/default/production\telecomando.X.production.obj
 __Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\telecomando.X.production.obj
 __size_of_LCD_send_command 0 0 ABS 0 - dist/default/production\telecomando.X.production.obj
@@ -1081,10 +1081,10 @@ _LATC F8B 0 ABS 0 - dist/default/production\telecomando.X.production.obj
 _LATD F8C 0 ABS 0 - dist/default/production\telecomando.X.production.obj
 _LATE F8D 0 ABS 0 - dist/default/production\telecomando.X.production.obj
 _PIE1 F9D 0 ABS 0 - dist/default/production\telecomando.X.production.obj
-___sp 0 0 STACK 2 stack C:\Users\Simone\AppData\Local\Temp\s56c.obj
+___sp 0 0 STACK 2 stack C:\Users\Simone\AppData\Local\Temp\s4ic.obj
 _main 1708 0 CODE 0 text0 dist/default/production\telecomando.X.production.obj
 btemp 47 0 COMRAM 1 temp dist/default/production\telecomando.X.production.obj
-start C0 0 CODE 0 init C:\Users\Simone\AppData\Local\Temp\s56c.obj
+start C0 0 CODE 0 init C:\Users\Simone\AppData\Local\Temp\s4ic.obj
 ___flmul@aexp 8B 0 BANK0 1 cstackBANK0 dist/default/production\telecomando.X.production.obj
 ___flmul@bexp 90 0 BANK0 1 cstackBANK0 dist/default/production\telecomando.X.production.obj
 ___flmul@prod 91 0 BANK0 1 cstackBANK0 dist/default/production\telecomando.X.production.obj
@@ -1117,11 +1117,11 @@ __LnvCOMRAM 0 0 ABS 0 nvCOMRAM dist/default/production\telecomando.X.production.
 __HdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/default/production\telecomando.X.production.obj
 __end_of_LCD_write_string 2FEC 0 CODE 0 text30 dist/default/production\telecomando.X.production.obj
 _sprintf$2474 100 0 BANK1 1 cstackBANK1 dist/default/production\telecomando.X.production.obj
-__accesstop 60 0 ABS 0 - C:\Users\Simone\AppData\Local\Temp\s56c.obj
-intlevel0 0 0 CODE 0 text C:\Users\Simone\AppData\Local\Temp\s56c.obj
-intlevel1 0 0 CODE 0 text C:\Users\Simone\AppData\Local\Temp\s56c.obj
-intlevel2 0 0 CODE 0 text C:\Users\Simone\AppData\Local\Temp\s56c.obj
-intlevel3 0 0 CODE 0 text C:\Users\Simone\AppData\Local\Temp\s56c.obj
+__accesstop 60 0 ABS 0 - C:\Users\Simone\AppData\Local\Temp\s4ic.obj
+intlevel0 0 0 CODE 0 text C:\Users\Simone\AppData\Local\Temp\s4ic.obj
+intlevel1 0 0 CODE 0 text C:\Users\Simone\AppData\Local\Temp\s4ic.obj
+intlevel2 0 0 CODE 0 text C:\Users\Simone\AppData\Local\Temp\s4ic.obj
+intlevel3 0 0 CODE 0 text C:\Users\Simone\AppData\Local\Temp\s4ic.obj
 __LbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production\telecomando.X.production.obj
 _actual_dir 218 -1D5 COMRAM 1 bitbssCOMRAM dist/default/production\telecomando.X.production.obj
 __size_of__div_to_l_ 0 0 ABS 0 - dist/default/production\telecomando.X.production.obj
@@ -1156,8 +1156,8 @@ _ADRESH FC4 0 ABS 0 - dist/default/production\telecomando.X.production.obj
 _scale$2473 9B 0 BANK0 1 cstackBANK0 dist/default/production\telecomando.X.production.obj
 LCD_write_message@buffer 7A 0 BANK0 1 cstackBANK0 dist/default/production\telecomando.X.production.obj
 ___awdiv@dividend 70 0 BANK0 1 cstackBANK0 dist/default/production\telecomando.X.production.obj
-___inthi_sp 0 0 STACK 2 stack C:\Users\Simone\AppData\Local\Temp\s56c.obj
-___intlo_sp 0 0 STACK 2 stack C:\Users\Simone\AppData\Local\Temp\s56c.obj
+___inthi_sp 0 0 STACK 2 stack C:\Users\Simone\AppData\Local\Temp\s4ic.obj
+___intlo_sp 0 0 STACK 2 stack C:\Users\Simone\AppData\Local\Temp\s4ic.obj
 __LdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/default/production\telecomando.X.production.obj
 LCD_write_char@D0 78 0 BANK0 1 cstackBANK0 dist/default/production\telecomando.X.production.obj
 LCD_write_char@D1 77 0 BANK0 1 cstackBANK0 dist/default/production\telecomando.X.production.obj
@@ -1272,7 +1272,7 @@ getsUSART@i 3A 0 COMRAM 1 cstackCOMRAM dist/default/production\telecomando.X.pro
 __size_of_LCD_backlight 0 0 ABS 0 - dist/default/production\telecomando.X.production.obj
 __Hbigbss 0 0 BIGRAM 1 bigbss dist/default/production\telecomando.X.production.obj
 __Hbigram 0 0 ABS 0 bigram dist/default/production\telecomando.X.production.obj
-__smallconst 0 0 SMALLCONST 0 smallconst C:\Users\Simone\AppData\Local\Temp\s56c.obj
+__smallconst 0 0 SMALLCONST 0 smallconst C:\Users\Simone\AppData\Local\Temp\s4ic.obj
 ___xxtofl@arg 7A 0 BANK0 1 cstackBANK0 dist/default/production\telecomando.X.production.obj
 ___xxtofl@exp 79 0 BANK0 1 cstackBANK0 dist/default/production\telecomando.X.production.obj
 ___xxtofl@val 70 0 BANK0 1 cstackBANK0 dist/default/production\telecomando.X.production.obj
@@ -1486,8 +1486,8 @@ __size_of_fround 0 0 ABS 0 - dist/default/production\telecomando.X.production.ob
 __Lfarbss 0 0 FARRAM 0 farbss dist/default/production\telecomando.X.production.obj
 ___lwdiv@divisor 3E 0 COMRAM 1 cstackCOMRAM dist/default/production\telecomando.X.production.obj
 __Lfardata 0 0 FARRAM 0 fardata dist/default/production\telecomando.X.production.obj
-stackhi 2FF 0 ABS 0 - C:\Users\Simone\AppData\Local\Temp\s56c.obj
-stacklo 125 0 ABS 0 - C:\Users\Simone\AppData\Local\Temp\s56c.obj
+stackhi 2FF 0 ABS 0 - C:\Users\Simone\AppData\Local\Temp\s4ic.obj
+stacklo 125 0 ABS 0 - C:\Users\Simone\AppData\Local\Temp\s4ic.obj
 __Lintcode 8 0 CODE 0 intcode dist/default/production\telecomando.X.production.obj
 __end_of_getsUSART 2FA0 0 CODE 0 text42 dist/default/production\telecomando.X.production.obj
 __Lintret 0 0 ABS 0 intret dist/default/production\telecomando.X.production.obj
@@ -1593,7 +1593,7 @@ __Ltext38 0 0 ABS 0 text38 dist/default/production\telecomando.X.production.obj
 __Ltext39 0 0 ABS 0 text39 dist/default/production\telecomando.X.production.obj
 __Ltext42 0 0 ABS 0 text42 dist/default/production\telecomando.X.production.obj
 __Ltext43 0 0 ABS 0 text43 dist/default/production\telecomando.X.production.obj
-__ramtop 300 0 RAM 0 ramtop C:\Users\Simone\AppData\Local\Temp\s56c.obj
+__ramtop 300 0 RAM 0 ramtop C:\Users\Simone\AppData\Local\Temp\s4ic.obj
 _sprintf C4 0 CODE 0 text12 dist/default/production\telecomando.X.production.obj
 __size_of_LCD_cursor 0 0 ABS 0 - dist/default/production\telecomando.X.production.obj
 __Lpowerup C0 0 CODE 0 powerup dist/default/production\telecomando.X.production.obj
