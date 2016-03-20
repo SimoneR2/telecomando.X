@@ -44,8 +44,8 @@
 #define LOW_POS 2
 #define HIGH 1
 #define LOW 0
-#define FWD 1
-#define BKWD 0
+#define FWD 2
+#define BKWD 1
 
 //Subroutines used:
 void board_initialization(void);
@@ -71,9 +71,9 @@ volatile unsigned char ECU_Check = 0;
 volatile unsigned char Battery_Check = 0;
 
 //Program variables
-volatile bit dir = LOW;
 volatile bit power_switch = LOW;
 volatile bit wait_low = LOW;
+volatile char dir = 0;
 volatile unsigned char i = 0;
 volatile unsigned char switch_position = 0;
 volatile unsigned char set_steering = 0;
@@ -103,7 +103,7 @@ __interrupt(high_priority) void ISR_alta(void) {
             actual_speed_pk0 = USART_Rx[3];
             ECU_Check = USART_Rx[4];
             Battery_Check = USART_Rx[5];
-            actual_speed = (actual_speed_pk1 << 8) || (actual_speed_pk0);
+            actual_speed = (actual_speed_pk1 << 8) | (actual_speed_pk0);
         }
         PIR1bits.RCIF = LOW;
     }
@@ -253,6 +253,9 @@ void Joystick_Polling(void) {
 
 void USART_Send(void) {
     set_speed_pk1 = set_speed >> 8;
+    if (set_speed_pk1 == 0x00) {
+        set_speed_pk1 = 0b1000000;
+    }
     set_speed_pk0 = set_speed;
     USART_Tx[1] = dir;
     USART_Tx[2] = set_speed_pk1;
