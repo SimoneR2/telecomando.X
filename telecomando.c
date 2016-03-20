@@ -273,7 +273,7 @@ void USART_Send(void) {
     for (i = 1; i < 6; i++) {
         if (USART_Tx[i] == USART_Tx_Old[i]) {
             spam_counter++;
-        };
+        }
     }
     if ((BusyUSART() != HIGH)&&(spam_counter != 5)) {
         putsUSART(USART_Tx);
