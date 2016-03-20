@@ -3,6 +3,40 @@ Version 3.2 HI-TECH Software Intermediate Code
 "152 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18.h
 [v __delay `JF16824 ~T0 @X0 0 e ]
 [p i __delay ]
+"29099 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f4480.h
+[s S1814 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1814 . LATB0 LATB1 LATB2 LATB3 LATB4 LATB5 LATB6 LATB7 ]
+"29109
+[s S1815 :1 `uc 1 ]
+[n S1815 . LB0 ]
+"29112
+[s S1816 :1 `uc 1 :1 `uc 1 ]
+[n S1816 . . LB1 ]
+"29116
+[s S1817 :2 `uc 1 :1 `uc 1 ]
+[n S1817 . . LB2 ]
+"29120
+[s S1818 :3 `uc 1 :1 `uc 1 ]
+[n S1818 . . LB3 ]
+"29124
+[s S1819 :4 `uc 1 :1 `uc 1 ]
+[n S1819 . . LB4 ]
+"29128
+[s S1820 :5 `uc 1 :1 `uc 1 ]
+[n S1820 . . LB5 ]
+"29132
+[s S1821 :6 `uc 1 :1 `uc 1 ]
+[n S1821 . . LB6 ]
+"29136
+[s S1822 :7 `uc 1 :1 `uc 1 ]
+[n S1822 . . LB7 ]
+"29098
+[u S1813 `S1814 1 `S1815 1 `S1816 1 `S1817 1 `S1818 1 `S1819 1 `S1820 1 `S1821 1 `S1822 1 ]
+[n S1813 . . . . . . . . . . ]
+"29141
+[v _LATBbits `VS1813 ~T0 @X0 0 e@3978 ]
+"95 C:\Program Files (x86)\Microchip\xc8\v1.35\include\stdlib.h
+[v _itoa `(*uc ~T0 @X0 0 ef3`*uc`i`i ]
 "29231 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f4480.h
 [s S1824 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S1824 . LATC0 LATC1 LATC2 LATC3 LATC4 LATC5 LATC6 LATC7 ]
@@ -35,75 +69,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S1823 . . . . . . . . . . ]
 "29273
 [v _LATCbits `VS1823 ~T0 @X0 0 e@3979 ]
-"29363
-[s S1834 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1834 . LATD0 LATD1 LATD2 LATD3 LATD4 LATD5 LATD6 LATD7 ]
-"29373
-[s S1835 :1 `uc 1 ]
-[n S1835 . LD0 ]
-"29376
-[s S1836 :1 `uc 1 :1 `uc 1 ]
-[n S1836 . . LD1 ]
-"29380
-[s S1837 :2 `uc 1 :1 `uc 1 ]
-[n S1837 . . LD2 ]
-"29384
-[s S1838 :3 `uc 1 :1 `uc 1 ]
-[n S1838 . . LD3 ]
-"29388
-[s S1839 :4 `uc 1 :1 `uc 1 ]
-[n S1839 . . LD4 ]
-"29392
-[s S1840 :5 `uc 1 :1 `uc 1 ]
-[n S1840 . . LD5 ]
-"29396
-[s S1841 :6 `uc 1 :1 `uc 1 ]
-[n S1841 . . LD6 ]
-"29400
-[s S1842 :7 `uc 1 :1 `uc 1 ]
-[n S1842 . . LD7 ]
-"29362
-[u S1833 `S1834 1 `S1835 1 `S1836 1 `S1837 1 `S1838 1 `S1839 1 `S1840 1 `S1841 1 `S1842 1 ]
-[n S1833 . . . . . . . . . . ]
-"29405
-[v _LATDbits `VS1833 ~T0 @X0 0 e@3980 ]
-"29495
-[s S1844 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1844 . LATE0 LATE1 LATE2 ]
-"29500
-[s S1845 :1 `uc 1 ]
-[n S1845 . LE0 ]
-"29503
-[s S1846 :1 `uc 1 :1 `uc 1 ]
-[n S1846 . . LE1 ]
-"29507
-[s S1847 :2 `uc 1 :1 `uc 1 ]
-[n S1847 . . LE2 ]
-"29511
-[s S1848 :3 `uc 1 :1 `uc 1 ]
-[n S1848 . . LE3 ]
-"29515
-[s S1849 :4 `uc 1 :1 `uc 1 ]
-[n S1849 . . LE4 ]
-"29519
-[s S1850 :5 `uc 1 :1 `uc 1 ]
-[n S1850 . . LE5 ]
-"29523
-[s S1851 :6 `uc 1 :1 `uc 1 ]
-[n S1851 . . LE6 ]
-"29527
-[s S1852 :7 `uc 1 :1 `uc 1 ]
-[n S1852 . . LE7 ]
-"29494
-[u S1843 `S1844 1 `S1845 1 `S1846 1 `S1847 1 `S1848 1 `S1849 1 `S1850 1 `S1851 1 `S1852 1 ]
-[n S1843 . . . . . . . . . . ]
-"29532
-[v _LATEbits `VS1843 ~T0 @X0 0 e@3981 ]
-"95 C:\Program Files (x86)\Microchip\xc8\v1.35\include\stdlib.h
-[v _itoa `(*uc ~T0 @X0 0 ef3`*uc`i`i ]
 [t ~ __interrupt__ s ]
 [t T57 __interrupt__ __high_priority ]
-"30782 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f4480.h
+"30782
 [s S1891 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S1891 . TMR1IF TMR2IF CCP1IF SSPIF TXIF RCIF ADIF PSPIF ]
 "30792
@@ -138,28 +106,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [p mainexit ]
 "51 telecomando.c
 [v _board_initialization `(v ~T0 @X0 0 ef ]
-"28219 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f4480.h
-[s S1762 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1762 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
-"28229
-[s S1763 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1763 . INT0 INT1 INT2 CANRX KBI0 KBI1 KBI2 KBI3 ]
-"28239
-[s S1764 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1764 . AN10 AN8 CANTX . AN9 PGM PGC PGD ]
-"28249
-[s S1765 :1 `uc 1 ]
-[n S1765 . FLT0 ]
-"28252
-[s S1766 :3 `uc 1 :1 `uc 1 ]
-[n S1766 . . CCP2_PA2 ]
-"28218
-[u S1761 `S1762 1 `S1763 1 `S1764 1 `S1765 1 `S1766 1 ]
-[n S1761 . . . . . . ]
-"28257
-[v _PORTBbits `VS1761 ~T0 @X0 0 e@3969 ]
-"53 telecomando.c
-[v _USART_Send `(v ~T0 @X0 0 ef ]
 "28564 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f4480.h
 [s S1775 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S1775 . RD0 RD1 RD2 RD3 RD4 RD5 RD6 RD7 ]
@@ -181,76 +127,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 "28603
 [v _PORTDbits `VS1774 ~T0 @X0 0 e@3971 ]
 "52 telecomando.c
-[v _Joystick_Polling `(v ~T0 @X0 0 ef ]
-"28009 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f4480.h
-[s S1752 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1752 . RA0 RA1 RA2 RA3 RA4 RA5 RA6 RA7 ]
-"28019
-[s S1753 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1753 . AN0 AN1 AN2 AN3 T0CKI AN4 OSC2 OSC1 ]
-"28029
-[s S1754 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1754 . CVREF . VREFM VREFP . HLVDIN CLKO CLKI ]
-"28039
-[s S1755 :1 `uc 1 :4 `uc 1 :1 `uc 1 ]
-[n S1755 . CVREFA . LVDIN ]
-"28044
-[s S1756 :5 `uc 1 :1 `uc 1 ]
-[n S1756 . . SS ]
-"28048
-[s S1757 :5 `uc 1 :1 `uc 1 ]
-[n S1757 . . NOT_SS ]
-"28052
-[s S1758 :5 `uc 1 :1 `uc 1 ]
-[n S1758 . . nSS ]
-"28056
-[s S1759 :7 `uc 1 :1 `uc 1 ]
-[n S1759 . . RJPU ]
-"28060
-[s S1760 :1 `uc 1 ]
-[n S1760 . ULPWUIN ]
-"28008
-[u S1751 `S1752 1 `S1753 1 `S1754 1 `S1755 1 `S1756 1 `S1757 1 `S1758 1 `S1759 1 `S1760 1 ]
-[n S1751 . . . . . . . . . . ]
-"28064
-[v _PORTAbits `VS1751 ~T0 @X0 0 e@3968 ]
-"54 telecomando.c
-[v _LCD_Handler `(v ~T0 @X0 0 ef ]
-"33060 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f4480.h
-[s S2015 :1 `uc 1 :1 `uc 1 ]
-[n S2015 . . GO_NOT_DONE ]
-"33064
-[s S2016 :1 `uc 1 :1 `uc 1 :4 `uc 1 ]
-[n S2016 . ADON GO_nDONE CHS ]
-"33069
-[s S2017 :1 `uc 1 :1 `uc 1 ]
-[n S2017 . . GO_NOT_DONE ]
-"33073
-[s S2018 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S2018 . . GO_DONE CHS0 CHS1 CHS2 CHS3 ]
-"33081
-[s S2019 :1 `uc 1 :1 `uc 1 ]
-[n S2019 . . DONE ]
-"33085
-[s S2020 :1 `uc 1 :1 `uc 1 ]
-[n S2020 . . GO ]
-"33089
-[s S2021 :1 `uc 1 :1 `uc 1 ]
-[n S2021 . . NOT_DONE ]
-"33093
-[s S2022 :1 `uc 1 :1 `uc 1 ]
-[n S2022 . . nDONE ]
-"33097
-[s S2023 :1 `uc 1 :1 `uc 1 ]
-[n S2023 . . GODONE ]
-"33059
-[u S2014 `S2015 1 `S2016 1 `S2017 1 `S2018 1 `S2019 1 `S2020 1 `S2021 1 `S2022 1 `S2023 1 ]
-[n S2014 . . . . . . . . . . ]
-"33102
-[v _ADCON0bits `VS2014 ~T0 @X0 0 e@4034 ]
-"33188
-[v _ADRESH `Vuc ~T0 @X0 0 e@4036 ]
-"31749
+[v _PWR_Button_Polling `(v ~T0 @X0 0 ef ]
+"31749 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f4480.h
 [s S1942 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S1942 . TX9D TRMT BRGH SENDB SYNC TXEN TX9 CSRC ]
 "31759
@@ -288,6 +166,98 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S1941 . . . . . . . . . . . . ]
 "31798
 [v _TXSTAbits `VS1941 ~T0 @X0 0 e@4012 ]
+"54 telecomando.c
+[v _USART_Send `(v ~T0 @X0 0 ef ]
+"53
+[v _Joystick_Polling `(v ~T0 @X0 0 ef ]
+"28009 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f4480.h
+[s S1752 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1752 . RA0 RA1 RA2 RA3 RA4 RA5 RA6 RA7 ]
+"28019
+[s S1753 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1753 . AN0 AN1 AN2 AN3 T0CKI AN4 OSC2 OSC1 ]
+"28029
+[s S1754 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1754 . CVREF . VREFM VREFP . HLVDIN CLKO CLKI ]
+"28039
+[s S1755 :1 `uc 1 :4 `uc 1 :1 `uc 1 ]
+[n S1755 . CVREFA . LVDIN ]
+"28044
+[s S1756 :5 `uc 1 :1 `uc 1 ]
+[n S1756 . . SS ]
+"28048
+[s S1757 :5 `uc 1 :1 `uc 1 ]
+[n S1757 . . NOT_SS ]
+"28052
+[s S1758 :5 `uc 1 :1 `uc 1 ]
+[n S1758 . . nSS ]
+"28056
+[s S1759 :7 `uc 1 :1 `uc 1 ]
+[n S1759 . . RJPU ]
+"28060
+[s S1760 :1 `uc 1 ]
+[n S1760 . ULPWUIN ]
+"28008
+[u S1751 `S1752 1 `S1753 1 `S1754 1 `S1755 1 `S1756 1 `S1757 1 `S1758 1 `S1759 1 `S1760 1 ]
+[n S1751 . . . . . . . . . . ]
+"28064
+[v _PORTAbits `VS1751 ~T0 @X0 0 e@3968 ]
+"55 telecomando.c
+[v _LCD_Handler `(v ~T0 @X0 0 ef ]
+"28219 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f4480.h
+[s S1762 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1762 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
+"28229
+[s S1763 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1763 . INT0 INT1 INT2 CANRX KBI0 KBI1 KBI2 KBI3 ]
+"28239
+[s S1764 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1764 . AN10 AN8 CANTX . AN9 PGM PGC PGD ]
+"28249
+[s S1765 :1 `uc 1 ]
+[n S1765 . FLT0 ]
+"28252
+[s S1766 :3 `uc 1 :1 `uc 1 ]
+[n S1766 . . CCP2_PA2 ]
+"28218
+[u S1761 `S1762 1 `S1763 1 `S1764 1 `S1765 1 `S1766 1 ]
+[n S1761 . . . . . . ]
+"28257
+[v _PORTBbits `VS1761 ~T0 @X0 0 e@3969 ]
+"33060
+[s S2015 :1 `uc 1 :1 `uc 1 ]
+[n S2015 . . GO_NOT_DONE ]
+"33064
+[s S2016 :1 `uc 1 :1 `uc 1 :4 `uc 1 ]
+[n S2016 . ADON GO_nDONE CHS ]
+"33069
+[s S2017 :1 `uc 1 :1 `uc 1 ]
+[n S2017 . . GO_NOT_DONE ]
+"33073
+[s S2018 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S2018 . . GO_DONE CHS0 CHS1 CHS2 CHS3 ]
+"33081
+[s S2019 :1 `uc 1 :1 `uc 1 ]
+[n S2019 . . DONE ]
+"33085
+[s S2020 :1 `uc 1 :1 `uc 1 ]
+[n S2020 . . GO ]
+"33089
+[s S2021 :1 `uc 1 :1 `uc 1 ]
+[n S2021 . . NOT_DONE ]
+"33093
+[s S2022 :1 `uc 1 :1 `uc 1 ]
+[n S2022 . . nDONE ]
+"33097
+[s S2023 :1 `uc 1 :1 `uc 1 ]
+[n S2023 . . GODONE ]
+"33059
+[u S2014 `S2015 1 `S2016 1 `S2017 1 `S2018 1 `S2019 1 `S2020 1 `S2021 1 `S2022 1 `S2023 1 ]
+[n S2014 . . . . . . . . . . ]
+"33102
+[v _ADCON0bits `VS2014 ~T0 @X0 0 e@4034 ]
+"33188
+[v _ADRESH `Vuc ~T0 @X0 0 e@4036 ]
 "599 C:\Program Files (x86)\Microchip\xc8\v1.35\include\plib\usart.h
 [v _putsUSART `(v ~T0 @X0 0 ef1`*uc ]
 "194 C:\Program Files (x86)\Microchip\xc8\v1.35\include\stdio.h
@@ -15727,12 +15697,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;inc\delay.h: 74: void delay_ms (unsigned int value_ms);
 [; ;inc\delay.h: 88: void delay_s (unsigned char value_s);
 [; ;inc\delay.h: 102: void delay_set_quartz (unsigned char frequency);
-"49 ../../../Desktop/LaurTec_PIC_libraries_v_3.3.1/src\delay.c
+"49 ../../Drive/librerie/LaurTec_PIC_libraries_v_3.3.0/src\delay.c
 [v _delay_quartz_frequency_value `Vuc ~T0 @X0 1 e ]
 [i _delay_quartz_frequency_value
--> -> 16 `i `uc
+-> -> 20 `i `uc
 ]
-[; ;src\delay.c: 49: volatile unsigned char delay_quartz_frequency_value = 16;
+[; ;src\delay.c: 49: volatile unsigned char delay_quartz_frequency_value = 20;
 "50
 [v _clock_counter_reference `Vui ~T0 @X0 1 e ]
 [i _clock_counter_reference
@@ -15880,21 +15850,21 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;inc\LCD_44780.h: 341: void LCD_cursor(unsigned char active, unsigned char blinking);
 [; ;inc\LCD_44780.h: 356: void LCD_backlight(unsigned char active);
 [; ;inc\LCD_44780.h: 370: void LCD_initialize(unsigned char quartz_frequency);
-"49 ../../../Desktop/LaurTec_PIC_libraries_v_3.3.1/src\LCD_44780.c
+"49 ../../Drive/librerie/LaurTec_PIC_libraries_v_3.3.0/src\LCD_44780.c
 [v _LCD_enable_pulse `(v ~T0 @X0 1 ef ]
 {
 [; ;src\LCD_44780.c: 49: void LCD_enable_pulse (void) {
 [e :U _LCD_enable_pulse ]
 [f ]
-[; ;src\LCD_44780.c: 51: LATCbits.LATC1 = 1;
+[; ;src\LCD_44780.c: 51: LATBbits.LATB3 = 1;
 "51
-[e = . . _LATCbits 0 1 -> -> 1 `i `uc ]
+[e = . . _LATBbits 0 3 -> -> 1 `i `uc ]
 [; ;src\LCD_44780.c: 52: delay_ms (1);
 "52
 [e ( _delay_ms (1 -> -> 1 `i `ui ]
-[; ;src\LCD_44780.c: 53: LATCbits.LATC1 = 0;
+[; ;src\LCD_44780.c: 53: LATBbits.LATB3 = 0;
 "53
-[e = . . _LATCbits 0 1 -> -> 0 `i `uc ]
+[e = . . _LATBbits 0 3 -> -> 0 `i `uc ]
 [; ;src\LCD_44780.c: 54: delay_ms (1);
 "54
 [e ( _delay_ms (1 -> -> 1 `i `ui ]
@@ -15912,18 +15882,18 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _D1 `uc ~T0 @X0 1 r3 ]
 [v _D0 `uc ~T0 @X0 1 r4 ]
 [f ]
-[; ;src\LCD_44780.c: 63: LATCbits.LATC2 = D0;
+[; ;src\LCD_44780.c: 63: LATBbits.LATB4 = D0;
 "63
-[e = . . _LATCbits 0 2 _D0 ]
-[; ;src\LCD_44780.c: 64: LATCbits.LATC3 = D1;
+[e = . . _LATBbits 0 4 _D0 ]
+[; ;src\LCD_44780.c: 64: LATBbits.LATB5 = D1;
 "64
-[e = . . _LATCbits 0 3 _D1 ]
-[; ;src\LCD_44780.c: 65: LATDbits.LATD0 = D2;
+[e = . . _LATBbits 0 5 _D1 ]
+[; ;src\LCD_44780.c: 65: LATBbits.LATB6 = D2;
 "65
-[e = . . _LATDbits 0 0 _D2 ]
-[; ;src\LCD_44780.c: 66: LATDbits.LATD1 = D3;
+[e = . . _LATBbits 0 6 _D2 ]
+[; ;src\LCD_44780.c: 66: LATBbits.LATB7 = D3;
 "66
-[e = . . _LATDbits 0 1 _D3 ]
+[e = . . _LATBbits 0 7 _D3 ]
 [; ;src\LCD_44780.c: 67: LCD_enable_pulse ();
 "67
 [e ( _LCD_enable_pulse ..  ]
@@ -16119,9 +16089,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _D1 `uc ~T0 @X0 1 a ]
 [v _D0 `uc ~T0 @X0 1 a ]
 [; ;src\LCD_44780.c: 147: unsigned char D3,D2,D1,D0;
-[; ;src\LCD_44780.c: 149: LATEbits.LATE2 = 1;
+[; ;src\LCD_44780.c: 149: LATBbits.LATB1 = 1;
 "149
-[e = . . _LATEbits 0 2 -> -> 1 `i `uc ]
+[e = . . _LATBbits 0 1 -> -> 1 `i `uc ]
 [; ;src\LCD_44780.c: 152: D3 = (value & 0b10000000) >> 7;
 "152
 [e = _D3 -> >> & -> _value `i -> 128 `i -> 7 `i `uc ]
@@ -16152,9 +16122,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;src\LCD_44780.c: 165: LCD_send_command (D3,D2,D1,D0);
 "165
 [e ( _LCD_send_command (4 , , , _D3 _D2 _D1 _D0 ]
-[; ;src\LCD_44780.c: 167: LATEbits.LATE2 = 0;
+[; ;src\LCD_44780.c: 167: LATBbits.LATB1 = 0;
 "167
-[e = . . _LATEbits 0 2 -> -> 0 `i `uc ]
+[e = . . _LATBbits 0 1 -> -> 0 `i `uc ]
 [; ;src\LCD_44780.c: 168: }
 "168
 [e :UE 2190 ]
@@ -16358,9 +16328,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :U _LCD_backlight ]
 [v _active `uc ~T0 @X0 1 r1 ]
 [f ]
-[; ;src\LCD_44780.c: 277: LATCbits.LATC4 = active;
+[; ;src\LCD_44780.c: 277: LATCbits.LATC2 = active;
 "277
-[e = . . _LATCbits 0 4 _active ]
+[e = . . _LATCbits 0 2 _active ]
 [; ;src\LCD_44780.c: 278: }
 "278
 [e :UE 2211 ]
@@ -16375,15 +16345,15 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;src\LCD_44780.c: 285: delay_set_quartz (quartz_frequency);
 "285
 [e ( _delay_set_quartz (1 _quartz_frequency ]
-[; ;src\LCD_44780.c: 287: LATEbits.LATE2 = 0x00;
+[; ;src\LCD_44780.c: 287: LATBbits.LATB1 = 0x00;
 "287
-[e = . . _LATEbits 0 2 -> -> 0 `i `uc ]
-[; ;src\LCD_44780.c: 288: LATCbits.LATC1 = 0x00;
+[e = . . _LATBbits 0 1 -> -> 0 `i `uc ]
+[; ;src\LCD_44780.c: 288: LATBbits.LATB3 = 0x00;
 "288
-[e = . . _LATCbits 0 1 -> -> 0 `i `uc ]
-[; ;src\LCD_44780.c: 289: LATCbits.LATC0 = 0x00;
+[e = . . _LATBbits 0 3 -> -> 0 `i `uc ]
+[; ;src\LCD_44780.c: 289: LATBbits.LATB2 = 0x00;
 "289
-[e = . . _LATCbits 0 0 -> -> 0 `i `uc ]
+[e = . . _LATBbits 0 2 -> -> 0 `i `uc ]
 [; ;src\LCD_44780.c: 291: delay_ms (100);
 "291
 [e ( _delay_ms (1 -> -> 100 `i `ui ]
@@ -16495,901 +16465,1043 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;math.h: 54: extern double trunc(double);
 [; ;math.h: 55: extern double round(double);
 [; ;telecomando.c: 51: void board_initialization(void);
-[; ;telecomando.c: 52: void Joystick_Polling(void);
-[; ;telecomando.c: 53: void USART_Send(void);
-[; ;telecomando.c: 54: void LCD_Handler(void);
-"61 telecomando.c
+[; ;telecomando.c: 52: void PWR_Button_Polling(void);
+[; ;telecomando.c: 53: void Joystick_Polling(void);
+[; ;telecomando.c: 54: void USART_Send(void);
+[; ;telecomando.c: 55: void LCD_Handler(void);
+"62 telecomando.c
 [v _USART_Tx `uc ~T0 @X0 -> 8 `i e ]
 [i _USART_Tx
 :U ..
 -> -> 0 `i `uc
 ..
 ]
-[; ;telecomando.c: 61: unsigned char USART_Tx [8] = 0;
-"62
+[; ;telecomando.c: 62: unsigned char USART_Tx [8] = 0;
+"63
+[v _USART_Tx_Old `uc ~T0 @X0 -> 8 `i e ]
+[i _USART_Tx_Old
+:U ..
+-> -> 0 `i `uc
+..
+]
+[; ;telecomando.c: 63: unsigned char USART_Tx_Old [8] = 0;
+"64
 [v _USART_Rx `uc ~T0 @X0 -> 8 `i e ]
 [i _USART_Rx
 :U ..
 -> -> 0 `i `uc
 ..
 ]
-[; ;telecomando.c: 62: unsigned char USART_Rx[8] = 0;
-"63
+[; ;telecomando.c: 64: unsigned char USART_Rx[8] = 0;
+"65
 [v _actual_dir `Vb ~T0 @X0 1 e ]
 [i _actual_dir
 -> 0 `i
 ]
-[; ;telecomando.c: 63: volatile bit actual_dir = 0;
-"64
+[; ;telecomando.c: 65: volatile bit actual_dir = 0;
+"66
+[v _spam_counter `Vuc ~T0 @X0 1 e ]
+[i _spam_counter
+-> -> 0 `i `uc
+]
+[; ;telecomando.c: 66: volatile char spam_counter = 0;
+"67
 [v _actual_speed `Vui ~T0 @X0 1 e ]
 [i _actual_speed
 -> -> 0 `i `ui
 ]
-[; ;telecomando.c: 64: volatile unsigned int actual_speed = 0;
-"65
+[; ;telecomando.c: 67: volatile unsigned int actual_speed = 0;
+"68
 [v _actual_speed_pk1 `Vuc ~T0 @X0 1 e ]
 [i _actual_speed_pk1
 -> -> 0 `i `uc
 ]
-[; ;telecomando.c: 65: volatile unsigned char actual_speed_pk1 = 0;
-"66
+[; ;telecomando.c: 68: volatile unsigned char actual_speed_pk1 = 0;
+"69
 [v _actual_speed_pk0 `Vuc ~T0 @X0 1 e ]
 [i _actual_speed_pk0
 -> -> 0 `i `uc
 ]
-[; ;telecomando.c: 66: volatile unsigned char actual_speed_pk0 = 0;
-"67
+[; ;telecomando.c: 69: volatile unsigned char actual_speed_pk0 = 0;
+"70
 [v _ECU_Check `Vuc ~T0 @X0 1 e ]
 [i _ECU_Check
 -> -> 0 `i `uc
 ]
-[; ;telecomando.c: 67: volatile unsigned char ECU_Check = 0;
-"68
+[; ;telecomando.c: 70: volatile unsigned char ECU_Check = 0;
+"71
 [v _Battery_Check `Vuc ~T0 @X0 1 e ]
 [i _Battery_Check
 -> -> 0 `i `uc
 ]
-[; ;telecomando.c: 68: volatile unsigned char Battery_Check = 0;
-"71
-[v _dir `Vb ~T0 @X0 1 e ]
-[i _dir
--> 0 `i
-]
-[; ;telecomando.c: 71: volatile bit dir = 0;
-"72
+[; ;telecomando.c: 71: volatile unsigned char Battery_Check = 0;
+"74
 [v _power_switch `Vb ~T0 @X0 1 e ]
 [i _power_switch
 -> 0 `i
 ]
-[; ;telecomando.c: 72: volatile bit power_switch = 0;
-"73
+[; ;telecomando.c: 74: volatile bit power_switch = 0;
+"75
 [v _wait_low `Vb ~T0 @X0 1 e ]
 [i _wait_low
 -> 0 `i
 ]
-[; ;telecomando.c: 73: volatile bit wait_low = 0;
-"74
+[; ;telecomando.c: 75: volatile bit wait_low = 0;
+"76
+[v _dir `Vuc ~T0 @X0 1 e ]
+[i _dir
+-> -> 0 `i `uc
+]
+[; ;telecomando.c: 76: volatile char dir = 0;
+"77
 [v _i `Vuc ~T0 @X0 1 e ]
 [i _i
 -> -> 0 `i `uc
 ]
-[; ;telecomando.c: 74: volatile unsigned char i = 0;
-"75
+[; ;telecomando.c: 77: volatile unsigned char i = 0;
+"78
 [v _switch_position `Vuc ~T0 @X0 1 e ]
 [i _switch_position
 -> -> 0 `i `uc
 ]
-[; ;telecomando.c: 75: volatile unsigned char switch_position = 0;
-"76
+[; ;telecomando.c: 78: volatile unsigned char switch_position = 0;
+"79
 [v _set_steering `Vuc ~T0 @X0 1 e ]
 [i _set_steering
 -> -> 0 `i `uc
 ]
-[; ;telecomando.c: 76: volatile unsigned char set_steering = 0;
-"77
+[; ;telecomando.c: 79: volatile unsigned char set_steering = 0;
+"80
 [v _set_speed `Vui ~T0 @X0 1 e ]
 [i _set_speed
 -> -> 0 `i `ui
 ]
-[; ;telecomando.c: 77: volatile unsigned int set_speed = 0;
-"78
+[; ;telecomando.c: 80: volatile unsigned int set_speed = 0;
+"81
 [v _set_speed_pk1 `Vuc ~T0 @X0 1 e ]
 [i _set_speed_pk1
 -> -> 0 `i `uc
 ]
-[; ;telecomando.c: 78: volatile unsigned char set_speed_pk1 = 0;
-"79
+[; ;telecomando.c: 81: volatile unsigned char set_speed_pk1 = 0;
+"82
 [v _set_speed_pk0 `Vuc ~T0 @X0 1 e ]
 [i _set_speed_pk0
 -> -> 0 `i `uc
 ]
-[; ;telecomando.c: 79: volatile unsigned char set_speed_pk0 = 0;
-"80
+[; ;telecomando.c: 82: volatile unsigned char set_speed_pk0 = 0;
+"83
 [v _analogic_brake `Vuc ~T0 @X0 1 e ]
 [i _analogic_brake
 -> -> 0 `i `uc
 ]
-[; ;telecomando.c: 80: volatile unsigned char analogic_brake = 0;
-"81
+[; ;telecomando.c: 83: volatile unsigned char analogic_brake = 0;
+"84
 [v _JoystickValues `Vc ~T0 @X0 -> 2 `i e ]
 [i _JoystickValues
 :U ..
 -> -> 0 `i `c
 ..
 ]
-[; ;telecomando.c: 81: volatile signed char JoystickValues[2] = 0;
-"82
+[; ;telecomando.c: 84: volatile signed char JoystickValues[2] = 0;
+"85
 [v _JoystickConstants `Vf ~T0 @X0 -> 2 `i e ]
 [i _JoystickConstants
 :U ..
 -> -> 0 `i `f
 ..
 ]
-[; ;telecomando.c: 82: volatile signed float JoystickConstants[2] = 0;
-"85
+[; ;telecomando.c: 85: volatile signed float JoystickConstants[2] = 0;
+"88
 [v _time_counter `Vul ~T0 @X0 1 e ]
 [i _time_counter
 -> -> -> 0 `i `l `ul
 ]
-[; ;telecomando.c: 85: volatile unsigned long time_counter = 0;
-"86
+[; ;telecomando.c: 88: volatile unsigned long time_counter = 0;
+"89
 [v _pr_time_1 `Vul ~T0 @X0 1 e ]
 [i _pr_time_1
 -> -> -> 0 `i `l `ul
 ]
-[; ;telecomando.c: 86: volatile unsigned long pr_time_1 = 0;
-"87
+[; ;telecomando.c: 89: volatile unsigned long pr_time_1 = 0;
+"90
 [v _pr_time_2 `Vul ~T0 @X0 1 e ]
 [i _pr_time_2
 -> -> -> 0 `i `l `ul
 ]
-[; ;telecomando.c: 87: volatile unsigned long pr_time_2 = 0;
-"88
+[; ;telecomando.c: 90: volatile unsigned long pr_time_2 = 0;
+"91
 [v _pr_time_3 `Vul ~T0 @X0 1 e ]
 [i _pr_time_3
 -> -> -> 0 `i `l `ul
 ]
-[; ;telecomando.c: 88: volatile unsigned long pr_time_3 = 0;
-"91
+[; ;telecomando.c: 91: volatile unsigned long pr_time_3 = 0;
+"94
 [v _str `uc ~T0 @X0 -> 12 `i e ]
 [i _str
 :U ..
 -> -> 0 `i `uc
 ..
 ]
-[; ;telecomando.c: 91: unsigned char str [12] = 0;
-"92
+[; ;telecomando.c: 94: unsigned char str [12] = 0;
+"95
 [v _actual_speed_kmh `f ~T0 @X0 1 e ]
 [i _actual_speed_kmh
 -> -> 0 `i `f
 ]
-[; ;telecomando.c: 92: signed float actual_speed_kmh = 0;
-[v F17191 `(v ~T0 @X0 1 tf ]
-"94
-[v _ISR_alta `IF17191 ~T57 @X0 1 e ]
+[; ;telecomando.c: 95: signed float actual_speed_kmh = 0;
+[v F17195 `(v ~T0 @X0 1 tf ]
+"97
+[v _ISR_alta `IF17195 ~T57 @X0 1 e ]
 {
-[; ;telecomando.c: 94: __attribute__((interrupt("__high_priority"))) void ISR_alta(void) {
+[; ;telecomando.c: 97: __attribute__((interrupt("__high_priority"))) void ISR_alta(void) {
 [e :U _ISR_alta ]
 [f ]
-[; ;telecomando.c: 95: if (PIR1bits.RCIF == 1) {
-"95
+[; ;telecomando.c: 98: if (PIR1bits.RCIF == 1) {
+"98
 [e $ ! == -> . . _PIR1bits 0 5 `i -> 1 `i 2215  ]
 {
-[; ;telecomando.c: 96: getsUSART((char*) USART_Rx, 7);
-"96
+[; ;telecomando.c: 99: getsUSART((char*) USART_Rx, 7);
+"99
 [e ( _getsUSART (2 , &U _USART_Rx -> -> 7 `i `uc ]
-[; ;telecomando.c: 97: if ((USART_Rx[0] == 0xAA) && (USART_Rx[6] == 0xAA)) {
-"97
+[; ;telecomando.c: 100: if ((USART_Rx[0] == 0xAA) && (USART_Rx[6] == 0xAA)) {
+"100
 [e $ ! && == -> *U + &U _USART_Rx * -> -> -> 0 `i `ui `ux -> -> # *U &U _USART_Rx `ui `ux `i -> 170 `i == -> *U + &U _USART_Rx * -> -> -> 6 `i `ui `ux -> -> # *U &U _USART_Rx `ui `ux `i -> 170 `i 2216  ]
 {
-[; ;telecomando.c: 98: actual_dir = USART_Rx[1];
-"98
-[e = _actual_dir -> *U + &U _USART_Rx * -> -> -> 1 `i `ui `ux -> -> # *U &U _USART_Rx `ui `ux `b ]
-[; ;telecomando.c: 99: actual_speed_pk1 = USART_Rx[2];
-"99
-[e = _actual_speed_pk1 *U + &U _USART_Rx * -> -> -> 2 `i `ui `ux -> -> # *U &U _USART_Rx `ui `ux ]
-[; ;telecomando.c: 100: actual_speed_pk0 = USART_Rx[3];
-"100
-[e = _actual_speed_pk0 *U + &U _USART_Rx * -> -> -> 3 `i `ui `ux -> -> # *U &U _USART_Rx `ui `ux ]
-[; ;telecomando.c: 101: ECU_Check = USART_Rx[4];
+[; ;telecomando.c: 101: actual_dir = USART_Rx[1];
 "101
-[e = _ECU_Check *U + &U _USART_Rx * -> -> -> 4 `i `ui `ux -> -> # *U &U _USART_Rx `ui `ux ]
-[; ;telecomando.c: 102: Battery_Check = USART_Rx[5];
+[e = _actual_dir -> *U + &U _USART_Rx * -> -> -> 1 `i `ui `ux -> -> # *U &U _USART_Rx `ui `ux `b ]
+[; ;telecomando.c: 102: actual_speed_pk1 = USART_Rx[2];
 "102
-[e = _Battery_Check *U + &U _USART_Rx * -> -> -> 5 `i `ui `ux -> -> # *U &U _USART_Rx `ui `ux ]
-[; ;telecomando.c: 103: actual_speed = (actual_speed_pk1 << 8) || (actual_speed_pk0);
+[e = _actual_speed_pk1 *U + &U _USART_Rx * -> -> -> 2 `i `ui `ux -> -> # *U &U _USART_Rx `ui `ux ]
+[; ;telecomando.c: 103: if (actual_speed_pk1 == 0b10000000) {
 "103
-[e = _actual_speed -> -> || != << -> _actual_speed_pk1 `i -> 8 `i -> 0 `i != -> _actual_speed_pk0 `i -> -> -> 0 `i `Vuc `i `i `ui ]
+[e $ ! == -> _actual_speed_pk1 `i -> 128 `i 2217  ]
+{
+[; ;telecomando.c: 104: actual_speed_pk1 = 0x00;
 "104
+[e = _actual_speed_pk1 -> -> 0 `i `uc ]
+"105
+}
+[e :U 2217 ]
+[; ;telecomando.c: 105: }
+[; ;telecomando.c: 106: actual_speed_pk0 = USART_Rx[3];
+"106
+[e = _actual_speed_pk0 *U + &U _USART_Rx * -> -> -> 3 `i `ui `ux -> -> # *U &U _USART_Rx `ui `ux ]
+[; ;telecomando.c: 107: ECU_Check = USART_Rx[4];
+"107
+[e = _ECU_Check *U + &U _USART_Rx * -> -> -> 4 `i `ui `ux -> -> # *U &U _USART_Rx `ui `ux ]
+[; ;telecomando.c: 108: Battery_Check = USART_Rx[5];
+"108
+[e = _Battery_Check *U + &U _USART_Rx * -> -> -> 5 `i `ui `ux -> -> # *U &U _USART_Rx `ui `ux ]
+[; ;telecomando.c: 109: actual_speed = (actual_speed_pk1 << 8) | (actual_speed_pk0);
+"109
+[e = _actual_speed -> | << -> _actual_speed_pk1 `i -> 8 `i -> _actual_speed_pk0 `i `ui ]
+"110
 }
 [e :U 2216 ]
-[; ;telecomando.c: 104: }
-[; ;telecomando.c: 105: PIR1bits.RCIF = 0;
-"105
+[; ;telecomando.c: 110: }
+[; ;telecomando.c: 111: PIR1bits.RCIF = 0;
+"111
 [e = . . _PIR1bits 0 5 -> -> 0 `i `uc ]
-"106
+"112
 }
 [e :U 2215 ]
-[; ;telecomando.c: 106: }
-[; ;telecomando.c: 107: }
-"107
+[; ;telecomando.c: 112: }
+[; ;telecomando.c: 113: }
+"113
 [e :UE 2214 ]
 }
-[v F17195 `(v ~T0 @X0 1 tf ]
-"109
-[v _ISR_bassa `IF17195 ~T58 @X0 1 e ]
+[v F17199 `(v ~T0 @X0 1 tf ]
+"115
+[v _ISR_bassa `IF17199 ~T58 @X0 1 e ]
 {
-[; ;telecomando.c: 109: __attribute__((interrupt("__low_priority"))) void ISR_bassa(void) {
+[; ;telecomando.c: 115: __attribute__((interrupt("__low_priority"))) void ISR_bassa(void) {
 [e :U _ISR_bassa ]
 [f ]
-[; ;telecomando.c: 110: if (PIR2bits.TMR3IF) {
-"110
-[e $ ! != -> . . _PIR2bits 0 1 `i -> -> -> 0 `i `Vuc `i 2218  ]
-{
-[; ;telecomando.c: 111: time_counter++;
-"111
-[e ++ _time_counter -> -> -> 1 `i `l `ul ]
-[; ;telecomando.c: 112: TMR3H = 0x63;
-"112
-[e = _TMR3H -> -> 99 `i `uc ]
-[; ;telecomando.c: 113: TMR3L = 0xC0;
-"113
-[e = _TMR3L -> -> 192 `i `uc ]
-[; ;telecomando.c: 114: PIR2bits.TMR3IF = 0;
-"114
-[e = . . _PIR2bits 0 1 -> -> 0 `i `uc ]
-"115
-}
-[e :U 2218 ]
-[; ;telecomando.c: 115: }
-[; ;telecomando.c: 116: }
+[; ;telecomando.c: 116: if (PIR2bits.TMR3IF) {
 "116
-[e :UE 2217 ]
+[e $ ! != -> . . _PIR2bits 0 1 `i -> -> -> 0 `i `Vuc `i 2219  ]
+{
+[; ;telecomando.c: 117: time_counter++;
+"117
+[e ++ _time_counter -> -> -> 1 `i `l `ul ]
+[; ;telecomando.c: 118: TMR3H = 0x63;
+"118
+[e = _TMR3H -> -> 99 `i `uc ]
+[; ;telecomando.c: 119: TMR3L = 0xC0;
+"119
+[e = _TMR3L -> -> 192 `i `uc ]
+[; ;telecomando.c: 120: PIR2bits.TMR3IF = 0;
+"120
+[e = . . _PIR2bits 0 1 -> -> 0 `i `uc ]
+"121
 }
+[e :U 2219 ]
+[; ;telecomando.c: 121: }
+[; ;telecomando.c: 122: }
 "122
+[e :UE 2218 ]
+}
+"128
 [v _main `(v ~T0 @X0 1 ef ]
 {
-[; ;telecomando.c: 122: void main(void) {
+[; ;telecomando.c: 128: void main(void) {
 [e :U _main ]
 [f ]
-[; ;telecomando.c: 123: board_initialization();
-"123
-[e ( _board_initialization ..  ]
-[; ;telecomando.c: 127: USART_Tx[0] = 0xAA;
-"127
-[e = *U + &U _USART_Tx * -> -> -> 0 `i `ui `ux -> -> # *U &U _USART_Tx `ui `ux -> -> 170 `i `uc ]
-[; ;telecomando.c: 128: USART_Tx[1] = 0x01;
-"128
-[e = *U + &U _USART_Tx * -> -> -> 1 `i `ui `ux -> -> # *U &U _USART_Tx `ui `ux -> -> 1 `i `uc ]
-[; ;telecomando.c: 129: USART_Tx[2] = 0x01;
+[; ;telecomando.c: 129: board_initialization();
 "129
-[e = *U + &U _USART_Tx * -> -> -> 2 `i `ui `ux -> -> # *U &U _USART_Tx `ui `ux -> -> 1 `i `uc ]
-[; ;telecomando.c: 130: USART_Tx[3] = 0x01;
-"130
-[e = *U + &U _USART_Tx * -> -> -> 3 `i `ui `ux -> -> # *U &U _USART_Tx `ui `ux -> -> 1 `i `uc ]
-[; ;telecomando.c: 131: USART_Tx[4] = 0x01;
-"131
-[e = *U + &U _USART_Tx * -> -> -> 4 `i `ui `ux -> -> # *U &U _USART_Tx `ui `ux -> -> 1 `i `uc ]
-[; ;telecomando.c: 132: USART_Tx[5] = 0x01;
+[e ( _board_initialization ..  ]
+[; ;telecomando.c: 132: PORTDbits.RD2 = 1;
 "132
-[e = *U + &U _USART_Tx * -> -> -> 5 `i `ui `ux -> -> # *U &U _USART_Tx `ui `ux -> -> 1 `i `uc ]
-[; ;telecomando.c: 133: USART_Tx[6] = 0xAA;
+[e = . . _PORTDbits 0 2 -> -> 1 `i `uc ]
+[; ;telecomando.c: 133: PORTDbits.RD3 = 1;
 "133
-[e = *U + &U _USART_Tx * -> -> -> 6 `i `ui `ux -> -> # *U &U _USART_Tx `ui `ux -> -> 170 `i `uc ]
-[; ;telecomando.c: 134: USART_Tx[7] = '\0';
+[e = . . _PORTDbits 0 3 -> -> 1 `i `uc ]
+[; ;telecomando.c: 134: PORTDbits.RD5 = 1;
 "134
-[e = *U + &U _USART_Tx * -> -> -> 7 `i `ui `ux -> -> # *U &U _USART_Tx `ui `ux -> -> 0 `ui `uc ]
-[; ;telecomando.c: 135: JoystickConstants[0] = 0.703;
+[e = . . _PORTDbits 0 5 -> -> 1 `i `uc ]
+[; ;telecomando.c: 135: PORTDbits.RD6 = 1;
 "135
-[e = *U + &U _JoystickConstants * -> -> -> 0 `i `ui `ux -> -> # *U &U _JoystickConstants `ui `ux -> .0.703 `f ]
-[; ;telecomando.c: 136: JoystickConstants[1] = 34;
+[e = . . _PORTDbits 0 6 -> -> 1 `i `uc ]
+[; ;telecomando.c: 136: PORTDbits.RD7 = 1;
 "136
-[e = *U + &U _JoystickConstants * -> -> -> 1 `i `ui `ux -> -> # *U &U _JoystickConstants `ui `ux -> -> 34 `i `f ]
-[; ;telecomando.c: 140: while (1) {
+[e = . . _PORTDbits 0 7 -> -> 1 `i `uc ]
+[; ;telecomando.c: 137: delay_ms(500);
+"137
+[e ( _delay_ms (1 -> -> 500 `i `ui ]
+[; ;telecomando.c: 138: PORTDbits.RD2 = 0;
+"138
+[e = . . _PORTDbits 0 2 -> -> 0 `i `uc ]
+[; ;telecomando.c: 139: PORTDbits.RD3 = 0;
+"139
+[e = . . _PORTDbits 0 3 -> -> 0 `i `uc ]
+[; ;telecomando.c: 140: PORTDbits.RD5 = 0;
 "140
-[e :U 2221 ]
-{
-[; ;telecomando.c: 142: if ((PORTBbits.RB3 == 0) || (wait_low == 0)) {
+[e = . . _PORTDbits 0 5 -> -> 0 `i `uc ]
+[; ;telecomando.c: 141: PORTDbits.RD6 = 0;
+"141
+[e = . . _PORTDbits 0 6 -> -> 0 `i `uc ]
+[; ;telecomando.c: 142: PORTDbits.RD7 = 0;
 "142
-[e $ ! || == -> . . _PORTBbits 0 3 `i -> 0 `i == -> _wait_low `i -> 0 `i 2223  ]
-{
-[; ;telecomando.c: 143: wait_low = 0;
-"143
-[e = _wait_low -> -> 0 `i `b ]
-[; ;telecomando.c: 144: if (PORTBbits.RB3 == 1) {
-"144
-[e $ ! == -> . . _PORTBbits 0 3 `i -> 1 `i 2224  ]
-{
-[; ;telecomando.c: 145: power_switch = ~power_switch;
+[e = . . _PORTDbits 0 7 -> -> 0 `i `uc ]
+[; ;telecomando.c: 145: PORTDbits.RD7 = 0;
 "145
-[e = _power_switch -> ~ -> _power_switch `ui `b ]
-[; ;telecomando.c: 146: wait_low = 1;
-"146
-[e = _wait_low -> -> 1 `i `b ]
-"147
-}
-[e :U 2224 ]
+[e = . . _PORTDbits 0 7 -> -> 0 `i `uc ]
+[; ;telecomando.c: 148: USART_Tx[0] = 0xAA;
 "148
-}
-[e :U 2223 ]
-[; ;telecomando.c: 147: }
-[; ;telecomando.c: 148: }
-[; ;telecomando.c: 150: if (power_switch == 0) {
+[e = *U + &U _USART_Tx * -> -> -> 0 `i `ui `ux -> -> # *U &U _USART_Tx `ui `ux -> -> 170 `i `uc ]
+[; ;telecomando.c: 149: USART_Tx[1] = 0x01;
+"149
+[e = *U + &U _USART_Tx * -> -> -> 1 `i `ui `ux -> -> # *U &U _USART_Tx `ui `ux -> -> 1 `i `uc ]
+[; ;telecomando.c: 150: USART_Tx[2] = 0x01;
 "150
-[e $ ! == -> _power_switch `i -> 0 `i 2225  ]
-{
-[; ;telecomando.c: 151: dir = 1;
+[e = *U + &U _USART_Tx * -> -> -> 2 `i `ui `ux -> -> # *U &U _USART_Tx `ui `ux -> -> 1 `i `uc ]
+[; ;telecomando.c: 151: USART_Tx[3] = 0x01;
 "151
-[e = _dir -> -> 1 `i `b ]
-[; ;telecomando.c: 152: set_speed = 0;
+[e = *U + &U _USART_Tx * -> -> -> 3 `i `ui `ux -> -> # *U &U _USART_Tx `ui `ux -> -> 1 `i `uc ]
+[; ;telecomando.c: 152: USART_Tx[4] = 0x01;
 "152
-[e = _set_speed -> -> 0 `i `ui ]
-[; ;telecomando.c: 153: set_steering = 90;
+[e = *U + &U _USART_Tx * -> -> -> 4 `i `ui `ux -> -> # *U &U _USART_Tx `ui `ux -> -> 1 `i `uc ]
+[; ;telecomando.c: 153: USART_Tx[5] = 0x01;
 "153
-[e = _set_steering -> -> 90 `i `uc ]
-[; ;telecomando.c: 154: analogic_brake = 0;
+[e = *U + &U _USART_Tx * -> -> -> 5 `i `ui `ux -> -> # *U &U _USART_Tx `ui `ux -> -> 1 `i `uc ]
+[; ;telecomando.c: 154: USART_Tx[6] = 0xAA;
 "154
-[e = _analogic_brake -> -> 0 `i `uc ]
-[; ;telecomando.c: 155: USART_Send();
+[e = *U + &U _USART_Tx * -> -> -> 6 `i `ui `ux -> -> # *U &U _USART_Tx `ui `ux -> -> 170 `i `uc ]
+[; ;telecomando.c: 155: USART_Tx[7] = '\0';
 "155
-[e ( _USART_Send ..  ]
-[; ;telecomando.c: 156: while (power_switch == 0) {
+[e = *U + &U _USART_Tx * -> -> -> 7 `i `ui `ux -> -> # *U &U _USART_Tx `ui `ux -> -> 0 `ui `uc ]
+[; ;telecomando.c: 156: JoystickConstants[0] = 0.703;
 "156
-[e $U 2226  ]
-[e :U 2227 ]
-{
-[; ;telecomando.c: 157: LCD_clear();
+[e = *U + &U _JoystickConstants * -> -> -> 0 `i `ui `ux -> -> # *U &U _JoystickConstants `ui `ux -> .0.703 `f ]
+[; ;telecomando.c: 157: JoystickConstants[1] = 34;
 "157
-[e ( _LCD_clear ..  ]
-[; ;telecomando.c: 158: LCD_goto_line(1);
-"158
-[e ( _LCD_goto_line (1 -> -> 1 `i `uc ]
-[; ;telecomando.c: 159: LCD_write_message("====================");
+[e = *U + &U _JoystickConstants * -> -> -> 1 `i `ui `ux -> -> # *U &U _JoystickConstants `ui `ux -> -> 34 `i `f ]
+[; ;telecomando.c: 159: while (1) {
 "159
-[e ( _LCD_write_message (1 :s 1C ]
-[; ;telecomando.c: 160: LCD_goto_line(2);
-"160
-[e ( _LCD_goto_line (1 -> -> 2 `i `uc ]
-[; ;telecomando.c: 161: LCD_write_message("==> VEHICLE  OFF <==");
-"161
-[e ( _LCD_write_message (1 :s 2C ]
-[; ;telecomando.c: 162: LCD_goto_line(3);
-"162
-[e ( _LCD_goto_line (1 -> -> 3 `i `uc ]
-[; ;telecomando.c: 163: LCD_write_message("Turn the switch ON! ");
-"163
-[e ( _LCD_write_message (1 :s 3C ]
-[; ;telecomando.c: 164: LCD_goto_line(4);
-"164
-[e ( _LCD_goto_line (1 -> -> 4 `i `uc ]
-[; ;telecomando.c: 165: LCD_write_message("====================");
-"165
-[e ( _LCD_write_message (1 :s 4C ]
-[; ;telecomando.c: 166: if ((time_counter - pr_time_1) >= 50) {
-"166
-[e $ ! >= - _time_counter _pr_time_1 -> -> -> 50 `i `l `ul 2229  ]
+[e :U 2222 ]
 {
-[; ;telecomando.c: 167: pr_time_1 = time_counter;
+[; ;telecomando.c: 163: PWR_Button_Polling();
+"163
+[e ( _PWR_Button_Polling ..  ]
+[; ;telecomando.c: 165: if (power_switch == 0) {
+"165
+[e $ ! == -> _power_switch `i -> 0 `i 2224  ]
+{
+[; ;telecomando.c: 166: dir = 2;
+"166
+[e = _dir -> -> 2 `i `uc ]
+[; ;telecomando.c: 167: set_speed = 0;
 "167
-[e = _pr_time_1 _time_counter ]
-[; ;telecomando.c: 168: PORTDbits.RD7 = ~PORTDbits.RD7;
+[e = _set_speed -> -> 0 `i `ui ]
+[; ;telecomando.c: 168: set_steering = 90;
 "168
-[e = . . _PORTDbits 0 7 -> ~ -> . . _PORTDbits 0 7 `i `uc ]
+[e = _set_steering -> -> 90 `i `uc ]
+[; ;telecomando.c: 169: analogic_brake = 0;
 "169
-}
-[e :U 2229 ]
-[; ;telecomando.c: 169: }
-[; ;telecomando.c: 170: delay_ms(300);
+[e = _analogic_brake -> -> 0 `i `uc ]
+[; ;telecomando.c: 170: while ((!TXSTAbits.TRMT) == 1) {
 "170
-[e ( _delay_ms (1 -> -> 300 `i `ui ]
+[e $U 2225  ]
+[e :U 2226 ]
+{
 "171
 }
-[e :U 2226 ]
-"156
-[e $ == -> _power_switch `i -> 0 `i 2227  ]
-[e :U 2228 ]
-[; ;telecomando.c: 171: }
-[; ;telecomando.c: 172: PORTDbits.RD7 = 0;
-"172
-[e = . . _PORTDbits 0 7 -> -> 0 `i `uc ]
-"173
-}
 [e :U 2225 ]
-[; ;telecomando.c: 173: }
-[; ;telecomando.c: 175: Joystick_Polling();
+"170
+[e $ == -> ! != -> . . _TXSTAbits 0 1 `i -> -> -> 0 `i `Vuc `i `i -> 1 `i 2226  ]
+[e :U 2227 ]
+[; ;telecomando.c: 171: };
+[; ;telecomando.c: 172: USART_Send();
+"172
+[e ( _USART_Send ..  ]
+[; ;telecomando.c: 173: while (power_switch == 0) {
+"173
+[e $U 2228  ]
+[e :U 2229 ]
+{
+[; ;telecomando.c: 174: LCD_clear();
+"174
+[e ( _LCD_clear ..  ]
+[; ;telecomando.c: 175: LCD_goto_line(1);
 "175
-[e ( _Joystick_Polling ..  ]
-[; ;telecomando.c: 178: if (PORTAbits.RA2 == 1) {
+[e ( _LCD_goto_line (1 -> -> 1 `i `uc ]
+[; ;telecomando.c: 176: LCD_write_message("====================");
+"176
+[e ( _LCD_write_message (1 :s 1C ]
+[; ;telecomando.c: 177: LCD_goto_line(2);
+"177
+[e ( _LCD_goto_line (1 -> -> 2 `i `uc ]
+[; ;telecomando.c: 178: LCD_write_message("==> VEHICLE  OFF <==");
 "178
-[e $ ! == -> . . _PORTAbits 0 2 `i -> 1 `i 2230  ]
-{
-[; ;telecomando.c: 179: switch_position = 0;
+[e ( _LCD_write_message (1 :s 2C ]
+[; ;telecomando.c: 179: LCD_goto_line(3);
 "179
-[e = _switch_position -> -> 0 `i `uc ]
+[e ( _LCD_goto_line (1 -> -> 3 `i `uc ]
+[; ;telecomando.c: 180: LCD_write_message("Turn the switch ON! ");
 "180
-}
-[; ;telecomando.c: 180: } else {
-[e $U 2231  ]
-[e :U 2230 ]
-{
-[; ;telecomando.c: 181: if (PORTAbits.RA3 == 0) {
+[e ( _LCD_write_message (1 :s 3C ]
+[; ;telecomando.c: 181: LCD_goto_line(4);
 "181
-[e $ ! == -> . . _PORTAbits 0 3 `i -> 0 `i 2232  ]
-{
-[; ;telecomando.c: 182: switch_position = 1;
+[e ( _LCD_goto_line (1 -> -> 4 `i `uc ]
+[; ;telecomando.c: 182: LCD_write_message("====================");
 "182
-[e = _switch_position -> -> 1 `i `uc ]
-[; ;telecomando.c: 183: dir = 1;
+[e ( _LCD_write_message (1 :s 4C ]
+[; ;telecomando.c: 183: if ((time_counter - pr_time_1) >= 50) {
 "183
-[e = _dir -> -> 1 `i `b ]
+[e $ ! >= - _time_counter _pr_time_1 -> -> -> 50 `i `l `ul 2231  ]
+{
+[; ;telecomando.c: 184: pr_time_1 = time_counter;
 "184
+[e = _pr_time_1 _time_counter ]
+[; ;telecomando.c: 185: PORTDbits.RD7 = ~PORTDbits.RD7;
+"185
+[e = . . _PORTDbits 0 7 -> ~ -> . . _PORTDbits 0 7 `i `uc ]
+"186
 }
-[; ;telecomando.c: 184: } else {
+[e :U 2231 ]
+[; ;telecomando.c: 186: }
+[; ;telecomando.c: 187: PWR_Button_Polling();
+"187
+[e ( _PWR_Button_Polling ..  ]
+[; ;telecomando.c: 188: delay_ms(300);
+"188
+[e ( _delay_ms (1 -> -> 300 `i `ui ]
+"189
+}
+[e :U 2228 ]
+"173
+[e $ == -> _power_switch `i -> 0 `i 2229  ]
+[e :U 2230 ]
+[; ;telecomando.c: 189: }
+[; ;telecomando.c: 190: PORTDbits.RD7 = 0;
+"190
+[e = . . _PORTDbits 0 7 -> -> 0 `i `uc ]
+"191
+}
+[e :U 2224 ]
+[; ;telecomando.c: 191: }
+[; ;telecomando.c: 193: Joystick_Polling();
+"193
+[e ( _Joystick_Polling ..  ]
+[; ;telecomando.c: 196: if (PORTAbits.RA2 == 1) {
+"196
+[e $ ! == -> . . _PORTAbits 0 2 `i -> 1 `i 2232  ]
+{
+[; ;telecomando.c: 197: switch_position = 0;
+"197
+[e = _switch_position -> -> 0 `i `uc ]
+"198
+}
+[; ;telecomando.c: 198: } else {
 [e $U 2233  ]
 [e :U 2232 ]
 {
-[; ;telecomando.c: 185: switch_position = 2;
-"185
-[e = _switch_position -> -> 2 `i `uc ]
-[; ;telecomando.c: 186: dir = 0;
-"186
-[e = _dir -> -> 0 `i `b ]
-"187
-}
-[e :U 2233 ]
-"188
-}
-[e :U 2231 ]
-[; ;telecomando.c: 187: }
-[; ;telecomando.c: 188: }
-[; ;telecomando.c: 190: if (switch_position != 0) {
-"190
-[e $ ! != -> _switch_position `i -> 0 `i 2234  ]
-{
-[; ;telecomando.c: 191: set_steering = (128 + JoystickValues[0])*(JoystickConstants[0]);
-"191
-[e = _set_steering -> * -> + -> 128 `i -> *U + &U _JoystickValues * -> -> -> 0 `i `ui `ux -> -> # *U &U _JoystickValues `ui `ux `i `f *U + &U _JoystickConstants * -> -> -> 0 `i `ui `ux -> -> # *U &U _JoystickConstants `ui `ux `uc ]
-[; ;telecomando.c: 192: if (JoystickValues[1] > 0) {
-"192
-[e $ ! > -> *U + &U _JoystickValues * -> -> -> 1 `i `ui `ux -> -> # *U &U _JoystickValues `ui `ux `i -> 0 `i 2235  ]
-{
-[; ;telecomando.c: 193: set_speed = (JoystickValues[1])*(JoystickConstants[1]);
-"193
-[e = _set_speed -> * -> *U + &U _JoystickValues * -> -> -> 1 `i `ui `ux -> -> # *U &U _JoystickValues `ui `ux `f *U + &U _JoystickConstants * -> -> -> 1 `i `ui `ux -> -> # *U &U _JoystickConstants `ui `ux `ui ]
-[; ;telecomando.c: 194: analogic_brake = 0;
-"194
-[e = _analogic_brake -> -> 0 `i `uc ]
-"195
-}
-[; ;telecomando.c: 195: } else {
-[e $U 2236  ]
-[e :U 2235 ]
-{
-[; ;telecomando.c: 196: set_speed = 0;
-"196
-[e = _set_speed -> -> 0 `i `ui ]
-[; ;telecomando.c: 197: analogic_brake = -((2 * JoystickValues[1]) + 1);
-"197
-[e = _analogic_brake -> -U + * -> 2 `i -> *U + &U _JoystickValues * -> -> -> 1 `i `ui `ux -> -> # *U &U _JoystickValues `ui `ux `i -> 1 `i `uc ]
-"198
-}
-[e :U 2236 ]
+[; ;telecomando.c: 199: if (PORTAbits.RA3 == 0) {
 "199
-}
-[; ;telecomando.c: 198: }
-[; ;telecomando.c: 199: } else {
-[e $U 2237  ]
-[e :U 2234 ]
+[e $ ! == -> . . _PORTAbits 0 3 `i -> 0 `i 2234  ]
 {
-[; ;telecomando.c: 200: set_speed = 0;
+[; ;telecomando.c: 200: switch_position = 1;
 "200
-[e = _set_speed -> -> 0 `i `ui ]
-[; ;telecomando.c: 201: analogic_brake = 255;
+[e = _switch_position -> -> 1 `i `uc ]
+[; ;telecomando.c: 201: dir = 2;
 "201
-[e = _analogic_brake -> -> 255 `i `uc ]
+[e = _dir -> -> 2 `i `uc ]
 "202
 }
-[e :U 2237 ]
-[; ;telecomando.c: 202: }
-[; ;telecomando.c: 204: if ((time_counter - pr_time_2) >= 10) {
+[; ;telecomando.c: 202: } else {
+[e $U 2235  ]
+[e :U 2234 ]
+{
+[; ;telecomando.c: 203: switch_position = 2;
+"203
+[e = _switch_position -> -> 2 `i `uc ]
+[; ;telecomando.c: 204: dir = 1;
 "204
-[e $ ! >= - _time_counter _pr_time_2 -> -> -> 10 `i `l `ul 2238  ]
-{
-[; ;telecomando.c: 205: pr_time_2 = time_counter;
+[e = _dir -> -> 1 `i `uc ]
 "205
-[e = _pr_time_2 _time_counter ]
-[; ;telecomando.c: 206: USART_Send();
+}
+[e :U 2235 ]
 "206
-[e ( _USART_Send ..  ]
-"207
 }
-[e :U 2238 ]
-[; ;telecomando.c: 207: }
-[; ;telecomando.c: 209: if ((time_counter - pr_time_3) >= 50) {
-"209
-[e $ ! >= - _time_counter _pr_time_3 -> -> -> 50 `i `l `ul 2239  ]
+[e :U 2233 ]
+[; ;telecomando.c: 205: }
+[; ;telecomando.c: 206: }
+[; ;telecomando.c: 208: if (switch_position != 0) {
+"208
+[e $ ! != -> _switch_position `i -> 0 `i 2236  ]
 {
-[; ;telecomando.c: 210: pr_time_3 = time_counter;
+[; ;telecomando.c: 209: set_steering = (128 + JoystickValues[0])*(JoystickConstants[0]);
+"209
+[e = _set_steering -> * -> + -> 128 `i -> *U + &U _JoystickValues * -> -> -> 0 `i `ui `ux -> -> # *U &U _JoystickValues `ui `ux `i `f *U + &U _JoystickConstants * -> -> -> 0 `i `ui `ux -> -> # *U &U _JoystickConstants `ui `ux `uc ]
+[; ;telecomando.c: 210: if (JoystickValues[1] > 0) {
 "210
-[e = _pr_time_3 _time_counter ]
-[; ;telecomando.c: 211: LCD_Handler();
+[e $ ! > -> *U + &U _JoystickValues * -> -> -> 1 `i `ui `ux -> -> # *U &U _JoystickValues `ui `ux `i -> 0 `i 2237  ]
+{
+[; ;telecomando.c: 211: set_speed = (JoystickValues[1])*(JoystickConstants[1]);
 "211
-[e ( _LCD_Handler ..  ]
+[e = _set_speed -> * -> *U + &U _JoystickValues * -> -> -> 1 `i `ui `ux -> -> # *U &U _JoystickValues `ui `ux `f *U + &U _JoystickConstants * -> -> -> 1 `i `ui `ux -> -> # *U &U _JoystickConstants `ui `ux `ui ]
+[; ;telecomando.c: 212: analogic_brake = 0;
 "212
-}
-[e :U 2239 ]
+[e = _analogic_brake -> -> 0 `i `uc ]
 "213
 }
-[e :U 2220 ]
-"140
-[e $U 2221  ]
-[e :U 2222 ]
-[; ;telecomando.c: 212: }
-[; ;telecomando.c: 213: }
-[; ;telecomando.c: 214: }
+[; ;telecomando.c: 213: } else {
+[e $U 2238  ]
+[e :U 2237 ]
+{
+[; ;telecomando.c: 214: set_speed = 0;
 "214
-[e :UE 2219 ]
+[e = _set_speed -> -> 0 `i `ui ]
+[; ;telecomando.c: 215: analogic_brake = -((2 * JoystickValues[1]) + 1);
+"215
+[e = _analogic_brake -> -U + * -> 2 `i -> *U + &U _JoystickValues * -> -> -> 1 `i `ui `ux -> -> # *U &U _JoystickValues `ui `ux `i -> 1 `i `uc ]
+"216
 }
+[e :U 2238 ]
+"217
+}
+[; ;telecomando.c: 216: }
+[; ;telecomando.c: 217: } else {
+[e $U 2239  ]
+[e :U 2236 ]
+{
+[; ;telecomando.c: 218: set_speed = 0;
+"218
+[e = _set_speed -> -> 0 `i `ui ]
+[; ;telecomando.c: 219: analogic_brake = 255;
+"219
+[e = _analogic_brake -> -> 255 `i `uc ]
 "220
+}
+[e :U 2239 ]
+[; ;telecomando.c: 220: }
+[; ;telecomando.c: 224: USART_Send();
+"224
+[e ( _USART_Send ..  ]
+[; ;telecomando.c: 227: if ((time_counter - pr_time_3) >= 50) {
+"227
+[e $ ! >= - _time_counter _pr_time_3 -> -> -> 50 `i `l `ul 2240  ]
+{
+[; ;telecomando.c: 228: pr_time_3 = time_counter;
+"228
+[e = _pr_time_3 _time_counter ]
+[; ;telecomando.c: 229: LCD_Handler();
+"229
+[e ( _LCD_Handler ..  ]
+"230
+}
+[e :U 2240 ]
+"231
+}
+[e :U 2221 ]
+"159
+[e $U 2222  ]
+[e :U 2223 ]
+[; ;telecomando.c: 230: }
+[; ;telecomando.c: 231: }
+[; ;telecomando.c: 232: }
+"232
+[e :UE 2220 ]
+}
+"238
+[v _PWR_Button_Polling `(v ~T0 @X0 1 ef ]
+{
+[; ;telecomando.c: 238: void PWR_Button_Polling(void) {
+[e :U _PWR_Button_Polling ]
+[f ]
+[; ;telecomando.c: 239: if ((PORTBbits.RB3 == 0) || (wait_low == 0)) {
+"239
+[e $ ! || == -> . . _PORTBbits 0 3 `i -> 0 `i == -> _wait_low `i -> 0 `i 2242  ]
+{
+[; ;telecomando.c: 240: wait_low = 0;
+"240
+[e = _wait_low -> -> 0 `i `b ]
+[; ;telecomando.c: 241: if (PORTBbits.RB3 == 1) {
+"241
+[e $ ! == -> . . _PORTBbits 0 3 `i -> 1 `i 2243  ]
+{
+[; ;telecomando.c: 242: power_switch = ~power_switch;
+"242
+[e = _power_switch -> ~ -> _power_switch `ui `b ]
+[; ;telecomando.c: 243: wait_low = 1;
+"243
+[e = _wait_low -> -> 1 `i `b ]
+"244
+}
+[e :U 2243 ]
+"245
+}
+[e :U 2242 ]
+[; ;telecomando.c: 244: }
+[; ;telecomando.c: 245: }
+[; ;telecomando.c: 246: }
+"246
+[e :UE 2241 ]
+}
+"248
 [v _Joystick_Polling `(v ~T0 @X0 1 ef ]
 {
-[; ;telecomando.c: 220: void Joystick_Polling(void) {
+[; ;telecomando.c: 248: void Joystick_Polling(void) {
 [e :U _Joystick_Polling ]
 [f ]
-[; ;telecomando.c: 221: for (i = 0; i < 2; i++) {
-"221
+[; ;telecomando.c: 249: for (i = 0; i < 2; i++) {
+"249
 {
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 2 `i 2241  ]
-[e $U 2242  ]
-[e :U 2241 ]
-{
-[; ;telecomando.c: 222: ADCON0bits.GO = 1;
-"222
-[e = . . _ADCON0bits 5 1 -> -> 1 `i `uc ]
-[; ;telecomando.c: 223: while (ADCON0bits.GO);
-"223
-[e $U 2244  ]
+[e $ < -> _i `i -> 2 `i 2245  ]
+[e $U 2246  ]
 [e :U 2245 ]
-[e :U 2244 ]
-[e $ != -> . . _ADCON0bits 5 1 `i -> -> -> 0 `i `Vuc `i 2245  ]
-[e :U 2246 ]
-[; ;telecomando.c: 224: JoystickValues[i] = ADRESH - 128;
-"224
+{
+[; ;telecomando.c: 250: ADCON0bits.GO = 1;
+"250
+[e = . . _ADCON0bits 5 1 -> -> 1 `i `uc ]
+[; ;telecomando.c: 251: while (ADCON0bits.GO);
+"251
+[e $U 2248  ]
+[e :U 2249 ]
+[e :U 2248 ]
+[e $ != -> . . _ADCON0bits 5 1 `i -> -> -> 0 `i `Vuc `i 2249  ]
+[e :U 2250 ]
+[; ;telecomando.c: 252: JoystickValues[i] = ADRESH - 128;
+"252
 [e = *U + &U _JoystickValues * -> _i `ux -> -> # *U &U _JoystickValues `ui `ux -> - -> _ADRESH `i -> 128 `i `c ]
-[; ;telecomando.c: 225: ADCON0bits.CHS0 = ~ADCON0bits.CHS0;
-"225
+[; ;telecomando.c: 253: ADCON0bits.CHS0 = ~ADCON0bits.CHS0;
+"253
 [e = . . _ADCON0bits 3 2 -> ~ -> . . _ADCON0bits 3 2 `i `uc ]
-"226
+"254
 }
-"221
+"249
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 2 `i 2241  ]
-[e :U 2242 ]
-"226
+[e $ < -> _i `i -> 2 `i 2245  ]
+[e :U 2246 ]
+"254
 }
-[; ;telecomando.c: 226: }
-[; ;telecomando.c: 227: }
-"227
-[e :UE 2240 ]
+[; ;telecomando.c: 254: }
+[; ;telecomando.c: 255: }
+"255
+[e :UE 2244 ]
 }
-"229
+"257
 [v _USART_Send `(v ~T0 @X0 1 ef ]
 {
-[; ;telecomando.c: 229: void USART_Send(void) {
+[; ;telecomando.c: 257: void USART_Send(void) {
 [e :U _USART_Send ]
 [f ]
-[; ;telecomando.c: 230: set_speed_pk1 = set_speed >> 8;
-"230
+[; ;telecomando.c: 258: set_speed_pk1 = set_speed >> 8;
+"258
 [e = _set_speed_pk1 -> >> _set_speed -> 8 `i `uc ]
-[; ;telecomando.c: 231: set_speed_pk0 = set_speed;
-"231
+[; ;telecomando.c: 259: if (set_speed_pk1 == 0x00) {
+"259
+[e $ ! == -> _set_speed_pk1 `i -> 0 `i 2252  ]
+{
+[; ;telecomando.c: 260: set_speed_pk1 = 0b1000000;
+"260
+[e = _set_speed_pk1 -> -> 64 `i `uc ]
+"261
+}
+[e :U 2252 ]
+[; ;telecomando.c: 261: }
+[; ;telecomando.c: 262: set_speed_pk0 = set_speed;
+"262
 [e = _set_speed_pk0 -> _set_speed `uc ]
-[; ;telecomando.c: 232: USART_Tx[1] = dir;
-"232
-[e = *U + &U _USART_Tx * -> -> -> 1 `i `ui `ux -> -> # *U &U _USART_Tx `ui `ux -> -> _dir `i `uc ]
-[; ;telecomando.c: 233: USART_Tx[2] = set_speed_pk1;
-"233
+[; ;telecomando.c: 263: USART_Tx[1] = dir;
+"263
+[e = *U + &U _USART_Tx * -> -> -> 1 `i `ui `ux -> -> # *U &U _USART_Tx `ui `ux _dir ]
+[; ;telecomando.c: 264: USART_Tx[2] = set_speed_pk1;
+"264
 [e = *U + &U _USART_Tx * -> -> -> 2 `i `ui `ux -> -> # *U &U _USART_Tx `ui `ux _set_speed_pk1 ]
-[; ;telecomando.c: 234: USART_Tx[3] = set_speed_pk0;
-"234
+[; ;telecomando.c: 265: USART_Tx[3] = set_speed_pk0;
+"265
 [e = *U + &U _USART_Tx * -> -> -> 3 `i `ui `ux -> -> # *U &U _USART_Tx `ui `ux _set_speed_pk0 ]
-[; ;telecomando.c: 235: USART_Tx[4] = set_steering;
-"235
+[; ;telecomando.c: 266: USART_Tx[4] = set_steering;
+"266
 [e = *U + &U _USART_Tx * -> -> -> 4 `i `ui `ux -> -> # *U &U _USART_Tx `ui `ux _set_steering ]
-[; ;telecomando.c: 236: USART_Tx[5] = analogic_brake;
-"236
+[; ;telecomando.c: 267: USART_Tx[5] = analogic_brake;
+"267
 [e = *U + &U _USART_Tx * -> -> -> 5 `i `ui `ux -> -> # *U &U _USART_Tx `ui `ux _analogic_brake ]
-[; ;telecomando.c: 237: for (char i = 0; i<6; i++){
-"237
+[; ;telecomando.c: 270: for (char i = 0; i < 6; i++) {
+"270
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 6 `i 2248  ]
-[e $U 2249  ]
-[e :U 2248 ]
+[e $ < -> _i `i -> 6 `i 2253  ]
+[e $U 2254  ]
+[e :U 2253 ]
 {
-[; ;telecomando.c: 238: if (USART_Tx[i] == 0){
-"238
-[e $ ! == -> *U + &U _USART_Tx * -> _i `ux -> -> # *U &U _USART_Tx `ui `ux `i -> 0 `i 2251  ]
+[; ;telecomando.c: 271: if (USART_Tx[i] == 0) {
+"271
+[e $ ! == -> *U + &U _USART_Tx * -> _i `ux -> -> # *U &U _USART_Tx `ui `ux `i -> 0 `i 2256  ]
 {
-[; ;telecomando.c: 239: USART_Tx[i] = 1;
-"239
+[; ;telecomando.c: 272: USART_Tx[i] = 1;
+"272
 [e = *U + &U _USART_Tx * -> _i `ux -> -> # *U &U _USART_Tx `ui `ux -> -> 1 `i `uc ]
-"240
-}
-[e :U 2251 ]
-"241
-}
-"237
-[e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 6 `i 2248  ]
-[e :U 2249 ]
-"241
-}
-[; ;telecomando.c: 240: }
-[; ;telecomando.c: 241: }
-[; ;telecomando.c: 242: if ((!TXSTAbits.TRMT)!= 1){
-"242
-[e $ ! != -> ! != -> . . _TXSTAbits 0 1 `i -> -> -> 0 `i `Vuc `i `i -> 1 `i 2252  ]
-{
-[; ;telecomando.c: 243: putsUSART(USART_Tx);
-"243
-[e ( _putsUSART (1 &U _USART_Tx ]
-"244
-}
-[e :U 2252 ]
-[; ;telecomando.c: 244: }
-[; ;telecomando.c: 245: }
-"245
-[e :UE 2247 ]
-}
-"247
-[v _LCD_Handler `(v ~T0 @X0 1 ef ]
-{
-[; ;telecomando.c: 247: void LCD_Handler(void) {
-[e :U _LCD_Handler ]
-[f ]
-[; ;telecomando.c: 248: actual_speed_kmh = actual_speed / 278;
-"248
-[e = _actual_speed_kmh -> / _actual_speed -> -> 278 `i `ui `f ]
-[; ;telecomando.c: 250: LCD_clear();
-"250
-[e ( _LCD_clear ..  ]
-[; ;telecomando.c: 251: LCD_goto_line(1);
-"251
-[e ( _LCD_goto_line (1 -> -> 1 `i `uc ]
-[; ;telecomando.c: 252: LCD_write_message("=== VEHICLE DATA ===");
-"252
-[e ( _LCD_write_message (1 :s 5C ]
-[; ;telecomando.c: 254: LCD_goto_line(2);
-"254
-[e ( _LCD_goto_line (1 -> -> 2 `i `uc ]
-[; ;telecomando.c: 255: LCD_write_message("Direction: ");
-"255
-[e ( _LCD_write_message (1 :s 6C ]
-[; ;telecomando.c: 256: if (switch_position != 0) {
-"256
-[e $ ! != -> _switch_position `i -> 0 `i 2254  ]
-{
-[; ;telecomando.c: 257: if (dir == 1) {
-"257
-[e $ ! == -> _dir `i -> 1 `i 2255  ]
-{
-[; ;telecomando.c: 258: LCD_write_message("FWD");
-"258
-[e ( _LCD_write_message (1 :s 7C ]
-"259
-}
-[; ;telecomando.c: 259: } else {
-[e $U 2256  ]
-[e :U 2255 ]
-{
-[; ;telecomando.c: 260: LCD_write_message("BKWD");
-"260
-[e ( _LCD_write_message (1 :s 8C ]
-"261
+"273
 }
 [e :U 2256 ]
-"262
+"275
 }
-[; ;telecomando.c: 261: }
-[; ;telecomando.c: 262: } else {
-[e $U 2257  ]
-[e :U 2254 ]
-{
-[; ;telecomando.c: 263: LCD_write_message("P");
-"263
-[e ( _LCD_write_message (1 :s 9C ]
-"264
-}
-[e :U 2257 ]
-[; ;telecomando.c: 264: }
-[; ;telecomando.c: 266: LCD_goto_line(3);
-"266
-[e ( _LCD_goto_line (1 -> -> 3 `i `uc ]
-[; ;telecomando.c: 267: sprintf(str, "Speed: %.3f", actual_speed_kmh);
-"267
-[e ( _sprintf (1 , (. , &U _str :s 10C -> _actual_speed_kmh `d ]
-[; ;telecomando.c: 268: str[11] = '\0';
-"268
-[e = *U + &U _str * -> -> -> 11 `i `ui `ux -> -> # *U &U _str `ui `ux -> -> 0 `ui `uc ]
-[; ;telecomando.c: 269: LCD_write_string(str);
-"269
-[e ( _LCD_write_string (1 &U _str ]
-[; ;telecomando.c: 270: LCD_write_message("Km/h");
 "270
-[e ( _LCD_write_message (1 :s 11C ]
-[; ;telecomando.c: 272: LCD_goto_line(4);
-"272
-[e ( _LCD_goto_line (1 -> -> 4 `i `uc ]
-[; ;telecomando.c: 273: LCD_write_message("====================");
-"273
-[e ( _LCD_write_message (1 :s 12C ]
-[; ;telecomando.c: 274: }
-"274
-[e :UE 2253 ]
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 6 `i 2253  ]
+[e :U 2254 ]
+"275
 }
-"276
+[; ;telecomando.c: 273: }
+[; ;telecomando.c: 275: }
+[; ;telecomando.c: 278: spam_counter = 0;
+"278
+[e = _spam_counter -> -> 0 `i `uc ]
+[; ;telecomando.c: 279: for (i = 1; i < 6; i++) {
+"279
+{
+[e = _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 6 `i 2257  ]
+[e $U 2258  ]
+[e :U 2257 ]
+{
+[; ;telecomando.c: 280: if (USART_Tx[i] == USART_Tx_Old[i]) {
+"280
+[e $ ! == -> *U + &U _USART_Tx * -> _i `ux -> -> # *U &U _USART_Tx `ui `ux `i -> *U + &U _USART_Tx_Old * -> _i `ux -> -> # *U &U _USART_Tx_Old `ui `ux `i 2260  ]
+{
+[; ;telecomando.c: 281: spam_counter++;
+"281
+[e ++ _spam_counter -> -> 1 `i `uc ]
+"282
+}
+[e :U 2260 ]
+"283
+}
+"279
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 6 `i 2257  ]
+[e :U 2258 ]
+"283
+}
+[; ;telecomando.c: 282: }
+[; ;telecomando.c: 283: }
+[; ;telecomando.c: 284: if (((!TXSTAbits.TRMT) != 1)&&(spam_counter != 5)) {
+"284
+[e $ ! && != -> ! != -> . . _TXSTAbits 0 1 `i -> -> -> 0 `i `Vuc `i `i -> 1 `i != -> _spam_counter `i -> 5 `i 2261  ]
+{
+[; ;telecomando.c: 285: putsUSART(USART_Tx);
+"285
+[e ( _putsUSART (1 &U _USART_Tx ]
+[; ;telecomando.c: 286: for (char i = 0; i < 6; i++) {
+"286
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 6 `i 2262  ]
+[e $U 2263  ]
+[e :U 2262 ]
+{
+[; ;telecomando.c: 287: USART_Tx_Old[i] = USART_Tx[i];
+"287
+[e = *U + &U _USART_Tx_Old * -> _i `ux -> -> # *U &U _USART_Tx_Old `ui `ux *U + &U _USART_Tx * -> _i `ux -> -> # *U &U _USART_Tx `ui `ux ]
+"288
+}
+"286
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 6 `i 2262  ]
+[e :U 2263 ]
+"288
+}
+"289
+}
+[e :U 2261 ]
+[; ;telecomando.c: 288: }
+[; ;telecomando.c: 289: }
+[; ;telecomando.c: 290: }
+"290
+[e :UE 2251 ]
+}
+"292
+[v _LCD_Handler `(v ~T0 @X0 1 ef ]
+{
+[; ;telecomando.c: 292: void LCD_Handler(void) {
+[e :U _LCD_Handler ]
+[f ]
+[; ;telecomando.c: 293: actual_speed_kmh = actual_speed / 278;
+"293
+[e = _actual_speed_kmh -> / _actual_speed -> -> 278 `i `ui `f ]
+[; ;telecomando.c: 295: LCD_clear();
+"295
+[e ( _LCD_clear ..  ]
+[; ;telecomando.c: 296: LCD_goto_line(1);
+"296
+[e ( _LCD_goto_line (1 -> -> 1 `i `uc ]
+[; ;telecomando.c: 297: LCD_write_message("=== VEHICLE DATA ===");
+"297
+[e ( _LCD_write_message (1 :s 5C ]
+[; ;telecomando.c: 299: LCD_goto_line(2);
+"299
+[e ( _LCD_goto_line (1 -> -> 2 `i `uc ]
+[; ;telecomando.c: 300: LCD_write_message("Direction: ");
+"300
+[e ( _LCD_write_message (1 :s 6C ]
+[; ;telecomando.c: 301: if (switch_position != 0) {
+"301
+[e $ ! != -> _switch_position `i -> 0 `i 2266  ]
+{
+[; ;telecomando.c: 302: if (dir == 2) {
+"302
+[e $ ! == -> _dir `i -> 2 `i 2267  ]
+{
+[; ;telecomando.c: 303: LCD_write_message("FWD");
+"303
+[e ( _LCD_write_message (1 :s 7C ]
+"304
+}
+[; ;telecomando.c: 304: } else {
+[e $U 2268  ]
+[e :U 2267 ]
+{
+[; ;telecomando.c: 305: LCD_write_message("BKWD");
+"305
+[e ( _LCD_write_message (1 :s 8C ]
+"306
+}
+[e :U 2268 ]
+"307
+}
+[; ;telecomando.c: 306: }
+[; ;telecomando.c: 307: } else {
+[e $U 2269  ]
+[e :U 2266 ]
+{
+[; ;telecomando.c: 308: LCD_write_message("P");
+"308
+[e ( _LCD_write_message (1 :s 9C ]
+"309
+}
+[e :U 2269 ]
+[; ;telecomando.c: 309: }
+[; ;telecomando.c: 311: LCD_goto_line(3);
+"311
+[e ( _LCD_goto_line (1 -> -> 3 `i `uc ]
+[; ;telecomando.c: 312: sprintf(str, "Speed: %.3f", actual_speed_kmh);
+"312
+[e ( _sprintf (1 , (. , &U _str :s 10C -> _actual_speed_kmh `d ]
+[; ;telecomando.c: 313: str[11] = '\0';
+"313
+[e = *U + &U _str * -> -> -> 11 `i `ui `ux -> -> # *U &U _str `ui `ux -> -> 0 `ui `uc ]
+[; ;telecomando.c: 314: LCD_write_string(str);
+"314
+[e ( _LCD_write_string (1 &U _str ]
+[; ;telecomando.c: 315: LCD_write_message("Km/h");
+"315
+[e ( _LCD_write_message (1 :s 11C ]
+[; ;telecomando.c: 317: LCD_goto_line(4);
+"317
+[e ( _LCD_goto_line (1 -> -> 4 `i `uc ]
+[; ;telecomando.c: 318: LCD_write_message("====================");
+"318
+[e ( _LCD_write_message (1 :s 12C ]
+[; ;telecomando.c: 319: }
+"319
+[e :UE 2265 ]
+}
+"321
 [v _board_initialization `(v ~T0 @X0 1 ef ]
 {
-[; ;telecomando.c: 276: void board_initialization(void) {
+[; ;telecomando.c: 321: void board_initialization(void) {
 [e :U _board_initialization ]
 [f ]
-[; ;telecomando.c: 278: LATA = 0x00;
-"278
-[e = _LATA -> -> 0 `i `uc ]
-[; ;telecomando.c: 279: TRISA = 0b00001111;
-"279
-[e = _TRISA -> -> 15 `i `uc ]
-[; ;telecomando.c: 280: LATB = 0x00;
-"280
-[e = _LATB -> -> 0 `i `uc ]
-[; ;telecomando.c: 281: TRISB = 0xFF;
-"281
-[e = _TRISB -> -> 255 `i `uc ]
-[; ;telecomando.c: 282: LATC = 0x00;
-"282
-[e = _LATC -> -> 0 `i `uc ]
-[; ;telecomando.c: 283: TRISC = 0b10110000;
-"283
-[e = _TRISC -> -> 176 `i `uc ]
-[; ;telecomando.c: 284: LATD = 0x00;
-"284
-[e = _LATD -> -> 0 `i `uc ]
-[; ;telecomando.c: 285: TRISD = 0x00;
-"285
-[e = _TRISD -> -> 0 `i `uc ]
-[; ;telecomando.c: 286: LATE = 0x00;
-"286
-[e = _LATE -> -> 0 `i `uc ]
-[; ;telecomando.c: 287: TRISE = 0x00;
-"287
-[e = _TRISE -> -> 0 `i `uc ]
-[; ;telecomando.c: 290: PIR1bits.RCIF = 0;
-"290
-[e = . . _PIR1bits 0 5 -> -> 0 `i `uc ]
-[; ;telecomando.c: 291: PIR2bits.TMR3IF = 0;
-"291
-[e = . . _PIR2bits 0 1 -> -> 0 `i `uc ]
-[; ;telecomando.c: 294: RCONbits.IPEN = 1;
-"294
-[e = . . _RCONbits 5 7 -> -> 1 `i `uc ]
-[; ;telecomando.c: 295: IPR1bits.RCIP = 1;
-"295
-[e = . . _IPR1bits 0 5 -> -> 1 `i `uc ]
-[; ;telecomando.c: 296: IPR2bits.TMR3IP = 0;
-"296
-[e = . . _IPR2bits 0 1 -> -> 0 `i `uc ]
-[; ;telecomando.c: 299: RCSTA&=0b01001111,TXSTAbits.TXEN=0,PIE1&=0b11001111;
-"299
-[e ; ; =& _RCSTA -> -> 79 `i `uc = . . _TXSTAbits 0 5 -> -> 0 `i `uc =& _PIE1 -> -> 207 `i `uc ]
-[; ;telecomando.c: 300: delay_ms(10);
-"300
-[e ( _delay_ms (1 -> -> 10 `i `ui ]
-[; ;telecomando.c: 301: OpenUSART(0b01111111 & 0b11111111 & 0b11111110
-[; ;telecomando.c: 302: & 0b11111101 & 0b11111111 & 0b11111111, 103);
-"302
-[e ( _OpenUSART (2 , -> & & & & & -> 127 `i -> 255 `i -> 254 `i -> 253 `i -> 255 `i -> 255 `i `uc -> -> 103 `i `ui ]
-[; ;telecomando.c: 305: ADCON1 = 0b00001101;
-"305
-[e = _ADCON1 -> -> 13 `i `uc ]
-[; ;telecomando.c: 306: ADCON0bits.CHS2 = 0;
-"306
-[e = . . _ADCON0bits 3 4 -> -> 0 `i `uc ]
-[; ;telecomando.c: 307: ADCON0bits.CHS1 = 0;
-"307
-[e = . . _ADCON0bits 3 3 -> -> 0 `i `uc ]
-[; ;telecomando.c: 308: ADCON0bits.CHS0 = 0;
-"308
-[e = . . _ADCON0bits 3 2 -> -> 0 `i `uc ]
-[; ;telecomando.c: 309: ADCON2bits.ACQT2 = 1;
-"309
-[e = . . _ADCON2bits 1 5 -> -> 1 `i `uc ]
-[; ;telecomando.c: 310: ADCON2bits.ACQT1 = 1;
-"310
-[e = . . _ADCON2bits 1 4 -> -> 1 `i `uc ]
-[; ;telecomando.c: 311: ADCON2bits.ACQT0 = 0;
-"311
-[e = . . _ADCON2bits 1 3 -> -> 0 `i `uc ]
-[; ;telecomando.c: 312: ADCON2bits.ADCS2 = 1;
-"312
-[e = . . _ADCON2bits 1 2 -> -> 1 `i `uc ]
-[; ;telecomando.c: 313: ADCON2bits.ADCS1 = 0;
-"313
-[e = . . _ADCON2bits 1 1 -> -> 0 `i `uc ]
-[; ;telecomando.c: 314: ADCON2bits.ADCS0 = 1;
-"314
-[e = . . _ADCON2bits 1 0 -> -> 1 `i `uc ]
-[; ;telecomando.c: 315: ADCON2bits.ADFM = 0;
-"315
-[e = . . _ADCON2bits 0 3 -> -> 0 `i `uc ]
-[; ;telecomando.c: 316: ADCON0bits.ADON = 1;
-"316
-[e = . . _ADCON0bits 1 0 -> -> 1 `i `uc ]
-[; ;telecomando.c: 318: PORTDbits.RD2 = 1;
-"318
-[e = . . _PORTDbits 0 2 -> -> 1 `i `uc ]
-[; ;telecomando.c: 319: delay_ms(10);
-"319
-[e ( _delay_ms (1 -> -> 10 `i `ui ]
-[; ;telecomando.c: 320: PORTDbits.RD3 = 1;
-"320
-[e = . . _PORTDbits 0 3 -> -> 1 `i `uc ]
-[; ;telecomando.c: 321: delay_s(1);
-"321
-[e ( _delay_s (1 -> -> 1 `i `uc ]
-[; ;telecomando.c: 323: LCD_initialize(16);
+[; ;telecomando.c: 323: LATA = 0x00;
 "323
-[e ( _LCD_initialize (1 -> -> 16 `i `uc ]
-[; ;telecomando.c: 324: LCD_backlight(0);
+[e = _LATA -> -> 0 `i `uc ]
+[; ;telecomando.c: 324: TRISA = 0b00001111;
 "324
-[e ( _LCD_backlight (1 -> -> 0 `i `uc ]
-[; ;telecomando.c: 325: LCD_clear();
+[e = _TRISA -> -> 15 `i `uc ]
+[; ;telecomando.c: 325: LATB = 0x00;
 "325
-[e ( _LCD_clear ..  ]
-[; ;telecomando.c: 326: LCD_goto_line(1);
+[e = _LATB -> -> 0 `i `uc ]
+[; ;telecomando.c: 326: TRISB = 0xFF;
 "326
-[e ( _LCD_goto_line (1 -> -> 1 `i `uc ]
-[; ;telecomando.c: 328: LCD_write_message("Wait...");
+[e = _TRISB -> -> 255 `i `uc ]
+[; ;telecomando.c: 327: LATC = 0x00;
+"327
+[e = _LATC -> -> 0 `i `uc ]
+[; ;telecomando.c: 328: TRISC = 0b10110000;
 "328
-[e ( _LCD_write_message (1 :s 13C ]
-[; ;telecomando.c: 330: PORTDbits.RD2 = 0;
+[e = _TRISC -> -> 176 `i `uc ]
+[; ;telecomando.c: 329: LATD = 0x00;
+"329
+[e = _LATD -> -> 0 `i `uc ]
+[; ;telecomando.c: 330: TRISD = 0x00;
 "330
-[e = . . _PORTDbits 0 2 -> -> 0 `i `uc ]
-[; ;telecomando.c: 331: PORTDbits.RD3 = 0;
+[e = _TRISD -> -> 0 `i `uc ]
+[; ;telecomando.c: 331: LATE = 0x00;
 "331
-[e = . . _PORTDbits 0 3 -> -> 0 `i `uc ]
-[; ;telecomando.c: 334: TMR3H = 0x63;
-"334
-[e = _TMR3H -> -> 99 `i `uc ]
-[; ;telecomando.c: 335: TMR3L = 0xC0;
+[e = _LATE -> -> 0 `i `uc ]
+[; ;telecomando.c: 332: TRISE = 0x00;
+"332
+[e = _TRISE -> -> 0 `i `uc ]
+[; ;telecomando.c: 335: PIR1bits.RCIF = 0;
 "335
-[e = _TMR3L -> -> 192 `i `uc ]
-[; ;telecomando.c: 338: PIE1bits.RCIE = 1;
-"338
-[e = . . _PIE1bits 0 5 -> -> 1 `i `uc ]
-[; ;telecomando.c: 339: PIE2bits.TMR3IE = 1;
+[e = . . _PIR1bits 0 5 -> -> 0 `i `uc ]
+[; ;telecomando.c: 336: PIR2bits.TMR3IF = 0;
+"336
+[e = . . _PIR2bits 0 1 -> -> 0 `i `uc ]
+[; ;telecomando.c: 339: RCONbits.IPEN = 1;
 "339
-[e = . . _PIE2bits 0 1 -> -> 1 `i `uc ]
-[; ;telecomando.c: 340: INTCONbits.GIEH = 1;
+[e = . . _RCONbits 5 7 -> -> 1 `i `uc ]
+[; ;telecomando.c: 340: IPR1bits.RCIP = 1;
 "340
-[e = . . _INTCONbits 2 7 -> -> 1 `i `uc ]
-[; ;telecomando.c: 341: INTCONbits.GIEL = 1;
+[e = . . _IPR1bits 0 5 -> -> 1 `i `uc ]
+[; ;telecomando.c: 341: IPR2bits.TMR3IP = 0;
 "341
-[e = . . _INTCONbits 2 6 -> -> 1 `i `uc ]
-[; ;telecomando.c: 343: RCSTAbits.SPEN = 1;
-"343
-[e = . . _RCSTAbits 0 7 -> -> 1 `i `uc ]
-[; ;telecomando.c: 344: T3CON = 0x01;
+[e = . . _IPR2bits 0 1 -> -> 0 `i `uc ]
+[; ;telecomando.c: 344: RCSTA&=0b01001111,TXSTAbits.TXEN=0,PIE1&=0b11001111;
 "344
-[e = _T3CON -> -> 1 `i `uc ]
-[; ;telecomando.c: 345: LCD_clear();
+[e ; ; =& _RCSTA -> -> 79 `i `uc = . . _TXSTAbits 0 5 -> -> 0 `i `uc =& _PIE1 -> -> 207 `i `uc ]
+[; ;telecomando.c: 345: delay_ms(10);
 "345
+[e ( _delay_ms (1 -> -> 10 `i `ui ]
+[; ;telecomando.c: 346: OpenUSART(0b01111111 & 0b11111111 & 0b11111110
+[; ;telecomando.c: 347: & 0b11111101 & 0b11111111 & 0b11111111, 103);
+"347
+[e ( _OpenUSART (2 , -> & & & & & -> 127 `i -> 255 `i -> 254 `i -> 253 `i -> 255 `i -> 255 `i `uc -> -> 103 `i `ui ]
+[; ;telecomando.c: 350: ADCON1 = 0b00001101;
+"350
+[e = _ADCON1 -> -> 13 `i `uc ]
+[; ;telecomando.c: 351: ADCON0bits.CHS2 = 0;
+"351
+[e = . . _ADCON0bits 3 4 -> -> 0 `i `uc ]
+[; ;telecomando.c: 352: ADCON0bits.CHS1 = 0;
+"352
+[e = . . _ADCON0bits 3 3 -> -> 0 `i `uc ]
+[; ;telecomando.c: 353: ADCON0bits.CHS0 = 0;
+"353
+[e = . . _ADCON0bits 3 2 -> -> 0 `i `uc ]
+[; ;telecomando.c: 354: ADCON2bits.ACQT2 = 1;
+"354
+[e = . . _ADCON2bits 1 5 -> -> 1 `i `uc ]
+[; ;telecomando.c: 355: ADCON2bits.ACQT1 = 1;
+"355
+[e = . . _ADCON2bits 1 4 -> -> 1 `i `uc ]
+[; ;telecomando.c: 356: ADCON2bits.ACQT0 = 0;
+"356
+[e = . . _ADCON2bits 1 3 -> -> 0 `i `uc ]
+[; ;telecomando.c: 357: ADCON2bits.ADCS2 = 1;
+"357
+[e = . . _ADCON2bits 1 2 -> -> 1 `i `uc ]
+[; ;telecomando.c: 358: ADCON2bits.ADCS1 = 0;
+"358
+[e = . . _ADCON2bits 1 1 -> -> 0 `i `uc ]
+[; ;telecomando.c: 359: ADCON2bits.ADCS0 = 1;
+"359
+[e = . . _ADCON2bits 1 0 -> -> 1 `i `uc ]
+[; ;telecomando.c: 360: ADCON2bits.ADFM = 0;
+"360
+[e = . . _ADCON2bits 0 3 -> -> 0 `i `uc ]
+[; ;telecomando.c: 361: ADCON0bits.ADON = 1;
+"361
+[e = . . _ADCON0bits 1 0 -> -> 1 `i `uc ]
+[; ;telecomando.c: 363: PORTDbits.RD2 = 1;
+"363
+[e = . . _PORTDbits 0 2 -> -> 1 `i `uc ]
+[; ;telecomando.c: 364: delay_ms(10);
+"364
+[e ( _delay_ms (1 -> -> 10 `i `ui ]
+[; ;telecomando.c: 365: PORTDbits.RD3 = 1;
+"365
+[e = . . _PORTDbits 0 3 -> -> 1 `i `uc ]
+[; ;telecomando.c: 366: delay_s(1);
+"366
+[e ( _delay_s (1 -> -> 1 `i `uc ]
+[; ;telecomando.c: 368: LCD_initialize(16);
+"368
+[e ( _LCD_initialize (1 -> -> 16 `i `uc ]
+[; ;telecomando.c: 369: LCD_backlight(0);
+"369
+[e ( _LCD_backlight (1 -> -> 0 `i `uc ]
+[; ;telecomando.c: 370: LCD_clear();
+"370
 [e ( _LCD_clear ..  ]
-[; ;telecomando.c: 346: }
-"346
-[e :UE 2258 ]
+[; ;telecomando.c: 371: LCD_goto_line(1);
+"371
+[e ( _LCD_goto_line (1 -> -> 1 `i `uc ]
+[; ;telecomando.c: 373: LCD_write_message("Wait...");
+"373
+[e ( _LCD_write_message (1 :s 13C ]
+[; ;telecomando.c: 375: PORTDbits.RD2 = 0;
+"375
+[e = . . _PORTDbits 0 2 -> -> 0 `i `uc ]
+[; ;telecomando.c: 376: PORTDbits.RD3 = 0;
+"376
+[e = . . _PORTDbits 0 3 -> -> 0 `i `uc ]
+[; ;telecomando.c: 379: TMR3H = 0x63;
+"379
+[e = _TMR3H -> -> 99 `i `uc ]
+[; ;telecomando.c: 380: TMR3L = 0xC0;
+"380
+[e = _TMR3L -> -> 192 `i `uc ]
+[; ;telecomando.c: 383: PIE1bits.RCIE = 1;
+"383
+[e = . . _PIE1bits 0 5 -> -> 1 `i `uc ]
+[; ;telecomando.c: 384: PIE2bits.TMR3IE = 1;
+"384
+[e = . . _PIE2bits 0 1 -> -> 1 `i `uc ]
+[; ;telecomando.c: 385: INTCONbits.GIEH = 1;
+"385
+[e = . . _INTCONbits 2 7 -> -> 1 `i `uc ]
+[; ;telecomando.c: 386: INTCONbits.GIEL = 1;
+"386
+[e = . . _INTCONbits 2 6 -> -> 1 `i `uc ]
+[; ;telecomando.c: 388: RCSTAbits.SPEN = 1;
+"388
+[e = . . _RCSTAbits 0 7 -> -> 1 `i `uc ]
+[; ;telecomando.c: 389: T3CON = 0x01;
+"389
+[e = _T3CON -> -> 1 `i `uc ]
+[; ;telecomando.c: 390: LCD_clear();
+"390
+[e ( _LCD_clear ..  ]
+[; ;telecomando.c: 391: }
+"391
+[e :UE 2270 ]
 }
 [p f _sprintf 8462336 ]
 [a 11C 75 109 47 104 0 ]

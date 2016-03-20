@@ -271,7 +271,7 @@ void USART_Send(void) {
         if (USART_Tx[i] == 0) {
             USART_Tx[i] = 1; //debug
         }
-        USART_Tx_Old[i] = USART_Tx[i];
+
     }
 
     //Checks if the data serial send is identical to the prevoius and blocks it
@@ -283,6 +283,9 @@ void USART_Send(void) {
     }
     if ((BusyUSART() != HIGH)&&(spam_counter != 5)) {
         putsUSART(USART_Tx);
+        for (char i = 0; i < 6; i++) {
+            USART_Tx_Old[i] = USART_Tx[i];
+        }
     }
 }
 
