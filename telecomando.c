@@ -29,7 +29,7 @@
 //#include <stdio.h>
 #include <xc.h>
 #include "telecomando.h"
-#include <usart.h>
+#include <usart.h> //not used in Rx
 #include "delay.h"
 #include "delay.c"
 #include "LCD_44780.h" 
@@ -53,6 +53,7 @@ void PWR_Button_Polling(void);
 void Joystick_Polling(void);
 void USART_Send(void);
 void LCD_Handler(void);
+void USART_RX(void);
 
 //////////////////
 //  Variables   //
@@ -81,8 +82,9 @@ volatile unsigned int set_speed = 0;
 volatile unsigned char set_speed_pk1 = 0;
 volatile unsigned char set_speed_pk0 = 0;
 volatile unsigned char analogic_brake = 0;
-volatile signed char JoystickValues[2] = 0; //steering - speed
+volatile unsigned char JoystickValues[2] = 0; //steering - speed
 volatile signed float JoystickConstants[2] = 0;
+//volatile unsigned char JoystickConstants[2] = 0;
 
 //TMR3 variables
 volatile unsigned long time_counter = 0;
@@ -95,25 +97,12 @@ unsigned char str [12] = 0;
 signed float actual_speed_kmh = 0;
 
 __interrupt(high_priority) void ISR_alta(void) {
-    if (PIR1bits.RCIF == HIGH) {
-        getsUSART((char*) USART_Rx, 7);
-        if ((USART_Rx[0] == 0xAA) && (USART_Rx[6] == 0xAA)) {
-            actual_dir = USART_Rx[1];
-            actual_speed_pk1 = USART_Rx[2];
-            if (actual_speed_pk1 == 0b10000000) {
-                actual_speed_pk1 = 0x00;
-            }
-            actual_speed_pk0 = USART_Rx[3];
-            ECU_Check = USART_Rx[4];
-            Battery_Check = USART_Rx[5];
-            actual_speed = (actual_speed_pk1 << 8) | (actual_speed_pk0);
-        }
-        PIR1bits.RCIF = LOW;
-    }
+    USART_RX();
+   
 }
 
 __interrupt(low_priority) void ISR_bassa(void) {
-    if (PIR2bits.TMR3IF) { //10ms
+ if (PIR2bits.TMR3IF) { //10ms
         time_counter++;
         TMR3H = 0x63;
         TMR3L = 0xC0;
@@ -127,20 +116,6 @@ __interrupt(low_priority) void ISR_bassa(void) {
 
 void main(void) {
     board_initialization();
-
-    //ECU Debug
-    PORTDbits.RD2 = HIGH;
-    PORTDbits.RD3 = HIGH;
-    PORTDbits.RD5 = HIGH;
-    PORTDbits.RD6 = HIGH;
-    PORTDbits.RD7 = HIGH;
-    delay_ms(500);
-    PORTDbits.RD2 = LOW;
-    PORTDbits.RD3 = LOW;
-    PORTDbits.RD5 = LOW;
-    PORTDbits.RD6 = LOW;
-    PORTDbits.RD7 = LOW;
-
     //Turn off ON/OFF switch backlight
     PORTDbits.RD7 = LOW;
 
@@ -154,12 +129,13 @@ void main(void) {
     USART_Tx[6] = 0xAA;
     USART_Tx[7] = '\0';
     JoystickConstants[X_AXIS] = 0.703;
-    JoystickConstants[Y_AXIS] = 34;
+    JoystickConstants[Y_AXIS] = 35; //35
 
     while (1) {
         //[Check BLUETOOTH CONNECTION]
         //[CHECK ECU]
 
+        USART_RX();
         PWR_Button_Polling();
 
         if (power_switch == LOW) {
@@ -205,24 +181,21 @@ void main(void) {
             }
         }
 
+        set_steering = (JoystickValues[X_AXIS])*(JoystickConstants[X_AXIS]);
         if (switch_position != HIGH_POS) {
-            set_steering = (128 + JoystickValues[X_AXIS])*(JoystickConstants[X_AXIS]);
-            if (JoystickValues[Y_AXIS] > 0) {
-                set_speed = (JoystickValues[Y_AXIS])*(JoystickConstants[Y_AXIS]);
+            if (JoystickValues[Y_AXIS] > 132) {
+                set_speed = (JoystickValues[Y_AXIS] - 130)*(JoystickConstants[Y_AXIS]); //guardare
                 analogic_brake = 0;
             } else {
                 set_speed = 0;
-                analogic_brake = -((2 * JoystickValues[Y_AXIS]) + 1);
+                analogic_brake = ((130 - JoystickValues[Y_AXIS]))*(1.9);
             }
-        } else {
-            set_speed = 0;
-            analogic_brake = 255;
         }
 
-        //        if ((time_counter - pr_time_2) >= 1) {
-        //            pr_time_2 = time_counter;
-        USART_Send();
-        //        }
+        if ((time_counter - pr_time_2) >= 2) {
+            pr_time_2 = time_counter;
+            USART_Send();
+        }
 
         if ((time_counter - pr_time_3) >= 50) {
             pr_time_3 = time_counter;
@@ -249,20 +222,28 @@ void Joystick_Polling(void) {
     for (i = 0; i < 2; i++) {
         ADCON0bits.GO = HIGH;
         while (ADCON0bits.GO);
-        JoystickValues[i] = ADRESH - 128;
+        JoystickValues[i] = ADRESH;
         ADCON0bits.CHS0 = ~ADCON0bits.CHS0;
     }
 }
 
 void USART_Send(void) {
+    if (switch_position == LOW_POS) {
+        set_speed = set_speed / 4;
+    }
     set_speed_pk1 = set_speed >> 8;
     if (set_speed_pk1 == 0x00) {
-        set_speed_pk1 = 0b1000000;
+        set_speed_pk1 = 0b10000000;
     }
     set_speed_pk0 = set_speed;
     USART_Tx[1] = dir;
     USART_Tx[2] = set_speed_pk1;
     USART_Tx[3] = set_speed_pk0;
+
+    if ((switch_position == HIGH_POS) || ((JoystickValues[Y_AXIS] >= 128)&&(JoystickValues[Y_AXIS] <= 132))) {
+        USART_Tx[2] = 0b10000000;
+        USART_Tx[3] = 0b00000001;
+    }
     USART_Tx[4] = set_steering;
     USART_Tx[5] = analogic_brake;
 
@@ -276,17 +257,66 @@ void USART_Send(void) {
 
     //Checks if the data serial send is identical to the prevoius and blocks it
     spam_counter = 0;
-    for (i = 1; i < 6; i++) {
+    for (char i = 1; i < 6; i++) {
         if (USART_Tx[i] == USART_Tx_Old[i]) {
             spam_counter++;
         }
     }
-    if ((BusyUSART() != HIGH)&&(spam_counter != 5)) {
+    if (((BusyUSART() != HIGH)&&(spam_counter != 5)) || (switch_position == HIGH_POS)) {
+
+        if (switch_position == HIGH_POS) {
+            delay_ms(100);
+        }
+        INTCONbits.GIEH = 0; //debug
+        INTCONbits.GIEL = 0; //debug
         putsUSART(USART_Tx);
+        
+        INTCONbits.GIEH = 1; //debug
+        INTCONbits.GIEL = 1; //debug
         for (char i = 0; i < 6; i++) {
+
             USART_Tx_Old[i] = USART_Tx[i];
         }
     }
+}
+
+void USART_RX(void) {
+    if (PIR1bits.RCIF == HIGH) {
+        INTCONbits.GIEH = 0;
+        INTCONbits.GIEL = 0;
+        PIE2bits.TMR3IE = 0;
+        //  getsUSART(USART_Rx, 8);
+        PIE1bits.RCIE = 0; //disabilita interrupt ricezione seriale
+        if (RCREG == 0xAA) {
+             
+            for (unsigned char i = 0; i < 7; i++) {
+               PORTDbits.RD7 = 1;//debug
+                while (PIR1bits.RCIF != 1) {
+                }
+             
+                USART_Rx[i] = RCREG;
+                PIR1bits.RCIF = 0;
+            }
+           // PORTDbits.RD7 = 0;//debug
+        }
+        if (USART_Rx[5] == 0xAA) {
+            actual_dir = USART_Rx[1];
+            actual_speed_pk1 = USART_Rx[2];
+            if (actual_speed_pk1 == 0b10000000) {
+
+                actual_speed_pk1 = 0x00;
+            }
+            actual_speed_pk0 = USART_Rx[3];
+            ECU_Check = USART_Rx[4];
+            Battery_Check = USART_Rx[5];
+            actual_speed = (actual_speed_pk1 << 8) | (actual_speed_pk0);
+        }
+        PIR1bits.RCIF = LOW;
+        PIE1bits.RCIE = HIGH;
+        PIE2bits.TMR3IE = 1;
+    }
+    INTCONbits.GIEH = 1; //debug
+    INTCONbits.GIEL = 1; //debug    
 }
 
 void LCD_Handler(void) {
@@ -305,6 +335,7 @@ void LCD_Handler(void) {
             LCD_write_message("BKWD");
         }
     } else {
+
         LCD_write_message("P");
     }
 
@@ -313,6 +344,8 @@ void LCD_Handler(void) {
     str[11] = '\0';
     LCD_write_string(str);
     LCD_write_message("Km/h");
+    //    LCD_write_message("Valore: ");
+    //    LCD_write_integer(JoystickValues[Y_AXIS], 3, ZERO_CLEANING_ON);
 
     LCD_goto_line(4);
     LCD_write_message("====================");
@@ -344,7 +377,7 @@ void board_initialization(void) {
     CloseUSART();
     delay_ms(10);
     OpenUSART(USART_TX_INT_OFF & USART_RX_INT_ON & USART_ASYNCH_MODE
-            & USART_EIGHT_BIT & USART_BRGH_HIGH & USART_CONT_RX, 103);
+            & USART_EIGHT_BIT & USART_BRGH_HIGH & USART_CONT_RX, 25);
 
     //Configurazione ADC
     ADCON1 = 0b00001101; //RA0 and RA1 analogic, AVdd and AVss voltage reference (?)
@@ -371,6 +404,7 @@ void board_initialization(void) {
     LCD_goto_line(1);
 
     LCD_write_message("Wait...");
+    delay_ms(300);
 
     PORTDbits.RD2 = 0;
     PORTDbits.RD3 = 0;
