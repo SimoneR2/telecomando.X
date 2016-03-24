@@ -459,6 +459,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _RCSTAbits `VS1927 ~T0 @X0 0 e@4011 ]
 "32074
 [v _T3CON `Vuc ~T0 @X0 0 e@4017 ]
+"597 C:\Program Files (x86)\Microchip\xc8\v1.35\include\plib\usart.h
+[v _WriteUSART `(v ~T0 @X0 0 ef1`uc ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -17636,8 +17638,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;telecomando.c: 424: LCD_clear();
 "424
 [e ( _LCD_clear ..  ]
-[; ;telecomando.c: 425: }
+[; ;telecomando.c: 425: WriteUSART(0xaa);
 "425
+[e ( _WriteUSART (1 -> -> 170 `i `uc ]
+[; ;telecomando.c: 426: }
+"426
 [e :UE 2281 ]
 }
 [p f _sprintf 8462336 ]

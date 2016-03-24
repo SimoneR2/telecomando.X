@@ -422,4 +422,5 @@ void board_initialization(void) {
     RCSTAbits.SPEN = HIGH; //USART Enable
     T3CON = 0x01; //Timer Enable
     LCD_clear();
+    WriteUSART(0xaa); //inizializza CantoSerial
 }

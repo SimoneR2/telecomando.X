@@ -20213,4 +20213,5 @@ INTCONbits.GIEL = 1;
 RCSTAbits.SPEN = 1;
 T3CON = 0x01;
 LCD_clear();
+WriteUSART(0xaa);
 }
