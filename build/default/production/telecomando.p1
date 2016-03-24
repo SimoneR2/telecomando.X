@@ -459,8 +459,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _RCSTAbits `VS1927 ~T0 @X0 0 e@4011 ]
 "32074
 [v _T3CON `Vuc ~T0 @X0 0 e@4017 ]
-"597 C:\Program Files (x86)\Microchip\xc8\v1.35\include\plib\usart.h
-[v _WriteUSART `(v ~T0 @X0 0 ef1`uc ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -17289,11 +17287,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 "290
 [e $ ! == -> _RCREG `i -> 170 `i 2267  ]
 {
-[; ;telecomando.c: 292: for (unsigned char i = 0; i < 7; i++) {
+[; ;telecomando.c: 291: USART_Rx[0] = 0xAA;
+"291
+[e = *U + &U _USART_Rx * -> -> -> 0 `i `ui `ux -> -> # *U &U _USART_Rx `ui `ux -> -> 170 `i `uc ]
+[; ;telecomando.c: 292: for (unsigned char i = 1; i < 7; i++) {
 "292
 {
 [v _i `uc ~T0 @X0 1 a ]
-[e = _i -> -> 0 `i `uc ]
+[e = _i -> -> 1 `i `uc ]
 [e $ < -> _i `i -> 7 `i 2268  ]
 [e $U 2269  ]
 [e :U 2268 ]
@@ -17332,9 +17333,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :U 2267 ]
 [; ;telecomando.c: 299: }
 [; ;telecomando.c: 301: }
-[; ;telecomando.c: 302: if (USART_Rx[5] == 0xAA) {
+[; ;telecomando.c: 302: if (USART_Rx[6] == 0xAA) {
 "302
-[e $ ! == -> *U + &U _USART_Rx * -> -> -> 5 `i `ui `ux -> -> # *U &U _USART_Rx `ui `ux `i -> 170 `i 2274  ]
+[e $ ! == -> *U + &U _USART_Rx * -> -> -> 6 `i `ui `ux -> -> # *U &U _USART_Rx `ui `ux `i -> 170 `i 2274  ]
 {
 [; ;telecomando.c: 303: actual_dir = USART_Rx[1];
 "303
@@ -17623,26 +17624,26 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;telecomando.c: 418: PIE2bits.TMR3IE = 1;
 "418
 [e = . . _PIE2bits 0 1 -> -> 1 `i `uc ]
-[; ;telecomando.c: 419: INTCONbits.GIEH = 1;
-"419
-[e = . . _INTCONbits 2 7 -> -> 1 `i `uc ]
-[; ;telecomando.c: 420: INTCONbits.GIEL = 1;
-"420
-[e = . . _INTCONbits 2 6 -> -> 1 `i `uc ]
-[; ;telecomando.c: 422: RCSTAbits.SPEN = 1;
-"422
+[; ;telecomando.c: 421: RCSTAbits.SPEN = 1;
+"421
 [e = . . _RCSTAbits 0 7 -> -> 1 `i `uc ]
-[; ;telecomando.c: 423: T3CON = 0x01;
-"423
+[; ;telecomando.c: 422: T3CON = 0x01;
+"422
 [e = _T3CON -> -> 1 `i `uc ]
-[; ;telecomando.c: 424: LCD_clear();
-"424
+[; ;telecomando.c: 423: LCD_clear();
+"423
 [e ( _LCD_clear ..  ]
-[; ;telecomando.c: 425: WriteUSART(0xaa);
-"425
-[e ( _WriteUSART (1 -> -> 170 `i `uc ]
-[; ;telecomando.c: 426: }
-"426
+[; ;telecomando.c: 428: PIR1bits.RCIF = 0;
+"428
+[e = . . _PIR1bits 0 5 -> -> 0 `i `uc ]
+[; ;telecomando.c: 429: INTCONbits.GIEH = 1;
+"429
+[e = . . _INTCONbits 2 7 -> -> 1 `i `uc ]
+[; ;telecomando.c: 430: INTCONbits.GIEL = 1;
+"430
+[e = . . _INTCONbits 2 6 -> -> 1 `i `uc ]
+[; ;telecomando.c: 431: }
+"431
 [e :UE 2281 ]
 }
 [p f _sprintf 8462336 ]

@@ -353,7 +353,7 @@
 [v _TRISB TRISB `VEuc  1 e 1 @3987 ]
 "30033
 [v _TRISC TRISC `VEuc  1 e 1 @3988 ]
-[s S1600 . 1 `uc 1 TRISC0 1 0 :1:0 
+[s S1595 . 1 `uc 1 TRISC0 1 0 :1:0 
 `uc 1 TRISC1 1 0 :1:1 
 `uc 1 TRISC2 1 0 :1:2 
 `uc 1 TRISC3 1 0 :1:3 
@@ -363,7 +363,7 @@
 `uc 1 TRISC7 1 0 :1:7 
 ]
 "30065
-[s S1609 . 1 `uc 1 RC0 1 0 :1:0 
+[s S1604 . 1 `uc 1 RC0 1 0 :1:0 
 `uc 1 RC1 1 0 :1:1 
 `uc 1 RC2 1 0 :1:2 
 `uc 1 RC3 1 0 :1:3 
@@ -372,8 +372,8 @@
 `uc 1 RC6 1 0 :1:6 
 `uc 1 RC7 1 0 :1:7 
 ]
-[u S1618 . 1 `S1600 1 . 1 0 `S1609 1 . 1 0 ]
-[v _TRISCbits TRISCbits `VES1618  1 e 1 @3988 ]
+[u S1613 . 1 `S1595 1 . 1 0 `S1604 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES1613  1 e 1 @3988 ]
 "30254
 [v _TRISD TRISD `VEuc  1 e 1 @3989 ]
 "30475
@@ -725,15 +725,15 @@
 [v __powers_ _powers_ `C[13]d  1 e 52 0 ]
 "39
 [v __npowers_ _npowers_ `C[13]d  1 e 52 0 ]
-[s S1756 . 1 `uc 1 RX_NINE 1 0 :1:0 
+[s S1755 . 1 `uc 1 RX_NINE 1 0 :1:0 
 `uc 1 TX_NINE 1 0 :1:1 
 `uc 1 FRAME_ERROR 1 0 :1:2 
 `uc 1 OVERRUN_ERROR 1 0 :1:3 
 `uc 1 fill 1 0 :4:4 
 ]
 "5 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\pic18\plib\USART\udefs.c
-[u S1762 USART 1 `uc 1 val 1 0 `S1756 1 . 1 0 ]
-[v _USART_Status USART_Status `S1762  1 e 1 0 ]
+[u S1761 USART 1 `uc 1 val 1 0 `S1755 1 . 1 0 ]
+[v _USART_Status USART_Status `S1761  1 e 1 0 ]
 "63 C:\Users\Simone\Documents\GitHub\telecomando.X\telecomando.c
 [v _USART_Tx USART_Tx `[8]uc  1 e 8 0 ]
 "64
@@ -798,7 +798,7 @@
 "354
 [v _board_initialization board_initialization `(v  1 e 0 0 ]
 {
-"426
+"431
 } 0
 "102 C:\Users\Simone/Desktop/LaurTec_PIC_libraries_v_3.3.1/src\delay.c
 [v _delay_s delay_s `(v  1 e 0 0 ]
@@ -863,9 +863,9 @@
 [v _USART_Send USART_Send `(v  1 e 0 0 ]
 {
 "276
-[v USART_Send@i_1334 i `uc  1 a 1 12 ]
+[v USART_Send@i_1329 i `uc  1 a 1 12 ]
 "260
-[v USART_Send@i_1325 i `uc  1 a 1 11 ]
+[v USART_Send@i_1320 i `uc  1 a 1 11 ]
 "251
 [v USART_Send@i i `uc  1 a 1 10 ]
 "281
@@ -907,9 +907,9 @@
 {
 "516
 [v sprintf@fval fval `d  1 a 4 20 ]
-[u S1464 . 4 `ul 1 vd 4 0 `d 1 integ 4 0 ]
+[u S1459 . 4 `ul 1 vd 4 0 `d 1 integ 4 0 ]
 "526
-[v sprintf@tmpval tmpval `S1464  1 a 4 14 ]
+[v sprintf@tmpval tmpval `S1459  1 a 4 14 ]
 "528
 [v sprintf@val val `ul  1 a 4 8 ]
 "504
@@ -957,17 +957,17 @@
 "8 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
 {
-[s S2077 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+[s S2076 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
 "13
-[s S2082 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
-[u S2085 . 4 `l 1 i 4 0 `d 1 f 4 0 `S2077 1 fAsBytes 4 0 `S2082 1 fAsWords 4 0 ]
-[v ___flmul@prod prod `S2085  1 a 4 40 ]
+[s S2081 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
+[u S2084 . 4 `l 1 i 4 0 `d 1 f 4 0 `S2076 1 fAsBytes 4 0 `S2081 1 fAsWords 4 0 ]
+[v ___flmul@prod prod `S2084  1 a 4 40 ]
 "12
 [v ___flmul@grs grs `ul  1 a 4 35 ]
-[s S2153 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+[s S2152 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
 "14
-[u S2156 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S2153 1 nAsBytes 2 0 ]
-[v ___flmul@temp temp `S2156  1 a 2 44 ]
+[u S2155 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S2152 1 nAsBytes 2 0 ]
+[v ___flmul@temp temp `S2155  1 a 2 44 ]
 "10
 [v ___flmul@bexp bexp `uc  1 a 1 39 ]
 "11

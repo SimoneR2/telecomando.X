@@ -288,8 +288,8 @@ void USART_RX(void) {
         //  getsUSART(USART_Rx, 8);
         PIE1bits.RCIE = 0; //disabilita interrupt ricezione seriale
         if (RCREG == 0xAA) {
-             
-            for (unsigned char i = 0; i < 7; i++) {
+            USART_Rx[0] = 0xAA;
+            for (unsigned char i = 1; i < 7; i++) {
                PORTDbits.RD7 = 1;//debug
                 while (PIR1bits.RCIF != 1) {
                 }
@@ -299,7 +299,7 @@ void USART_RX(void) {
             }
            // PORTDbits.RD7 = 0;//debug
         }
-        if (USART_Rx[5] == 0xAA) {
+        if (USART_Rx[6] == 0xAA) {
             actual_dir = USART_Rx[1];
             actual_speed_pk1 = USART_Rx[2];
             if (actual_speed_pk1 == 0b10000000) {
@@ -416,11 +416,16 @@ void board_initialization(void) {
     //Interrupts Enables
     PIE1bits.RCIE = HIGH;
     PIE2bits.TMR3IE = HIGH;
-    INTCONbits.GIEH = HIGH;
-    INTCONbits.GIEL = HIGH;
+    
 
     RCSTAbits.SPEN = HIGH; //USART Enable
     T3CON = 0x01; //Timer Enable
     LCD_clear();
-    WriteUSART(0xaa); //inizializza CantoSerial
+//    WriteUSART(0xaa); //inizializza CantoSerial
+//    while(RCREG != 0xAA){
+//        WriteUSART(0xaa); //inizializza CantoSerial  
+//    }
+    PIR1bits.RCIF = LOW;
+    INTCONbits.GIEH = HIGH;
+    INTCONbits.GIEL = HIGH;
 }

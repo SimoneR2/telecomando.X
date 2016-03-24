@@ -20079,8 +20079,8 @@ PIE2bits.TMR3IE = 0;
 
 PIE1bits.RCIE = 0;
 if (RCREG == 0xAA) {
-
-for (unsigned char i = 0; i < 7; i++) {
+USART_Rx[0] = 0xAA;
+for (unsigned char i = 1; i < 7; i++) {
 PORTDbits.RD7 = 1;
 while (PIR1bits.RCIF != 1) {
 }
@@ -20090,7 +20090,7 @@ PIR1bits.RCIF = 0;
 }
 
 }
-if (USART_Rx[5] == 0xAA) {
+if (USART_Rx[6] == 0xAA) {
 actual_dir = USART_Rx[1];
 actual_speed_pk1 = USART_Rx[2];
 if (actual_speed_pk1 == 0b10000000) {
@@ -20207,11 +20207,16 @@ TMR3L = 0xC0;
 
 PIE1bits.RCIE = 1;
 PIE2bits.TMR3IE = 1;
-INTCONbits.GIEH = 1;
-INTCONbits.GIEL = 1;
+
 
 RCSTAbits.SPEN = 1;
 T3CON = 0x01;
 LCD_clear();
-WriteUSART(0xaa);
+
+
+
+
+PIR1bits.RCIF = 0;
+INTCONbits.GIEH = 1;
+INTCONbits.GIEL = 1;
 }
